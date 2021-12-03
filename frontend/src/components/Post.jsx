@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 const Post = (props) => {
   return (
-    <div className="postContainer">
+    <div className="Post">
       <div>
-        <img src={props.post.url} />
+        <img src={props.url} />
+        <p>{props.desc}</p>
+        <p>{props.year}</p>
       </div>
     </div>
   );

@@ -1,3 +1,16 @@
 .App {
   text-align: center;
+  display: flex;
+}
+.Post {
+  padding: 2%;
+}
+.Post > img {
+  max-width: 100%;
+}
+.Gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }

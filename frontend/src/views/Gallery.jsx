@@ -1,34 +1,22 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { useState, useEffect } from "react";
-import postalService from "./services/postalService";
-import { Post } from "./component/Post";
+import Post from "../components/Post";
 
-const Gallery = () => {
-  const [posts, setPosts] = useState({});
-
-  const getPosts = () => {
-    postalService.getAll().then((returned) => {
-      console.log(returned);
-      returned.forEach((post) => {
-        if (posts) {
-          setPosts(...posts, {
-            url: post.url,
-            desc: post.desc,
-            year: post.year,
-            id: post.id,
-          });
-        }
-      });
-    });
-  };
-  useEffect(() => {
-    getPosts();
-  }, []);
+const Gallery = (props) => {
   return (
     <div className="Gallery">
-      {posts.map((post) => {
-        return <Post key={post.id} post={post} />;
-      })}
+      {props.posts ? (
+        props.posts.map((post, index) => {
+          return (
+            <Post
+              key={index}
+              url={post.url}
+              desc={post.desc}
+              year={post.year}
+            />
+          );
+        })
+      ) : null}
     </div>
   );
 };
