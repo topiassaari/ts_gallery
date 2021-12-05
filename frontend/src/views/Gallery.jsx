@@ -10,6 +10,7 @@ const Gallery = (props) => {
           return (
             <Post
               key={index}
+              id={post.id}
               url={post.url}
               desc={post.desc}
               year={post.year}
