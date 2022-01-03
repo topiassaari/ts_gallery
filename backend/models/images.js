@@ -8,16 +8,18 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("connected to server");
+    console.log("connected to mongodb");
   })
   .catch((error) => {
     console.log("error: ", error.message);
   });
 
-const objSchema = new mongoose.Schema({
-  val: { type: String },
+const imageSchema = new mongoose.Schema({
+  url: { type: String },
+  desc: { type: String },
+  year: { type: Number },
 });
-objSchema.set("toJSON", {
+imageSchema.set("toJSON", {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject._id;
@@ -25,4 +27,4 @@ objSchema.set("toJSON", {
   },
 });
 
-module.exports = mongoose.model("Object", objSchema);
+module.exports = mongoose.model("Image", imageSchema);
