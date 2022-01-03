@@ -26,8 +26,9 @@ const Post = (props) => {
       >
         <div>
           <img src={props.url} />
-          <p>{props.desc}</p>
-          <p>{props.year}</p>
+          <p>
+            {props.desc}, {props.year}
+          </p>
         </div>
       </div>
     </div>

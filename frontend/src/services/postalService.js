@@ -2,7 +2,7 @@ import axios from "axios";
 const baseUrl = "http://localhost:8000/api/";
 
 const getAll = () => {
-  const request = axios.get(baseUrl);
+  const request = axios.get(baseUrl + "images");
   return request.then((response) => response.data);
 };
 

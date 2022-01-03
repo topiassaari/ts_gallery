@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-  display: flex;
-}
 .Post {
   padding: 2%;
 }
@@ -10,6 +6,22 @@
 }
 .lightbox {
   display: none;
+}
+.thumbnail {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+.thumbnail > img {
+  width: 400px;
+  height: auto;
+}
+.lightbox > div {
+  padding: 20px;
+}
+.lightbox > div > img {
+  max-width: 100%;
+  height: auto;
 }
 .lightbox > div > p {
   color: rgb(255, 255, 255);
@@ -30,5 +42,21 @@
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  justify-content: center;
+}
+
+#headerContainer {
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#newPostForm {
+  padding: 30px;
+}
+#newPostForm > div {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
