@@ -9,23 +9,25 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const [posts, setPosts] = useState(null);
+  const [images, setImages] = useState(null);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
-    async function getPosts() {
-      const fetchedPosts = await postalService.getAll();
-      setPosts(fetchedPosts);
+    postalService.getAll().then((images) => setImages(images));
+    const loggedUserJSON = window.localStorage.getItem("loggedUser");
+    if (loggedUserJSON) {
+      const login = JSON.parse(loggedUserJSON);
+      setToken(login.token);
+      postalService.setToken(login.token);
     }
-    getPosts();
-    console.log(posts);
   }, []);
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Gallery posts={posts} />} />
-        <Route path="admin" element={<Admin />} />
+        <Route path="/" element={<Gallery images={images} />} />
+        <Route path="admin" element={<Admin token={token} />} />
       </Routes>
       <Footer />
     </div>

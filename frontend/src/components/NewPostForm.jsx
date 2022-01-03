@@ -1,11 +1,23 @@
 import React from "react";
-
+import postalService from "../services/postalService";
 
 const NewPostForm = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    postalService
+      .create({
+        url: event.target.url.value,
+        desc: event.target.desc.value,
+        year: event.target.year.value,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
   return (
     <div id="newPostForm">
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="url">url</label>
             <input type="url" name="url" id="url" required></input>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-const Post = (props) => {
+const Image = (props) => {
   const handleLightbox = (id) => {
     const lightbox = document.getElementById("lightbox " + id);
     if (lightbox.classList.contains("open")) {
@@ -34,4 +34,4 @@ const Post = (props) => {
     </div>
   );
 };
-export default Post;
+export default Image;
