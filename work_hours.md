@@ -5,4 +5,5 @@
 | 3.12.  | 1    | fetching from backend display in frontend                 |
 | 5.12.  | 1    | add lightbox functionality                                |
 |  3.1.  | 5    | make todo to project, add login and posting functionality |
+|  4.1.  | 1    | set up more images in kuvat.fi                            |
 | total  | 10   |                                                           |
