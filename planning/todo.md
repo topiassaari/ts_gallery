@@ -1,13 +1,11 @@
 in no specific order, always put done items at bottom
 
-- [ ] style header
+- [ ] implement header style
 - [ ] add safeguards to posting
 - [ ] plan admin functionality
 - [ ] plan local storing of urls
 - [ ] plan integration to site
-- [ ] design gallery view
-- [ ] design lightbox view
-- [ ] design admin view
+
 - [ ] take SASS in use
 - [ ] design mobile view
 - [ ] design filtering
@@ -17,8 +15,15 @@ in no specific order, always put done items at bottom
 - [ ] plan e2e tests for gallery
 - [ ] plan e2e tests for admin
 - [ ] hover desc
-- [ ] preview of img in form
+- [ ] implement preview of img in form
 - [ ] fix login refresh problem
+- [ ] empty form on submit
+
+  4.1.2021
+
+- [x] design gallery view
+- [x] design lightbox view
+- [x] design admin view
 
   3.1.2021
 

@@ -12,9 +12,7 @@ imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
   if (req.token === undefined) {
     res.status(401).json({ error: "Provide correct token" });
   }
-
   const img = req.body;
-  console.log(img);
   if (img === undefined || img.url === undefined) {
     return res.status(400).json({ error: "img missing" });
   }
