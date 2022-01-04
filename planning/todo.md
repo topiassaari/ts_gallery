@@ -1,11 +1,9 @@
 in no specific order, always put done items at bottom
 
-- [ ] implement header style
 - [ ] add safeguards to posting
 - [ ] plan admin functionality
 - [ ] plan local storing of urls
 - [ ] plan integration to site
-
 - [ ] take SASS in use
 - [ ] design mobile view
 - [ ] design filtering
@@ -17,13 +15,19 @@ in no specific order, always put done items at bottom
 - [ ] hover desc
 - [ ] implement preview of img in form
 - [ ] fix login refresh problem
-- [ ] empty form on submit
+- [ ] implement logout
+- [ ] implement expired token validation
+- [ ] clean up CSS and reformat
 
   4.1.2021
 
 - [x] design gallery view
 - [x] design lightbox view
 - [x] design admin view
+- [x] empty form on submit
+- [x] implement input and button styles
+- [x] update gallery view to show proper previews
+- [x] implement header style
 
   3.1.2021
 

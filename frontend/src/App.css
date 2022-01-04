@@ -1,5 +1,27 @@
+input,
+label {
+  display: block;
+}
+button {
+  margin: 8px 0;
+  padding: 4px 20px;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  font-weight: 700;
+  border-radius: 20px;
+}
+input {
+  border: 2px solid black;
+  padding: 4px;
+}
+button:hover {
+  background-color: rgb(53, 53, 53);
+  border: 1px solid rgb(53, 53, 53);
+  cursor: pointer;
+}
 .Post {
-  padding: 2%;
+  padding: 10px;
 }
 .Post > img {
   max-width: 100%;
@@ -13,7 +35,7 @@
   overflow: hidden;
 }
 .thumbnail > img {
-  width: 400px;
+  width: 450px;
   height: auto;
 }
 .lightbox > div {
@@ -44,17 +66,33 @@
   align-content: center;
   justify-content: center;
 }
+.Gallery > div {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
 
 #headerContainer {
   display: flex;
   align-content: flex-end;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 20px;
+}
+#headerLogo {
+  height: 50px;
+  width: auto;
 }
 
 #newPostForm {
   padding: 30px;
 }
+
+#newPostForm > div > form > div {
+  padding: 2px 0;
+}
+
 #newPostForm > div {
   display: flex;
   align-items: center;

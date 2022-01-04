@@ -10,14 +10,14 @@ const NewPostForm = () => {
         desc: event.target.desc.value,
         year: event.target.year.value,
       })
-      .then((res) => {
-        console.log(res);
+      .then(() => {
+        event.target.reset();
       });
   };
   return (
     <div id="newPostForm">
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id="form">
           <div>
             <label htmlFor="url">url</label>
             <input type="url" name="url" id="url" required></input>
