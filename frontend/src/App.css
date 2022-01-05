@@ -20,35 +20,30 @@ button:hover {
   border: 1px solid rgb(53, 53, 53);
   cursor: pointer;
 }
-.Post {
-  padding: 10px;
-}
-.Post > img {
-  max-width: 100%;
-}
-.lightbox {
-  display: none;
+.thumbnailGrid {
+  max-width: 1200px;
 }
 .thumbnail {
   width: 300px;
   height: 300px;
   overflow: hidden;
+  padding: 10px;
 }
 .thumbnail > img {
   width: 450px;
   height: auto;
 }
-.lightbox > div {
+#lightbox > div {
   padding: 20px;
 }
-.lightbox > div > img {
+#lightbox > div > img {
   max-width: 100%;
   height: auto;
 }
-.lightbox > div > p {
+#lightbox > div > p {
   color: rgb(255, 255, 255);
 }
-.lightbox.open {
+#lightbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +62,6 @@ button:hover {
   justify-content: center;
 }
 .Gallery > div {
-  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -80,9 +74,13 @@ button:hover {
   justify-content: space-between;
   padding: 20px;
 }
-#headerLogo {
+#headerLogo,
+#logoutLogo {
   height: 50px;
   width: auto;
+}
+#logoutLogo:hover {
+  cursor: pointer;
 }
 
 #newPostForm {
@@ -93,8 +91,29 @@ button:hover {
   padding: 2px 0;
 }
 
-#newPostForm > div {
+#newPostForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#loginForm > div {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#preview {
+  width: 200px;
+  height: 200px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preview > img {
+  background-color: grey;
+  height: auto;
+  width: 200px;
 }

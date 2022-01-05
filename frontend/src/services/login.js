@@ -6,4 +6,8 @@ const login = async (cred) => {
   return response.data;
 };
 
-export default { login };
+const logout = async () => {
+  await window.localStorage.removeItem("loggedUser");
+};
+
+export default { login, logout };

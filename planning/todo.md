@@ -1,7 +1,6 @@
 in no specific order, always put done items at bottom
 
 - [ ] add safeguards to posting
-- [ ] plan admin functionality
 - [ ] plan local storing of urls
 - [ ] plan integration to site
 - [ ] take SASS in use
@@ -12,14 +11,25 @@ in no specific order, always put done items at bottom
 - [ ] plan unit tests for admin
 - [ ] plan e2e tests for gallery
 - [ ] plan e2e tests for admin
-- [ ] hover desc
-- [ ] implement preview of img in form
-- [ ] fix login refresh problem
-- [ ] implement logout
+- [ ] hover desc in gallery
 - [ ] implement expired token validation
 - [ ] clean up CSS and reformat
+- [ ] figure out good spot for logout button
+- [ ] add table in admin view of all images (for deleting them)
+- [ ] explore optional style ideas
+- [ ] plan deployment
+- [ ] add keyboard support to lightbox
+- [ ] fix broken lightbox exit (next/prev triggers exit)
+- [ ] static position for lightbox buttons
 
-  4.1.2021
+  5.1.2022
+
+- [x] carousel in lightbox view (probs pretty big refactor)
+- [x] implement preview of img in form
+- [x] fix login refresh problem
+- [x] implement logout
+
+  4.1.2022
 
 - [x] design gallery view
 - [x] design lightbox view
@@ -29,7 +39,7 @@ in no specific order, always put done items at bottom
 - [x] update gallery view to show proper previews
 - [x] implement header style
 
-  3.1.2021
+  3.1.2022
 
 - [x] implement posting functionality in backend
 - [x] implement posting functionality in frontend
