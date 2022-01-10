@@ -20,6 +20,13 @@ button:hover {
   border: 1px solid rgb(53, 53, 53);
   cursor: pointer;
 }
+
+button:disabled {
+  background-color: rgb(122, 122, 122);
+  border: 1px solid rgb(122, 122, 122);
+  opacity: 0.5;
+  cursor: default;
+}
 .thumbnailGrid {
   max-width: 1200px;
 }
