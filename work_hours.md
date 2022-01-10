@@ -4,9 +4,9 @@
 | 2.12.  | 1    | set up eslint, prettier and plan project structure        |
 | 3.12.  | 1    | fetching from backend display in frontend                 |
 | 5.12.  | 1    | add lightbox functionality                                |
-| :----: | :--- | :-------------------------------------------------------- |
+|  ----  |  --- | --------------------------------------------------------  |
 |  3.1.  | 5    | make todo to project, add login and posting functionality |
 |  4.1.  | 3    | design UI and implement header,input,button styles        |
 |  5.1.  | 4    | logout, preview in new image -form, next/prew in lightbox |
-| :----: | :--- | :-------------------------------------------------------- |
+|  ----  |  --- |  -------------------------------------------------------- |
 | total  | 17   |                                                           |
