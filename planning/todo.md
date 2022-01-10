@@ -20,7 +20,10 @@ in no specific order, always put done items at bottom
 - [ ] plan deployment
 - [ ] add keyboard support to lightbox
 - [ ] fix broken lightbox exit (next/prev triggers exit)
-- [ ] static position for lightbox buttons
+
+  10.1.2022
+- [x] static position for lightbox buttons
+- [x] fix lightbox flex problem
 
   5.1.2022
 

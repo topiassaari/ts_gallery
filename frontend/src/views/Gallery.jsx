@@ -29,16 +29,20 @@ const Gallery = () => {
       >
         {lightboxCurrent ? (
           <>
-            <button style={{ zIndex: "100" }} onClick={handleLightboxPrev}>
-              {"<"}
-            </button>
             <div>
-              <img src={lightboxCurrent.url} />
-              <p>
-                {lightboxCurrent.desc}, {lightboxCurrent.year}
-              </p>
+              <img src={lightboxCurrent.url} onClick={() => handleLightbox()} />
+              <div>
+                <div>
+                  <p>
+                    {lightboxCurrent.desc}, {lightboxCurrent.year}
+                  </p>
+                  <div>
+                    <button onClick={handleLightboxPrev}>{"<"}</button>
+                    <button onClick={handleLightboxNext}>{">"}</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button onClick={handleLightboxNext}>{">"}</button>
           </>
         ) : null}
       </div>
