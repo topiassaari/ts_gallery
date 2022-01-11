@@ -3,7 +3,6 @@ in no specific order, always put done items at bottom
 - [ ] add safeguards to posting
 - [ ] plan local storing of urls
 - [ ] plan integration to site
-- [ ] take SASS in use
 - [ ] design mobile view
 - [ ] design filtering
 - [ ] implement filtering
@@ -20,6 +19,12 @@ in no specific order, always put done items at bottom
 - [ ] plan deployment
 - [ ] fix lightbox exit from outside image
 - [ ] separate lighbox to own component
+- [ ] fix optimization issue in lightbox when used with mouse
+- [ ] add exit button to lightbox
+
+  11.1.2022
+
+- [x] take SASS in use
 
   10.1.2022
 
