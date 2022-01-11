@@ -1,19 +1,14 @@
 /* eslint-disable indent */
 /* eslint-disable react/prop-types */
 import React from "react";
-
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import postalService from "../services/postalService";
 import Lightbox from "../components/Lightbox";
 import ThumbnailGrid from "../components/ThumbnailGrid";
 
 const Gallery = () => {
-  const [images, setImages] = useState([]);
+  const images = useSelector((state) => state.images);
   const [lightboxCurrent, setLightboxCurrent] = useState(null);
-
-  useEffect(() => {
-    postalService.getAll().then((images) => setImages(images));
-  }, []);
 
   useEffect(() => {
     if (document.getElementById("lightbox")) {
@@ -55,7 +50,7 @@ const Gallery = () => {
             images={images}
             handlePrev={handleLightboxPrev}
             handleNext={handleLightboxNext}
-            handle={handleLightbox}
+            close={handleLightbox}
           />
         ) : null}
       </div>

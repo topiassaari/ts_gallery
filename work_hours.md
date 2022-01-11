@@ -10,5 +10,5 @@
 |  5.1.  | 4    | logout, preview in new image -form, next/prew in lightbox |
 |  ----  | ---  | --------------------------------------------------------  |
 | 10.1.  | 2    | add lightbox keyboard support, bttn disabled and styles   |
-| 11.1.  | 2    | add SASS, refactor lightbox and thumbnails                |
-| total  | 20   |                                                           |
+| 11.1.  | 3    | add SASS and redux, refactor lightbox and thumbnails      |
+| total  | 21   |                                                           |

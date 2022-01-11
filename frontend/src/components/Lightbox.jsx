@@ -5,7 +5,7 @@ const Lightbox = (props) => {
   return (
     <>
       <div>
-        <img src={props.img.url} onClick={() => props.handle()} />
+        <img src={props.img.url} onClick={() => props.close()} />
         <div>
           <div>
             <p>

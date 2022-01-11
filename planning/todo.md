@@ -1,7 +1,6 @@
 in no specific order, always put done items at bottom
 
 - [ ] add safeguards to posting
-- [ ] plan local storing of urls
 - [ ] plan integration to site
 - [ ] design mobile view
 - [ ] design filtering
@@ -12,20 +11,23 @@ in no specific order, always put done items at bottom
 - [ ] plan e2e tests for admin
 - [ ] hover desc in gallery
 - [ ] implement expired token validation
-- [ ] clean up CSS and reformat
 - [ ] figure out good spot for logout button
 - [ ] add table in admin view of all images (for deleting them)
 - [ ] explore optional style ideas
 - [ ] plan deployment
 - [ ] fix lightbox exit from outside image
-- [ ] separate lighbox to own component
 - [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] add exit button to lightbox
-- [ ] check if necessary to use redux
+- [ ] notifications
 
   11.1.2022
 
+- [x] images to redux
+- [x] login to redux
+- [x] separate lighbox to own component
+- [x] check if necessary to use redux
 - [x] take SASS in use
+- [x] clean up CSS and reformat
 
   10.1.2022
 
