@@ -12,16 +12,19 @@ in no specific order, always put done items at bottom
 - [ ] hover desc in gallery
 - [ ] implement expired token validation
 - [ ] figure out good spot for logout button
-- [ ] add table in admin view of all images (for deleting them)
 - [ ] explore optional style ideas
 - [ ] plan deployment
 - [ ] fix lightbox exit from outside image
 - [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] add exit button to lightbox
 - [ ] notifications
+- [ ] landscape mobile view
+- [ ] add controls to ImageTable
+- [ ] hide NewPostForm behind an "add" icon
 
   11.1.2022
 
+- [x] add table in admin view of all images (for deleting them)
 - [x] images to redux
 - [x] login to redux
 - [x] separate lighbox to own component

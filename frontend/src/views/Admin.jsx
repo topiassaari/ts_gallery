@@ -5,6 +5,7 @@ import NewPostForm from "../components/NewPostForm";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/loginReducer";
 import LoginForm from "../components/LoginForm";
+import ImageTable from "../components/ImageTable";
 
 const Admin = () => {
   const login = useSelector((state) => state.login);
@@ -23,10 +24,11 @@ const Admin = () => {
       {!login.token ? (
         <LoginForm />
       ) : (
-        <div>
+        <>
           <NewPostForm />
+          <ImageTable />
           <button onClick={handleLogout}>logout</button>
-        </div>
+        </>
       )}
     </>
   );

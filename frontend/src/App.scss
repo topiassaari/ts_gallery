@@ -83,7 +83,13 @@ input {
     height: 300px;
     overflow: hidden;
     padding: 10px;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.9;
+      transition: 0.5s;
+    }
     & > img {
+      cursor: pointer;
       width: 450px;
       height: auto;
     }
@@ -126,4 +132,18 @@ input {
 }
 #loginForm > div {
   @include flexCenter;
+}
+
+#imgTable {
+  @include flexCenter;
+  table {
+    border-collapse: collapse;
+  }
+  img {
+    height: 20px;
+  }
+  td {
+    border: 1px solid black;
+    overflow: hidden;
+  }
 }
