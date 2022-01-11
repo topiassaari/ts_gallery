@@ -19,8 +19,9 @@ in no specific order, always put done items at bottom
 - [ ] plan deployment
 - [ ] fix lightbox exit from outside image
 - [ ] separate lighbox to own component
-- [ ] fix optimization issue in lightbox when used with mouse
+- [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] add exit button to lightbox
+- [ ] check if necessary to use redux
 
   11.1.2022
 

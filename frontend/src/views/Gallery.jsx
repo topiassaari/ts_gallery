@@ -4,6 +4,8 @@ import React from "react";
 
 import { useState, useEffect } from "react";
 import postalService from "../services/postalService";
+import Lightbox from "../components/Lightbox";
+import ThumbnailGrid from "../components/ThumbnailGrid";
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -19,15 +21,6 @@ const Gallery = () => {
     }
   }, [lightboxCurrent]);
 
-  const handleLightbox = (value) => {
-    setLightboxCurrent(value);
-  };
-  const handleLightboxPrev = () => {
-    setLightboxCurrent(images[images.indexOf(lightboxCurrent) - 1]);
-  };
-  const handleLightboxNext = () => {
-    setLightboxCurrent(images[images.indexOf(lightboxCurrent) + 1]);
-  };
   const handleKey = (event) => {
     switch (event.keyCode) {
       case 37:
@@ -41,6 +34,15 @@ const Gallery = () => {
         break;
     }
   };
+  const handleLightbox = (value) => {
+    setLightboxCurrent(value);
+  };
+  const handleLightboxPrev = () => {
+    setLightboxCurrent(images[images.indexOf(lightboxCurrent) - 1]);
+  };
+  const handleLightboxNext = () => {
+    setLightboxCurrent(images[images.indexOf(lightboxCurrent) + 1]);
+  };
   return (
     <div className="Gallery">
       <div
@@ -48,49 +50,19 @@ const Gallery = () => {
         style={lightboxCurrent ? { display: "flex" } : { display: "none" }}
       >
         {lightboxCurrent ? (
-          <>
-            <div>
-              <img src={lightboxCurrent.url} onClick={() => handleLightbox()} />
-              <div>
-                <div>
-                  <p>
-                    {lightboxCurrent.desc}, {lightboxCurrent.year}
-                  </p>
-                  <div>
-                    <button
-                      id="prev"
-                      disabled={images.indexOf(lightboxCurrent) === 0}
-                      onClick={handleLightboxPrev}
-                    >
-                      {"<"}
-                    </button>
-                    <button
-                      disabled={
-                        images.indexOf(lightboxCurrent) === images.length - 1
-                      }
-                      id="next"
-                      onClick={handleLightboxNext}
-                    >
-                      {">"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
+          <Lightbox
+            img={lightboxCurrent}
+            images={images}
+            handlePrev={handleLightboxPrev}
+            handleNext={handleLightboxNext}
+            handle={handleLightbox}
+          />
         ) : null}
       </div>
-      <div className="thumbnailGrid">
-        {images
-          ? images.map((img, index) => {
-              return (
-                <div key={index} className="thumbnail">
-                  <img src={img.url} onClick={() => handleLightbox(img)} />
-                </div>
-              );
-            })
-          : null}
-      </div>
+
+      {images ? (
+        <ThumbnailGrid images={images} handleLightbox={handleLightbox} />
+      ) : null}
     </div>
   );
 };

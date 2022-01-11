@@ -39,19 +39,6 @@ input {
   padding: 4px;
 }
 
-.thumbnailGrid {
-  max-width: 1200px;
-}
-.thumbnail {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  padding: 10px;
-  & > img {
-    width: 450px;
-    height: auto;
-  }
-}
 #lightbox {
   @include flexCenter;
   background-color: rgba(39, 39, 39, 0.8);
@@ -84,10 +71,22 @@ input {
 }
 .Gallery {
   @include flexCenter;
-
   & > div {
     @include flexCenter;
     flex-wrap: wrap;
+  }
+  & > #thumbnailGrid {
+    max-width: 1200px;
+  }
+  & .thumbnail {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    padding: 10px;
+    & > img {
+      width: 450px;
+      height: auto;
+    }
   }
 }
 #headerContainer {
@@ -108,23 +107,23 @@ input {
 #newPostForm {
   @include flexCenter;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 30px;
   & > div > form > div {
     padding: 2px 0;
   }
+  & > #preview {
+    @include flexCenter;
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+    & > img {
+      background-color: grey;
+      height: auto;
+      width: 200px;
+    }
+  }
 }
 #loginForm > div {
   @include flexCenter;
-}
-
-#preview {
-  @include flexCenter;
-  width: 200px;
-  height: 200px;
-  padding: 25px;
-  & > img {
-    background-color: grey;
-    height: auto;
-    width: 200px;
-  }
 }
