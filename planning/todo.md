@@ -20,10 +20,14 @@ in no specific order, always put done items at bottom
 - [ ] landscape mobile view
 - [ ] add controls to ImageTable
 - [ ] hide NewPostForm behind an "add" icon
-- [ ] design v2 admin panel style
 - [ ] design notifications
 - [ ] implement notifications
 - [ ] design modal for admin panel
+- [ ] add login/logout conditionals to prevent crashing
+
+  12.1.2022
+
+- [x] design v2 admin panel style
 
   11.1.2022
 
