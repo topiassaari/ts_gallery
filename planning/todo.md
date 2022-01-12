@@ -17,10 +17,13 @@ in no specific order, always put done items at bottom
 - [ ] fix lightbox exit from outside image
 - [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] add exit button to lightbox
-- [ ] notifications
 - [ ] landscape mobile view
 - [ ] add controls to ImageTable
 - [ ] hide NewPostForm behind an "add" icon
+- [ ] design v2 admin panel style
+- [ ] design notifications
+- [ ] implement notifications
+- [ ] design modal for admin panel
 
   11.1.2022
 
