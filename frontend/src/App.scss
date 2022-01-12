@@ -101,13 +101,24 @@ input {
   justify-content: space-between;
   padding: 20px;
 }
-#headerLogo,
-#logoutLogo {
-  height: 50px;
+#signature,
+#admin,
+#logout {
   width: auto;
   &:hover {
     cursor: pointer;
   }
+}
+#signature {
+  height: 50px;
+}
+#admin {
+  height: 25px;
+  margin: 10px;
+}
+#logout {
+  height: 25px;
+  margin: 10px;
 }
 
 #newPostForm {
@@ -136,14 +147,62 @@ input {
 
 #imgTable {
   @include flexCenter;
+  flex-direction: column;
   table {
     border-collapse: collapse;
+    width: 600px;
   }
-  img {
-    height: 20px;
+  thead {
+    font-weight: 800;
+    border-bottom: 4px solid black;
+    border-top: 0px solid black;
   }
-  td {
-    border: 1px solid black;
-    overflow: hidden;
+  tbody {
+    tr {
+      transition: 0.5s;
+      & > td > img {
+        height: 20px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        background-color: lightgrey;
+      }
+    }
+
+    td {
+      padding: 4px;
+
+      overflow: hidden;
+    }
   }
+}
+#modal {
+  width: 600px;
+  border: 6px solid black;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: white;
+  border-radius: 25px;
+  padding-bottom: 25px;
+  & > #header {
+    display: flex;
+    justify-content: right;
+    & > button {
+      margin: 12px;
+    }
+  }
+}
+
+#addButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 0;
+  font-size: x-large;
 }

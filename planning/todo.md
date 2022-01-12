@@ -11,22 +11,30 @@ in no specific order, always put done items at bottom
 - [ ] plan e2e tests for admin
 - [ ] hover desc in gallery
 - [ ] implement expired token validation
-- [ ] figure out good spot for logout button
 - [ ] explore optional style ideas
 - [ ] plan deployment
 - [ ] fix lightbox exit from outside image
 - [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] add exit button to lightbox
 - [ ] landscape mobile view
-- [ ] add controls to ImageTable
-- [ ] hide NewPostForm behind an "add" icon
 - [ ] design notifications
 - [ ] implement notifications
 - [ ] design modal for admin panel
 - [ ] add login/logout conditionals to prevent crashing
+- [ ] look into using redis
+- [ ] check if making an API could be in scope
+- [ ] separate button as a component
 
   12.1.2022
 
+- [x] add controls to ImageTable
+- [x] implement updating image in frontend
+- [x] implement updating image in backend
+- [x] implement deleting image in frontend
+- [x] implement deleting image in backend
+- [x] implement admin panel
+- [x] figure out good spot for logout button
+- [x] hide NewPostForm behind an "add" icon
 - [x] design v2 admin panel style
 
   11.1.2022

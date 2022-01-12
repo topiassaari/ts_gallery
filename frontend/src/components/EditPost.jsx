@@ -1,22 +1,22 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addImage } from "../reducers/imageReducer";
 import { useState } from "react";
 import placeholder from "../assets/placeholder.png";
+import { useDispatch } from "react-redux";
+import { updateImage, deleteImage } from "../reducers/imageReducer";
 
-const NewPostForm = () => {
+const EditPost = (props) => {
   const dispatch = useDispatch();
-  const [url, setUrl] = useState("");
-  const [desc, setDesc] = useState("");
-  const [year, setYear] = useState(2017);
+  const [url, setUrl] = useState(props.img.url);
+  const [desc, setDesc] = useState(props.img.desc);
+  const [year, setYear] = useState(props.img.year);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    dispatch(addImage({ url, desc, year })).then(() => {
-      setUrl("");
-      setDesc("");
-      setYear(2017);
-    });
+    dispatch(updateImage({ id: props.img.id, url, desc, year }));
+  };
+  const deleteImg = async () => {
+    dispatch(deleteImage(props.img.id)).then(() => props.onClose());
   };
   const handleUrl = (event) => {
     setUrl(event.target.value);
@@ -68,10 +68,17 @@ const NewPostForm = () => {
               required
             ></input>
           </div>
-          <button type="submit">submit</button>
+          <button type="submit">update</button>
+          <button
+            type="reset"
+            style={{ backgroundColor: "red", border: "red 1px solid" }}
+            onClick={deleteImg}
+          >
+            delete
+          </button>
         </form>
       </div>
     </div>
   );
 };
-export default NewPostForm;
+export default EditPost;

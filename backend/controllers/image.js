@@ -29,4 +29,26 @@ imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
     .catch((error) => next(error));
 });
 
+imageRouter.put("/:id", async (req, res) => {
+  const img = {
+    url: req.body.url,
+    desc: req.body.desc,
+    year: req.body.year,
+  };
+  const updated = await Image.findByIdAndUpdate(req.params.id, img, {
+    new: true,
+  });
+  if (updated) {
+    res.json(updated.toJSON());
+  } else {
+    res.status(404).end();
+  }
+});
+
+imageRouter.delete("/:id", middleware.userExtractor, async (req, res) => {
+  const img = await Image.findById(req.params.id);
+  await Image.findByIdAndDelete(req.params.id);
+  res.status(204).end();
+});
+
 module.exports = imageRouter;

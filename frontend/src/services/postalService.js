@@ -21,4 +21,15 @@ const create = async (newImg) => {
   return req.data;
 };
 
-export default { getAll, setToken, create };
+const update = (id, updated) => {
+  const req = axios.put(`${baseUrl}/${id}`, updated);
+  return req.then((res) => res.data);
+};
+
+const deleteImage = (id) => {
+  const config = { headers: { Authorization: token } };
+  const req = axios.delete(`${baseUrl}/${id}`, config);
+  return req.then((res) => res.data);
+};
+
+export default { getAll, setToken, create, update, deleteImage };
