@@ -21,6 +21,7 @@ in no specific order, always put done items at bottom
 - [ ] look into using redis
 - [ ] separate button as a component
 - [ ] if expired token --> show login form
+- [ ] research how to fix expired token problem
 
   13.1.2022
 
