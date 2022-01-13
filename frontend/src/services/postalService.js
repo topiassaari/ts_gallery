@@ -1,4 +1,5 @@
 import axios from "axios";
+import store from "../store";
 const baseUrl = "http://localhost:8000/api/images";
 let token = null;
 
@@ -17,16 +18,26 @@ const getAll = () => {
 
 const create = async (newImg) => {
   const config = { headers: { Authorization: token } };
-  const req = await axios.post(baseUrl, newImg, config);
-  return req.data;
+  const req = axios.post(baseUrl, newImg, config);
+
+  return req
+    .then((res) => res.data)
+    .catch((error) => {
+      if (error.response.data.error === "token expired") {
+        store.dispatch({ type: "LOGOUT", data: [] });
+      }
+      if (error.response.data.error === "token invalid") {
+        store.dispatch({ type: "LOGOUT", data: [] });
+      }
+    });
 };
 
-const update = (id, updated) => {
+const update = async (id, updated) => {
   const req = axios.put(`${baseUrl}/${id}`, updated);
   return req.then((res) => res.data);
 };
 
-const deleteImage = (id) => {
+const deleteImage = async (id) => {
   const config = { headers: { Authorization: token } };
   const req = axios.delete(`${baseUrl}/${id}`, config);
   return req.then((res) => res.data);

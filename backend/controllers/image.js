@@ -16,21 +16,14 @@ imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
   if (img === undefined || img.url === undefined) {
     return res.status(400).json({ error: "img missing" });
   }
-
   const newImg = new Image({
     url: img.url,
     desc: img.desc,
     year: img.year,
   });
-  newImg
-    .save()
-    .then((saved) => {
-      res.json(saved.toJSON());
-    })
-    .catch((error) => {
-      console.log(error._message);
-      next();
-    });
+  newImg.save().then((saved) => {
+    res.json(saved.toJSON());
+  });
 });
 
 imageRouter.put("/:id", async (req, res) => {
@@ -50,9 +43,13 @@ imageRouter.put("/:id", async (req, res) => {
 });
 
 imageRouter.delete("/:id", middleware.userExtractor, async (req, res) => {
-  const img = await Image.findById(req.params.id);
-  await Image.findByIdAndDelete(req.params.id);
-  res.status(204).end();
+  if (req.params.id) {
+    Image.findByIdAndDelete(req.params.id).then(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = imageRouter;

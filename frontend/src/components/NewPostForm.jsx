@@ -1,10 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addImage } from "../reducers/imageReducer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
 
 const NewPostForm = () => {
+  //clean form if user is forced to logout
+  useEffect(() => {
+    return () => {
+      setUrl("");
+      setDesc("");
+      setYear(2017);
+    };
+  }, []);
+
   const dispatch = useDispatch();
   const [url, setUrl] = useState("");
   const [desc, setDesc] = useState("");

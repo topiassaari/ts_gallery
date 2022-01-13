@@ -20,8 +20,7 @@ in no specific order, always put done items at bottom
 - [ ] design modal for admin panel
 - [ ] look into using redis
 - [ ] separate button as a component
-- [ ] if expired token --> show login form
-- [ ] research how to fix expired token problem
+- [ ] create notification before throwing out user after expired token
 
   13.1.2022
 
@@ -33,8 +32,10 @@ in no specific order, always put done items at bottom
 - [x] decrease expiration time of token
 - [x] add validators to mongoose
 - [x] implement expired token validation
-- [x] add safeguards to posting
 - [x] check that backend doesn't crash if validations fail
+- [x] check that https has proper confs
+- [x] research how to fix expired token problem aka how does frontend know token is expired
+- [x] implement case: if expired token --> show login form
 
   12.1.2022
 

@@ -9,7 +9,6 @@ const middleware = require("./utils/middleware");
 const morgan = require("morgan");
 require("dotenv").config();
 app.use(middleware.tokenExtractor);
-app.use(middleware.errorHandler);
 app.use(middleware.limitHandler);
 
 morgan.token("content", function (req) {

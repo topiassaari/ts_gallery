@@ -12,12 +12,6 @@ const imageReducer = (state = [], action) => {
     case "DELETE": {
       return state.filter((b) => b.id !== action.id);
     }
-    case "POSTING_ERROR": {
-      return {
-        ...state,
-        error: action.error,
-      };
-    }
     default:
       return state;
   }
@@ -40,12 +34,6 @@ export const addImage = (content) => {
       type: "NEW",
       data,
     });
-
-    // dispatch({
-    //   type: "POSTING_ERROR",
-    //   error: "posting error",
-    // });
-    // }
   };
 };
 
