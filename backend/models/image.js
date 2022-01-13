@@ -1,6 +1,13 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 const url = process.env.MONGODB_URI;
+var validate = require("mongoose-validator");
+const uniqueValidator = require("mongoose-unique-validator");
+
+var urlValidator = validate({
+  validator: "isURL",
+  message: "should be url",
+});
 
 mongoose
   .connect(url, {
@@ -15,10 +22,11 @@ mongoose
   });
 
 const imageSchema = new mongoose.Schema({
-  url: { type: String },
-  desc: { type: String },
-  year: { type: Number },
+  url: { type: String, required: true, validate: urlValidator, unique: true },
+  desc: { type: String, required: true },
+  year: { type: Number, required: true },
 });
+imageSchema.plugin(uniqueValidator);
 imageSchema.set("toJSON", {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();

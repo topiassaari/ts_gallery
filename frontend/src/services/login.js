@@ -7,7 +7,7 @@ const login = async (cred) => {
 };
 
 const logout = async () => {
-  await window.localStorage.removeItem("loggedUser");
+  await window.sessionStorage.removeItem("loggedUser");
 };
 
 export default { login, logout };

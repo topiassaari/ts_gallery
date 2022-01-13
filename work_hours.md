@@ -12,4 +12,5 @@
 | 10.1.  | 2    | add lightbox keyboard support, bttn disabled and styles        |
 | 11.1.  | 4    | add SASS and redux, refactor components, add imgtable in admin |
 | 12.1.  | 7    | design and implement v2 admin panel (add,update,delete)        |
-| total  | 30   |                                                                |
+| 13.1.  | 5    | research auth, implement validations and err handling in back  |
+| total  | 35   |                                                                |

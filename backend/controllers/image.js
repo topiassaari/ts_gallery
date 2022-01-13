@@ -16,17 +16,21 @@ imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
   if (img === undefined || img.url === undefined) {
     return res.status(400).json({ error: "img missing" });
   }
+
   const newImg = new Image({
     url: img.url,
     desc: img.desc,
-    year: parseInt(img.year),
+    year: img.year,
   });
   newImg
     .save()
     .then((saved) => {
       res.json(saved.toJSON());
     })
-    .catch((error) => next(error));
+    .catch((error) => {
+      console.log(error._message);
+      next();
+    });
 });
 
 imageRouter.put("/:id", async (req, res) => {

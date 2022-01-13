@@ -1,6 +1,5 @@
 in no specific order, always put done items at bottom
 
-- [ ] add safeguards to posting
 - [ ] plan integration to site
 - [ ] design mobile view
 - [ ] design filtering
@@ -10,7 +9,6 @@ in no specific order, always put done items at bottom
 - [ ] plan e2e tests for gallery
 - [ ] plan e2e tests for admin
 - [ ] hover desc in gallery
-- [ ] implement expired token validation
 - [ ] explore optional style ideas
 - [ ] plan deployment
 - [ ] fix lightbox exit from outside image
@@ -20,10 +18,22 @@ in no specific order, always put done items at bottom
 - [ ] design notifications
 - [ ] implement notifications
 - [ ] design modal for admin panel
-- [ ] add login/logout conditionals to prevent crashing
 - [ ] look into using redis
-- [ ] check if making an API could be in scope
 - [ ] separate button as a component
+- [ ] if expired token --> show login form
+
+  13.1.2022
+
+- [x] learn what refresh tokens are and should they be used here
+- [x] learn localStorage vs sessionStorage
+- [x] add request limiting
+- [x] https in prod
+- [x] use sessionStorage instead of localStorage
+- [x] decrease expiration time of token
+- [x] add validators to mongoose
+- [x] implement expired token validation
+- [x] add safeguards to posting
+- [x] check that backend doesn't crash if validations fail
 
   12.1.2022
 

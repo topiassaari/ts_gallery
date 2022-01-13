@@ -16,10 +16,10 @@ const loginReducer = (state = [], action) => {
 };
 export const userValidation = () => {
   return async (dispatch) => {
-    const loggedUserJSON = window.localStorage.getItem("loggedUser");
+    const loggedUserJSON = window.sessionStorage.getItem("loggedUser");
     const login = JSON.parse(loggedUserJSON);
     if (loggedUserJSON) {
-      await postalService.setToken(login.token);
+      postalService.setToken(login.token);
       dispatch({
         type: "VALIDATE",
         data: login,
@@ -34,8 +34,8 @@ export const userLogin = (username, password) => {
       password,
     });
     console.log("logging in ", username);
-    await postalService.setToken(login.token);
-    window.localStorage.setItem("loggedUser", JSON.stringify(login));
+    postalService.setToken(login.token);
+    window.sessionStorage.setItem("loggedUser", JSON.stringify(login));
 
     dispatch({
       type: "LOGIN",
@@ -46,7 +46,7 @@ export const userLogin = (username, password) => {
 
 export const logout = () => {
   return async (dispatch) => {
-    await window.localStorage.removeItem("loggedUser");
+    window.sessionStorage.removeItem("loggedUser");
     dispatch({
       type: "LOGOUT",
       data: [],
