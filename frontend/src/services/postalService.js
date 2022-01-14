@@ -34,13 +34,31 @@ const create = async (newImg) => {
 
 const update = async (id, updated) => {
   const req = axios.put(`${baseUrl}/${id}`, updated);
-  return req.then((res) => res.data);
+  return req
+    .then((res) => res.data)
+    .catch((error) => {
+      if (error.response.data.error === "token expired") {
+        store.dispatch({ type: "LOGOUT", data: [] });
+      }
+      if (error.response.data.error === "token invalid") {
+        store.dispatch({ type: "LOGOUT", data: [] });
+      }
+    });
 };
 
 const deleteImage = async (id) => {
   const config = { headers: { Authorization: token } };
   const req = axios.delete(`${baseUrl}/${id}`, config);
-  return req.then((res) => res.data);
+  return req
+    .then((res) => res.data)
+    .catch((error) => {
+      if (error.response.data.error === "token expired") {
+        store.dispatch({ type: "LOGOUT", data: [] });
+      }
+      if (error.response.data.error === "token invalid") {
+        store.dispatch({ type: "LOGOUT", data: [] });
+      }
+    });
 };
 
 export default { getAll, setToken, create, update, deleteImage };

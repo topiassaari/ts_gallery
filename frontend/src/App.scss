@@ -3,10 +3,20 @@
   justify-content: center;
   align-items: center;
 }
-
+@mixin overlay {
+  background-color: rgba(39, 39, 39, 0.8);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
 $button: #000000;
-$button-hover: #141414;
+$button-hover: #2e2e2e;
 $button-disabled: #cccccc;
+$button-delete: rgb(255, 0, 0);
+$button-delete-hover: rgb(204, 0, 0);
 
 input,
 label {
@@ -23,15 +33,37 @@ button {
 
   &:hover {
     background-color: $button-hover;
-    border: 1px solid $button-hover;
+    border-color: $button-hover;
     cursor: pointer;
   }
 
   &:disabled {
     background-color: $button-disabled;
-    border: 1px solid $button-disabled;
+    border-color: $button-disabled;
     opacity: 0.2;
     cursor: default;
+  }
+  &.add {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0;
+    font-size: x-large;
+  }
+  &.close {
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    padding: 0;
+    font-weight: 800;
+  }
+  &.delete {
+    background-color: $button-delete;
+    border-color: $button-delete;
+    &:hover {
+      background-color: $button-delete-hover;
+      border-color: $button-delete-hover;
+    }
   }
 }
 input {
@@ -41,13 +73,7 @@ input {
 
 #lightbox {
   @include flexCenter;
-  background-color: rgba(39, 39, 39, 0.8);
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  position: fixed;
+  @include overlay;
 
   & > div {
     padding: 20px;
@@ -133,7 +159,7 @@ input {
     @include flexCenter;
     width: 200px;
     height: 200px;
-    padding: 25px;
+    margin-right: 25px;
     & > img {
       background-color: grey;
       height: auto;
@@ -178,31 +204,27 @@ input {
     }
   }
 }
-#modal {
-  width: 600px;
-  border: 6px solid black;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  background-color: white;
-  border-radius: 25px;
-  padding-bottom: 25px;
-  & > #header {
-    display: flex;
-    justify-content: right;
-    & > button {
-      margin: 12px;
+
+.modalContainer {
+  @include overlay;
+  & > .modal {
+    width: fit-content;
+    border: 6px solid black;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 25px;
+    padding: 25px 25px 25px 25px;
+    & > .modalHeader {
+      display: flex;
+      justify-content: right;
+      & > button {
+        margin: 12px;
+      }
     }
   }
-}
-
-#addButton {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  padding: 0;
-  font-size: x-large;
 }

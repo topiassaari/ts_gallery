@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addImage } from "../reducers/imageReducer";
 import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
+import Button from "./Button";
 
 const NewPostForm = () => {
   //clean form if user is forced to logout
@@ -77,7 +78,7 @@ const NewPostForm = () => {
               required
             ></input>
           </div>
-          <button type="submit">submit</button>
+          <Button variant="submit" />
         </form>
       </div>
     </div>

@@ -1,11 +1,21 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
 import { useDispatch } from "react-redux";
 import { updateImage, deleteImage } from "../reducers/imageReducer";
+import Button from "./Button";
 
 const EditPost = (props) => {
+  //clean form if user is forced to logout
+  useEffect(() => {
+    return () => {
+      setUrl("");
+      setDesc("");
+      setYear(2017);
+    };
+  }, []);
+
   const dispatch = useDispatch();
   const [url, setUrl] = useState(props.img.url);
   const [desc, setDesc] = useState(props.img.desc);
@@ -68,14 +78,8 @@ const EditPost = (props) => {
               required
             ></input>
           </div>
-          <button type="submit">update</button>
-          <button
-            type="reset"
-            style={{ backgroundColor: "red", border: "red 1px solid" }}
-            onClick={deleteImg}
-          >
-            delete
-          </button>
+          <Button variant="update" />
+          <Button variant="delete" onClick={deleteImg} type="reset" />
         </form>
       </div>
     </div>

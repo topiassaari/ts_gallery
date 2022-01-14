@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../reducers/loginReducer";
+import Button from "./Button";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -23,9 +24,7 @@ const LoginForm = () => {
             <label htmlFor="password">password</label>
             <input id="password" type="password" name="password" />
           </div>
-          <button id="login" type="submit">
-            login
-          </button>
+          <Button variant="login" />
         </form>
       </div>
     </div>

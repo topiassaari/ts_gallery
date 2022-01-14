@@ -13,4 +13,5 @@
 | 11.1.  | 4    | add SASS and redux, refactor components, add imgtable in admin            |
 | 12.1.  | 7    | design and implement v2 admin panel (add,update,delete)                   |
 | 13.1.  | 8    | research auth, implement validators, error handling, handle expired token |
-| total  | 38   |                                                                           |
+| 14.1.  | 2    | add button and modal components                                           |
+| total  | 40   |                                                                           |

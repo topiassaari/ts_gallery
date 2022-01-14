@@ -47,6 +47,7 @@ export const userLogin = (username, password) => {
 export const logout = () => {
   return async (dispatch) => {
     window.sessionStorage.removeItem("loggedUser");
+    postalService.setToken(null);
     dispatch({
       type: "LOGOUT",
       data: [],

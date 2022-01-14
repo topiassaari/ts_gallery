@@ -1,8 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import NewPostForm from "../components/NewPostForm";
-import { useState } from "react";
 import EditPost from "./EditPost";
+import Button from "./Button";
+import Modal from "./Modal";
 
 const ImageTable = () => {
   const images = useSelector((state) => state.images);
@@ -22,22 +24,14 @@ const ImageTable = () => {
   };
   return (
     <>
-      <div id="modal" style={{ display: showNewModal ? "block" : "none" }}>
-        <div id="header">
-          <button style={{ margin: "12px" }} onClick={() => setNewModal(false)}>
-            x
-          </button>
-        </div>
-        <NewPostForm />
-      </div>
-      <div id="modal" style={{ display: showEditModal ? "block" : "none" }}>
-        <div id="header">
-          <button style={{ margin: "12px" }} onClick={closeEditModal}>
-            x
-          </button>
-        </div>
-        {editImg ? <EditPost img={editImg} onClose={closeEditModal} /> : null}
-      </div>
+      <Modal open={showNewModal} onClose={() => setNewModal(false)}>
+        {showNewModal ? <NewPostForm /> : null}
+      </Modal>
+      <Modal open={showEditModal} onClose={() => closeEditModal()}>
+        {showEditModal ? (
+          <EditPost img={editImg} onClose={closeEditModal} />
+        ) : null}
+      </Modal>
       <div id="imgTable">
         <table>
           <thead>
@@ -63,9 +57,7 @@ const ImageTable = () => {
               : null}
           </tbody>
         </table>
-        <button id="addButton" onClick={addImage}>
-          +
-        </button>
+        <Button variant="add" onClick={addImage} />
       </div>
     </>
   );

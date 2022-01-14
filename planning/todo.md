@@ -19,8 +19,15 @@ in no specific order, always put done items at bottom
 - [ ] implement notifications
 - [ ] design modal for admin panel
 - [ ] look into using redis
-- [ ] separate button as a component
 - [ ] create notification before throwing out user after expired token
+- [ ] reconsider exipred token logic
+- [ ] close button text alignment wrong
+- [ ] clean up duplicate code @axios
+
+  14.1.2022
+
+- [x] implement a modal component
+- [x] separate button as a component
 
   13.1.2022
 
