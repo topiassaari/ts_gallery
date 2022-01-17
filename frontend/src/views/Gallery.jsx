@@ -42,17 +42,23 @@ const Gallery = () => {
     setLightboxCurrent(images[images.indexOf(lightboxCurrent) + 1]);
   };
   const filterGalleryByYear = (year) => {
+    //already has
+    if (filtered && filtered.map((img) => img.year).includes(year)) {
+      setIsFiltered(false);
+      return setFiltered(null);
+    }
+    //add
+    if (filtered) {
+      return setFiltered(images.filter((imgs) => imgs.year === year));
+    }
+    //first
+    setIsFiltered(true);
     setFiltered(images.filter((imgs) => imgs.year === year));
-    setIsFiltered(true);
-  };
-  const filterGalleryByDA = (da) => {
-    setFiltered(images.filter((imgs) => imgs.da === da));
-    setIsFiltered(true);
   };
 
   return (
     <>
-      <Filter byYear={filterGalleryByYear} byDA={filterGalleryByDA} />
+      <Filter byYear={filterGalleryByYear} filtered={filtered} />
       <div className="Gallery">
         <div
           id="lightbox"

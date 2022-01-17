@@ -15,5 +15,5 @@
 | 13.1.  | 8    | research auth, implement validators, error handling, handle expired token |
 | 14.1.  | 2    | add button and modal components                                           |
 |  ----  | ---  | ------------------------------------------------------------------------- |
-| 17.1.  | 2    | work on filter-component                                                  |
-| total  | 42   |                                                                           |
+| 17.1.  | 4    | add filter component (slow monday)                                        |
+| total  | 44   |                                                                           |

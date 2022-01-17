@@ -5,40 +5,45 @@ import { useState } from "react";
 
 const Filter = (props) => {
   const [open, setOpen] = useState(false);
+  const years = [2017, 2018, 2019, 2020, 2021];
 
-  const years = [2017, 2018, 2019, 2020, 2021, 2022];
+  const filterByYear = (yr) => {
+    const all = document.querySelectorAll(".yearFilters");
+    const el = document.getElementById(yr);
+    if (!props.filtered) {
+      el.style.fontWeight = 800;
+      return props.byYear(yr);
+    }
+    if (props.filtered && props.filtered.map((img) => img.year).includes(yr)) {
+      el.style.fontWeight = 300;
+      return props.byYear(yr);
+    }
+    if (props.filtered) {
+      all.forEach((year) => (year.style.fontWeight = 300));
+      el.style.fontWeight = 800;
+      return props.byYear(yr);
+    }
+  };
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          width: "1200px",
-        }}
-      >
+    <div id="filter">
+      <div>
         <img
           src={filter}
-          style={{ height: "40px" }}
           onClick={open ? () => setOpen(false) : () => setOpen(true)}
         />
-        <div
-          style={{ display: open ? "flex" : "none", flexDirection: "column" }}
-        >
+        <div style={{ display: open ? "flex" : "none" }}>
           <div>
-            <span>year</span>
-            <div>
-              {years.map((yr) => (
-                <span
-                  style={{ marginRight: "2px", cursor: "pointer" }}
-                  key={yr}
-                  onClick={() => props.byYear(yr)}
-                >
-                  {yr}
-                </span>
-              ))}
-            </div>
+            {years.map((yr) => (
+              <span
+                key={yr}
+                id={yr}
+                className="yearFilters"
+                onClick={() => filterByYear(yr)}
+              >
+                {yr}
+              </span>
+            ))}
           </div>
-          <span onClick={() => props.byDA()}>date added</span>
         </div>
       </div>
     </div>
