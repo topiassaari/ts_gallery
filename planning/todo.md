@@ -2,7 +2,6 @@ in no specific order, always put done items at bottom
 
 - [ ] plan integration to site
 - [ ] design mobile view
-- [ ] design filtering
 - [ ] implement filtering
 - [ ] plan unit tests for gallery
 - [ ] plan unit tests for admin
@@ -23,6 +22,10 @@ in no specific order, always put done items at bottom
 - [ ] reconsider exipred token logic
 - [ ] close button text alignment wrong
 - [ ] clean up duplicate code @axios
+
+  17.1.2022
+
+- [x] design filtering
 
   14.1.2022
 

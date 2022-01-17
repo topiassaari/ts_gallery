@@ -5,10 +5,13 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import Lightbox from "../components/Lightbox";
 import ThumbnailGrid from "../components/ThumbnailGrid";
+import Filter from "../components/Filter";
 
 const Gallery = () => {
   const images = useSelector((state) => state.images);
   const [lightboxCurrent, setLightboxCurrent] = useState(null);
+  const [filtered, setFiltered] = useState(null);
+  const [isFiltered, setIsFiltered] = useState(false);
 
   useEffect(() => {
     if (document.getElementById("lightbox")) {
@@ -38,27 +41,42 @@ const Gallery = () => {
   const handleLightboxNext = () => {
     setLightboxCurrent(images[images.indexOf(lightboxCurrent) + 1]);
   };
+  const filterGalleryByYear = (year) => {
+    setFiltered(images.filter((imgs) => imgs.year === year));
+    setIsFiltered(true);
+  };
+  const filterGalleryByDA = (da) => {
+    setFiltered(images.filter((imgs) => imgs.da === da));
+    setIsFiltered(true);
+  };
+
   return (
-    <div className="Gallery">
-      <div
-        id="lightbox"
-        style={lightboxCurrent ? { display: "flex" } : { display: "none" }}
-      >
-        {lightboxCurrent ? (
-          <Lightbox
-            img={lightboxCurrent}
-            images={images}
-            handlePrev={handleLightboxPrev}
-            handleNext={handleLightboxNext}
-            close={handleLightbox}
+    <>
+      <Filter byYear={filterGalleryByYear} byDA={filterGalleryByDA} />
+      <div className="Gallery">
+        <div
+          id="lightbox"
+          style={lightboxCurrent ? { display: "flex" } : { display: "none" }}
+        >
+          {lightboxCurrent ? (
+            <Lightbox
+              img={lightboxCurrent}
+              images={images}
+              handlePrev={handleLightboxPrev}
+              handleNext={handleLightboxNext}
+              close={handleLightbox}
+            />
+          ) : null}
+        </div>
+
+        {images ? (
+          <ThumbnailGrid
+            images={isFiltered ? filtered : images}
+            handleLightbox={handleLightbox}
           />
         ) : null}
       </div>
-
-      {images ? (
-        <ThumbnailGrid images={images} handleLightbox={handleLightbox} />
-      ) : null}
-    </div>
+    </>
   );
 };
 

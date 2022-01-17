@@ -14,4 +14,6 @@
 | 12.1.  | 7    | design and implement v2 admin panel (add,update,delete)                   |
 | 13.1.  | 8    | research auth, implement validators, error handling, handle expired token |
 | 14.1.  | 2    | add button and modal components                                           |
-| total  | 40   |                                                                           |
+|  ----  | ---  | ------------------------------------------------------------------------- |
+| 17.1.  | 2    | work on filter-component                                                  |
+| total  | 42   |                                                                           |
