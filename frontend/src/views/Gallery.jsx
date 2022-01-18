@@ -12,7 +12,6 @@ const Gallery = () => {
   const [lightboxCurrent, setLightboxCurrent] = useState(null);
   const [filtered, setFiltered] = useState(null);
   const [isFiltered, setIsFiltered] = useState(false);
-
   useEffect(() => {
     if (document.getElementById("lightbox")) {
       document.addEventListener("keydown", handleKey);
@@ -36,22 +35,27 @@ const Gallery = () => {
     setLightboxCurrent(value);
   };
   const handleLightboxPrev = () => {
-    setLightboxCurrent(images[images.indexOf(lightboxCurrent) - 1]);
+    setLightboxCurrent(
+      isFiltered
+        ? filtered[filtered.indexOf(lightboxCurrent) - 1]
+        : images[images.indexOf(lightboxCurrent) - 1]
+    );
   };
   const handleLightboxNext = () => {
-    setLightboxCurrent(images[images.indexOf(lightboxCurrent) + 1]);
+    setLightboxCurrent(
+      isFiltered
+        ? filtered[filtered.indexOf(lightboxCurrent) + 1]
+        : images[images.indexOf(lightboxCurrent) + 1]
+    );
   };
   const filterGalleryByYear = (year) => {
-    //already has
     if (filtered && filtered.map((img) => img.year).includes(year)) {
       setIsFiltered(false);
       return setFiltered(null);
     }
-    //add
     if (filtered) {
       return setFiltered(images.filter((imgs) => imgs.year === year));
     }
-    //first
     setIsFiltered(true);
     setFiltered(images.filter((imgs) => imgs.year === year));
   };
@@ -67,7 +71,7 @@ const Gallery = () => {
           {lightboxCurrent ? (
             <Lightbox
               img={lightboxCurrent}
-              images={images}
+              content={isFiltered ? filtered : images}
               handlePrev={handleLightboxPrev}
               handleNext={handleLightboxNext}
               close={handleLightbox}
@@ -77,7 +81,7 @@ const Gallery = () => {
 
         {images ? (
           <ThumbnailGrid
-            images={isFiltered ? filtered : images}
+            content={isFiltered ? filtered : images}
             handleLightbox={handleLightbox}
           />
         ) : null}

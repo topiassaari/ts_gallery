@@ -20,6 +20,7 @@ imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
     url: img.url,
     desc: img.desc,
     year: img.year,
+    dateAdded: new Date(),
   });
   newImg.save().then((saved) => {
     res.json(saved.toJSON());

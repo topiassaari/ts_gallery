@@ -8,6 +8,7 @@ import Modal from "./Modal";
 
 const ImageTable = () => {
   const images = useSelector((state) => state.images);
+
   const [showNewModal, setNewModal] = useState(false);
   const [showEditModal, setEditModal] = useState(false);
   const [editImg, setEditImg] = useState(null);
@@ -44,16 +45,16 @@ const ImageTable = () => {
           <tbody>
             {images
               ? images.map((img, index) => {
-                return (
-                  <tr key={index} onClick={() => editImage(img)}>
-                    <td>
-                      <img src={img.url}></img>
-                    </td>
-                    <td>{img.desc}</td>
-                    <td>{img.year}</td>
-                  </tr>
-                );
-              })
+                  return (
+                    <tr key={index} onClick={() => editImage(img)}>
+                      <td>
+                        <img src={img.url}></img>
+                      </td>
+                      <td>{img.desc}</td>
+                      <td>{img.year}</td>
+                    </tr>
+                  );
+                })
               : null}
           </tbody>
         </table>

@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import filter from "../assets/filter.jpg";
-import { useState } from "react";
 
 const Filter = (props) => {
-  const [open, setOpen] = useState(false);
-  const years = [2017, 2018, 2019, 2020, 2021];
+  const years = [2022, 2021, 2020, 2019, 2018, 2017];
 
   const filterByYear = (yr) => {
     const all = document.querySelectorAll(".yearFilters");
@@ -27,11 +24,7 @@ const Filter = (props) => {
   return (
     <div id="filter">
       <div>
-        <img
-          src={filter}
-          onClick={open ? () => setOpen(false) : () => setOpen(true)}
-        />
-        <div style={{ display: open ? "flex" : "none" }}>
+        <div>
           <div>
             {years.map((yr) => (
               <span

@@ -16,4 +16,5 @@
 | 14.1.  | 2    | add button and modal components                                           |
 |  ----  | ---  | ------------------------------------------------------------------------- |
 | 17.1.  | 4    | add filter component (slow monday)                                        |
-| total  | 44   |                                                                           |
+| 18.1.  | 2    | dateAdded in backend, improve filtering in gallery                        |
+| total  | 46   |                                                                           |

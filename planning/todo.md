@@ -22,10 +22,16 @@ in no specific order, always put done items at bottom
 - [ ] close button text alignment wrong
 - [ ] clean up duplicate code @axios
 - [ ] strict mode to react?
-- [ ] implement desc search
-- [ ] implement date added in backend
-- [ ] arrange gallery in order of date added by default
-- [ ] fix lightbox when filtering is on
+- [ ] consider combinging "filtered" and "images" logic
+- [ ] consider if filtered should be handled in redux
+- [ ] implement sorting in admin view
+
+  18.1.2022
+
+- [x] implement date added in backend
+- [x] arrange gallery in order of year by default
+- [x] fix lightbox when filtering is on
+- [x] sort by date added in admin view
 
   17.1.2022
 

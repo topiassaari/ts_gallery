@@ -97,6 +97,7 @@ input {
 }
 .Gallery {
   @include flexCenter;
+  margin-bottom: 50px;
   & > div {
     @include flexCenter;
     flex-wrap: wrap;
@@ -116,7 +117,7 @@ input {
     }
     & > img {
       cursor: pointer;
-      width: 450px;
+      width: 500px;
       height: auto;
     }
   }
@@ -232,8 +233,7 @@ input {
 #filter {
   @include flexCenter;
   & > div {
-    display: flex;
-    justify-content: flex-end;
+    @include flexCenter;
     width: 1200px;
     & > img {
       height: 40px;

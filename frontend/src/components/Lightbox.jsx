@@ -14,14 +14,14 @@ const Lightbox = (props) => {
             <div>
               <button
                 id="prev"
-                disabled={props.images.indexOf(props.img) === 0}
+                disabled={props.content.indexOf(props.img) === 0}
                 onClick={props.handlePrev}
               >
                 {"<"}
               </button>
               <button
                 disabled={
-                  props.images.indexOf(props.img) === props.images.length - 1
+                  props.content.indexOf(props.img) === props.content.length - 1
                 }
                 id="next"
                 onClick={props.handleNext}

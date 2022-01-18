@@ -25,6 +25,7 @@ const imageSchema = new mongoose.Schema({
   url: { type: String, required: true, validate: urlValidator, unique: true },
   desc: { type: String, required: true },
   year: { type: Number, required: true },
+  dateAdded: { type: Date, required: true },
 });
 imageSchema.plugin(uniqueValidator);
 imageSchema.set("toJSON", {
