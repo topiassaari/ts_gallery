@@ -11,28 +11,31 @@ in no specific order, always put done items at bottom
 - [ ] plan deployment
 - [ ] fix lightbox exit from outside image
 - [ ] fix optimization issue in lightbox when used with keyboard
-- [ ] add exit button to lightbox
 - [ ] landscape mobile view
 - [ ] design notifications
 - [ ] implement notifications
-- [ ] design modal for admin panel
-- [ ] look into using redis
 - [ ] create notification before throwing out user after expired token
 - [ ] reconsider exipred token logic
 - [ ] close button text alignment wrong
-- [ ] clean up duplicate code @axios
 - [ ] strict mode to react?
 - [ ] consider combinging "filtered" and "images" logic
-- [ ] consider if filtered should be handled in redux
 - [ ] implement sorting in admin view
+- [ ] refactor Gallery view to be clearer
 
   18.1.2022
 
+- [x] make prop names in gallery a bit clearer
+- [x] design modal for admin panel
+- [x] add exit button to lightbox
+- [x] clean up duplicate code @axios
+- [x] look into using redis (not relevant atm)
+- [x] consider if filtered should be handled in redux (nope but refactor Gallery)
 - [x] separate AdminPanel and ImageTable
 - [x] implement date added in backend
 - [x] arrange gallery in order of year by default
 - [x] fix lightbox when filtering is on
 - [x] sort by date added in admin view
+- [x] combine NewPostForm and EditPost
 
   17.1.2022
 

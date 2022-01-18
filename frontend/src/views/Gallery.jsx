@@ -10,8 +10,7 @@ import Filter from "../components/Filter";
 const Gallery = () => {
   const images = useSelector((state) => state.images);
   const [lightboxCurrent, setLightboxCurrent] = useState(null);
-  const [filtered, setFiltered] = useState(null);
-  const [isFiltered, setIsFiltered] = useState(false);
+  const [filteredImages, setFiltered] = useState(null);
   useEffect(() => {
     if (document.getElementById("lightbox")) {
       document.addEventListener("keydown", handleKey);
@@ -36,49 +35,49 @@ const Gallery = () => {
   };
   const handleLightboxPrev = () => {
     setLightboxCurrent(
-      isFiltered
-        ? filtered[filtered.indexOf(lightboxCurrent) - 1]
+      filteredImages
+        ? filteredImages[filteredImages.indexOf(lightboxCurrent) - 1]
         : images[images.indexOf(lightboxCurrent) - 1]
     );
   };
   const handleLightboxNext = () => {
     setLightboxCurrent(
-      isFiltered
-        ? filtered[filtered.indexOf(lightboxCurrent) + 1]
+      filteredImages
+        ? filteredImages[filteredImages.indexOf(lightboxCurrent) + 1]
         : images[images.indexOf(lightboxCurrent) + 1]
     );
   };
   const filterGalleryByYear = (year) => {
-    if (filtered && filtered.map((img) => img.year).includes(year)) {
-      setIsFiltered(false);
+    if (
+      filteredImages &&
+      filteredImages.map((img) => img.year).includes(year)
+    ) {
       return setFiltered(null);
     }
-    if (filtered) {
+    if (filteredImages) {
       return setFiltered(images.filter((imgs) => imgs.year === year));
     }
-    setIsFiltered(true);
     setFiltered(images.filter((imgs) => imgs.year === year));
   };
 
   return (
     <>
-      <Filter byYear={filterGalleryByYear} filtered={filtered} />
+      <Filter byYear={filterGalleryByYear} content={filteredImages} />
       <div className="Gallery">
-
-          {lightboxCurrent ? (
-            <Lightbox
-              img={lightboxCurrent}
-              content={isFiltered ? filtered : images}
-              handlePrev={handleLightboxPrev}
-              handleNext={handleLightboxNext}
-              close={handleLightbox}
-            />
-          ) : null}
+        {lightboxCurrent ? (
+          <Lightbox
+            img={lightboxCurrent}
+            content={filteredImages ? filteredImages : images}
+            handlePrev={handleLightboxPrev}
+            handleNext={handleLightboxNext}
+            close={handleLightbox}
+          />
+        ) : null}
 
         {images ? (
           <ThumbnailGrid
-            content={isFiltered ? filtered : images}
-            handleLightbox={handleLightbox}
+            content={filteredImages ? filteredImages : images}
+            openLightbox={handleLightbox}
           />
         ) : null}
       </div>

@@ -7,7 +7,7 @@ const ThumbnailGrid = (props) => {
       {props.content.map((img, index) => {
         return (
           <div key={index} className="thumbnail">
-            <img src={img.url} onClick={() => props.handleLightbox(img)} />
+            <img src={img.url} onClick={() => props.openLightbox(img)} />
           </div>
         );
       })}

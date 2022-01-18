@@ -7,15 +7,15 @@ const Filter = (props) => {
   const filterByYear = (yr) => {
     const all = document.querySelectorAll(".yearFilters");
     const el = document.getElementById(yr);
-    if (!props.filtered) {
+    if (!props.content) {
       el.style.color = "black";
       return props.byYear(yr);
     }
-    if (props.filtered && props.filtered.map((img) => img.year).includes(yr)) {
+    if (props.content && props.content.map((img) => img.year).includes(yr)) {
       el.style.color = "gray";
       return props.byYear(yr);
     }
-    if (props.filtered) {
+    if (props.content) {
       all.forEach((year) => (year.style.color = "gray"));
       el.style.color = "black";
       return props.byYear(yr);
