@@ -74,9 +74,12 @@ input {
 #lightbox {
   @include flexCenter;
   @include overlay;
-
   & > div {
     padding: 20px;
+
+    & > #lightboxClose {
+      justify-content: flex-end;
+    }
     & img {
       max-width: 100%;
       height: auto;
@@ -85,6 +88,7 @@ input {
       @include flexCenter;
       & > div {
         & p {
+          text-align: center;
           color: rgb(255, 255, 255);
           font-size: large;
         }
@@ -148,23 +152,22 @@ input {
   margin: 10px;
 }
 
-#newPostForm {
+.form {
   @include flexCenter;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   padding: 30px;
   & > div > form > div {
     padding: 2px 0;
   }
-  & > #preview {
+  & > .preview {
     @include flexCenter;
-    width: 200px;
-    height: 200px;
-    margin-right: 25px;
+    width: 400px;
+    height: auto;
     & > img {
       background-color: grey;
       height: auto;
-      width: 200px;
+      max-width: 400px;
     }
   }
 }
@@ -218,8 +221,7 @@ input {
     left: 0;
     right: 0;
     background-color: white;
-    border-radius: 25px;
-    padding: 25px 25px 25px 25px;
+    padding: 25px;
     & > .modalHeader {
       display: flex;
       justify-content: right;

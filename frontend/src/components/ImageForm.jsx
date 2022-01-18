@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addImage } from "../reducers/imageReducer";
 import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
+import { useDispatch } from "react-redux";
+import { updateImage, deleteImage } from "../reducers/imageReducer";
 import Button from "./Button";
 
-const NewPostForm = () => {
+const ImageForm = (props) => {
   //clean form if user is forced to logout
   useEffect(() => {
     return () => {
@@ -16,17 +17,16 @@ const NewPostForm = () => {
   }, []);
 
   const dispatch = useDispatch();
-  const [url, setUrl] = useState("");
-  const [desc, setDesc] = useState("");
-  const [year, setYear] = useState(2017);
+  const [url, setUrl] = useState(props.img?.url ? props.img.url : "");
+  const [desc, setDesc] = useState(props.img?.desc ? props.img.desc : "");
+  const [year, setYear] = useState(props.img?.year ? props.img.year : 2017);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    dispatch(addImage({ url, desc, year })).then(() => {
-      setUrl("");
-      setDesc("");
-      setYear(2017);
-    });
+    dispatch(updateImage({ id: props.img.id, url, desc, year }));
+  };
+  const deleteImg = async () => {
+    dispatch(deleteImage(props.img.id)).then(() => props.onClose());
   };
   const handleUrl = (event) => {
     setUrl(event.target.value);
@@ -38,8 +38,8 @@ const NewPostForm = () => {
     setYear(event.target.value);
   };
   return (
-    <div id="newPostForm">
-      <div id="preview">
+    <div className="form">
+      <div className="preview">
         <img src={url ? url : placeholder} />
       </div>
       <div>
@@ -78,10 +78,17 @@ const NewPostForm = () => {
               required
             ></input>
           </div>
-          <Button variant="submit" />
+          {props.img ? (
+            <>
+              <Button variant="update" />
+              <Button variant="delete" onClick={deleteImg} type="reset" />
+            </>
+          ) : (
+            <Button variant="submit" />
+          )}
         </form>
       </div>
     </div>
   );
 };
-export default NewPostForm;
+export default ImageForm;
