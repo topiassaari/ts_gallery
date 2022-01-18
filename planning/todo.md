@@ -23,6 +23,9 @@ in no specific order, always put done items at bottom
 - [ ] clean up duplicate code @axios
 - [ ] strict mode to react?
 - [ ] implement desc search
+- [ ] implement date added in backend
+- [ ] arrange gallery in order of date added by default
+- [ ] fix lightbox when filtering is on
 
   17.1.2022
 
