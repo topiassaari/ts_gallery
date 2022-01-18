@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import Button from "./Button";
 
 const Lightbox = (props) => {
   return (
@@ -12,22 +13,20 @@ const Lightbox = (props) => {
               {props.img.desc}, {props.img.year}
             </p>
             <div>
-              <button
+              <Button
+                variant="prev"
                 id="prev"
                 disabled={props.content.indexOf(props.img) === 0}
                 onClick={props.handlePrev}
-              >
-                {"<"}
-              </button>
-              <button
+              />
+              <Button
+                variant="next"
                 disabled={
                   props.content.indexOf(props.img) === props.content.length - 1
                 }
                 id="next"
                 onClick={props.handleNext}
-              >
-                {">"}
-              </button>
+              />
             </div>
           </div>
         </div>

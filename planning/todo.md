@@ -28,6 +28,7 @@ in no specific order, always put done items at bottom
 
   18.1.2022
 
+- [x] separate AdminPanel and ImageTable
 - [x] implement date added in backend
 - [x] arrange gallery in order of year by default
 - [x] fix lightbox when filtering is on

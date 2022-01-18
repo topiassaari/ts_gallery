@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../reducers/loginReducer";
 import LoginForm from "../components/LoginForm";
-import ImageTable from "../components/ImageTable";
+import AdminPanel from "../components/AdminPanel";
 
 const Admin = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Admin = () => {
   }
 
   // eslint-disable-next-line react/prop-types
-  return <>{!login.token ? <LoginForm /> : <ImageTable />}</>;
+  return <>{!login.token ? <LoginForm /> : <AdminPanel />}</>;
 };
 
 export default Admin;
