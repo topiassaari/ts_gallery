@@ -64,10 +64,7 @@ const Gallery = () => {
     <>
       <Filter byYear={filterGalleryByYear} filtered={filtered} />
       <div className="Gallery">
-        <div
-          id="lightbox"
-          style={lightboxCurrent ? { display: "flex" } : { display: "none" }}
-        >
+
           {lightboxCurrent ? (
             <Lightbox
               img={lightboxCurrent}
@@ -77,7 +74,6 @@ const Gallery = () => {
               close={handleLightbox}
             />
           ) : null}
-        </div>
 
         {images ? (
           <ThumbnailGrid

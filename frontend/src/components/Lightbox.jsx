@@ -4,8 +4,14 @@ import Button from "./Button";
 
 const Lightbox = (props) => {
   return (
-    <>
+    <div
+      id="lightbox"
+      style={props.img ? { display: "flex" } : { display: "none" }}
+    >
       <div>
+        <div id="lightboxClose">
+          <Button variant="close" onClick={() => props.close()} />
+        </div>
         <img src={props.img.url} onClick={() => props.close()} />
         <div>
           <div>
@@ -31,7 +37,7 @@ const Lightbox = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Lightbox;
