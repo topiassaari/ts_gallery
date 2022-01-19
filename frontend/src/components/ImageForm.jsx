@@ -3,7 +3,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
 import { useDispatch } from "react-redux";
-import { updateImage, deleteImage } from "../reducers/imageReducer";
+import { updateImage, deleteImage, addImage } from "../reducers/imageReducer";
+import { setNotification } from "../reducers/NotificationReducer";
 import Button from "./Button";
 
 const ImageForm = (props) => {
@@ -23,10 +24,24 @@ const ImageForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    dispatch(updateImage({ id: props.img.id, url, desc, year }));
+    if (props.img?.id) {
+      return dispatch(updateImage({ id: props.img.id, url, desc, year })).then(
+        () => {
+          dispatch(setNotification("img updated", "success", 5));
+          return props.onClose();
+        }
+      );
+    }
+    dispatch(addImage({ url, desc, year })).then(() => {
+      dispatch(setNotification("img added", "success", 5));
+      return props.onClose();
+    });
   };
   const deleteImg = async () => {
-    dispatch(deleteImage(props.img.id)).then(() => props.onClose());
+    dispatch(deleteImage(props.img.id)).then(() => {
+      dispatch(setNotification("img deleted", "success", 5));
+      props.onClose();
+    });
   };
   const handleUrl = (event) => {
     setUrl(event.target.value);

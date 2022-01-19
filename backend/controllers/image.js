@@ -10,11 +10,11 @@ imageRouter.get("/", (req, res) => {
 
 imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
   if (req.token === undefined) {
-    res.status(401).json({ error: "Provide correct token" });
+    res.status(401).json({ error: "Provide correct token" }).end();
   }
   const img = req.body;
   if (img === undefined || img.url === undefined) {
-    return res.status(400).json({ error: "img missing" });
+    res.status(400).json({ error: "img missing" }).end();
   }
   const newImg = new Image({
     url: img.url,
@@ -27,12 +27,14 @@ imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
   });
 });
 
-imageRouter.put("/:id", async (req, res) => {
-  const img = {
-    url: req.body.url,
-    desc: req.body.desc,
-    year: req.body.year,
-  };
+imageRouter.put("/:id", middleware.userExtractor, async (req, res) => {
+  if (req.token === undefined) {
+    res.status(401).json({ error: "Provide correct token" }).end();
+  }
+  const img = req.body;
+  if (img === undefined || img.url === undefined) {
+    res.status(400).json({ error: "img missing" }).end();
+  }
   const updated = await Image.findByIdAndUpdate(req.params.id, img, {
     new: true,
   });
@@ -44,6 +46,9 @@ imageRouter.put("/:id", async (req, res) => {
 });
 
 imageRouter.delete("/:id", middleware.userExtractor, async (req, res) => {
+  if (req.token === undefined) {
+    res.status(401).json({ error: "Provide correct token" }).end();
+  }
   if (req.params.id) {
     Image.findByIdAndDelete(req.params.id).then(() => {
       res.status(204).end();

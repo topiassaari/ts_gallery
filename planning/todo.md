@@ -13,14 +13,18 @@ in no specific order, always put done items at bottom
 - [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] landscape mobile view
 - [ ] design notifications
-- [ ] implement notifications
-- [ ] create notification before throwing out user after expired token
-- [ ] reconsider exipred token logic
 - [ ] close button text alignment wrong
 - [ ] strict mode to react?
 - [ ] consider combinging "filtered" and "images" logic
 - [ ] implement sorting in admin view
 - [ ] refactor Gallery view to be clearer
+
+  19.1.2022
+
+- [x] use auth for update and delete
+- [x] implement notification logic
+- [x] reconsider exipred token logic
+- [x] create notification before throwing out user after expired token
 
   18.1.2022
 

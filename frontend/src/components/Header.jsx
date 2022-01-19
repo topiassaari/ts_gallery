@@ -5,6 +5,7 @@ import admin from "../assets/admin.png";
 import logoutImg from "../assets/logout.png";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/loginReducer";
+import { setNotification } from "../reducers/notificationReducer";
 
 const Header = () => {
   const login = useSelector((state) => state.login);
@@ -12,7 +13,7 @@ const Header = () => {
   const handleLogout = async (event) => {
     event.preventDefault();
     dispatch(logout()).then(() => {
-      console.log("logged out");
+      dispatch(setNotification("logged out", "success", 5));
     });
   };
   return (

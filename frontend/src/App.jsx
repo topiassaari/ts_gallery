@@ -7,6 +7,7 @@ import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getAll } from "./reducers/imageReducer";
+import Notification from "./components/Notification";
 import { userValidation } from "./reducers/loginReducer";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <Notification />
       <Routes>
         <Route path="/" element={<Gallery />} />
         <Route path="admin" element={<Admin />} />

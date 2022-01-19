@@ -17,4 +17,5 @@
 |  ----  | ---  | ------------------------------------------------------------------------- |
 | 17.1.  | 4    | add filter component (slow monday)                                        |
 | 18.1.  | 6    | add dateAdded, improve filtering, refactor admin and gallery components   |
-| total  | 50   |                                                                           |
+| 19.1.  | 3    | add notifications, fix authentication                                     |
+| total  | 53   |                                                                           |

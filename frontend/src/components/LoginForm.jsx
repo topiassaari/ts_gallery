@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../reducers/loginReducer";
 import Button from "./Button";
+import { setNotification } from "../reducers/notificationReducer";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,14 @@ const LoginForm = () => {
     event.preventDefault();
     dispatch(
       userLogin(event.target.username.value, event.target.password.value)
+    ).then(() =>
+      dispatch(
+        setNotification(
+          "logged in " + event.target.username.value,
+          "success",
+          5
+        )
+      )
     );
   };
   return (
