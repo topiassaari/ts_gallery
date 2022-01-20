@@ -12,13 +12,14 @@ in no specific order, always put done items at bottom
 - [ ] fix lightbox exit from outside image
 - [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] landscape mobile view
-- [ ] design notifications
 - [ ] close button text alignment wrong
 - [ ] implement sorting in admin view
 - [ ] refactor Gallery view to be clearer
 
   20.1.2022
 
+- [x] implement notification styles
+- [x] design notifications
 - [x] read about strict mode for react (yes, should be good for dev)
 - [x] consider combinging "filtered" and "images" logic (nope)
 - [x] try out using cron for automatic notification for logout (nope)

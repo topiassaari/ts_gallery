@@ -256,3 +256,22 @@ input {
     }
   }
 }
+
+#notification {
+  display: block;
+  position: absolute;
+  right: 50px;
+  top: 100px;
+  background-color: white;
+  border: #000000 1px solid;
+  width: fit-content;
+  transition: 0.5s;
+  & > div {
+    padding: 20px;
+    @include flexCenter;
+    & > img {
+      margin-left: 10px;
+      width: 20px;
+    }
+  }
+}

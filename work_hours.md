@@ -18,5 +18,5 @@
 | 17.1.  | 4    | add filter component (slow monday)                                        |
 | 18.1.  | 6    | add dateAdded, improve filtering, refactor admin and gallery components   |
 | 19.1.  | 3    | add notifications, fix authentication                                     |
-| 19.1.  | 1    | research strict mode, try out cron / think about refactoring state        |
-| total  | 54   |                                                                           |
+| 20.1.  | 2    | research strict mode, try out stat logic alts., add notification styles   |
+| total  | 55   |                                                                           |
