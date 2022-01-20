@@ -33,7 +33,6 @@ export const userLogin = (username, password) => {
       username,
       password,
     });
-    console.log("logging in ", username);
     postalService.setToken(login.token);
     window.sessionStorage.setItem("loggedUser", JSON.stringify(login));
 

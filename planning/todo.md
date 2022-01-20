@@ -14,10 +14,14 @@ in no specific order, always put done items at bottom
 - [ ] landscape mobile view
 - [ ] design notifications
 - [ ] close button text alignment wrong
-- [ ] strict mode to react?
-- [ ] consider combinging "filtered" and "images" logic
 - [ ] implement sorting in admin view
 - [ ] refactor Gallery view to be clearer
+
+  20.1.2022
+
+- [x] read about strict mode for react (yes, should be good for dev)
+- [x] consider combinging "filtered" and "images" logic (nope)
+- [x] try out using cron for automatic notification for logout (nope)
 
   19.1.2022
 
