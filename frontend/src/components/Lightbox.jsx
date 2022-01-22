@@ -8,11 +8,11 @@ const Lightbox = (props) => {
       id="lightbox"
       style={props.img ? { display: "flex" } : { display: "none" }}
     >
-      <div>
+      <div id="content">
         <div id="lightboxClose">
           <Button variant="close" onClick={() => props.close()} />
         </div>
-        <img src={props.img.url} onClick={() => props.close()} />
+        <img src={props.img.url} />
         <div>
           <div>
             <p>
@@ -23,7 +23,7 @@ const Lightbox = (props) => {
                 variant="prev"
                 id="prev"
                 disabled={props.content.indexOf(props.img) === 0}
-                onClick={props.handlePrev}
+                onClick={() => props.handlePrev()}
               />
               <Button
                 variant="next"
@@ -31,12 +31,13 @@ const Lightbox = (props) => {
                   props.content.indexOf(props.img) === props.content.length - 1
                 }
                 id="next"
-                onClick={props.handleNext}
+                onClick={() => props.handleNext()}
               />
             </div>
           </div>
         </div>
       </div>
+      <div id="background" onClick={() => props.close()} />
     </div>
   );
 };

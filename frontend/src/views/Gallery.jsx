@@ -13,7 +13,7 @@ const Gallery = () => {
   const [filteredImages, setFiltered] = useState(null);
   useEffect(() => {
     if (document.getElementById("lightbox")) {
-      document.addEventListener("keydown", handleKey);
+      return document.addEventListener("keydown", handleKey);
     }
   }, [lightboxCurrent]);
 
