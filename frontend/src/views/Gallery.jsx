@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Lightbox from "../components/Lightbox";
 import ThumbnailGrid from "../components/ThumbnailGrid";
 import Filter from "../components/Filter";
@@ -11,25 +11,7 @@ const Gallery = () => {
   const images = useSelector((state) => state.images);
   const [lightboxCurrent, setLightboxCurrent] = useState(null);
   const [filteredImages, setFiltered] = useState(null);
-  useEffect(() => {
-    if (document.getElementById("lightbox")) {
-      return document.addEventListener("keydown", handleKey);
-    }
-  }, [lightboxCurrent]);
 
-  const handleKey = (event) => {
-    switch (event.keyCode) {
-      case 37:
-        handleLightboxPrev();
-        break;
-      case 39:
-        handleLightboxNext();
-        break;
-      case 27:
-        handleLightbox();
-        break;
-    }
-  };
   const handleLightbox = (value) => {
     setLightboxCurrent(value);
   };

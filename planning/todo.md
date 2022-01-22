@@ -9,14 +9,15 @@ in no specific order, always put done items at bottom
 - [ ] hover desc in gallery
 - [ ] explore optional style ideas
 - [ ] plan deployment
-- [ ] fix optimization issue in lightbox when used with keyboard
 - [ ] landscape mobile view
 - [ ] close button text alignment wrong
 - [ ] implement sorting in admin view
 - [ ] refactor Gallery view to be clearer
+- [ ] dockerize the whole thing
 
   22.1.2022
 
+- [x] fix optimization issue in lightbox when used with keyboard (created event listener on every state change...)
 - [x] fix lightbox exit from outside image (it was a problem with stacking context)
 
   20.1.2022
