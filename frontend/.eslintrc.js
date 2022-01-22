@@ -5,12 +5,17 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:jsx-a11y/recommended",
+  ],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "jsx-a11y"],
   rules: {
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],

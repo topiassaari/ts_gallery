@@ -2,8 +2,8 @@ in no specific order, always put done items at bottom
 
 - [ ] plan integration to site
 - [ ] design mobile view
-- [ ] plan unit tests for gallery
 - [ ] plan unit tests for admin
+- [ ] plan unit tests for gallery
 - [ ] plan e2e tests for gallery
 - [ ] plan e2e tests for admin
 - [ ] hover desc in gallery
@@ -14,11 +14,25 @@ in no specific order, always put done items at bottom
 - [ ] implement sorting in admin view
 - [ ] refactor Gallery view to be clearer
 - [ ] dockerize the whole thing
+- [ ] add empty alt-tags for screenreaders
+- [ ] use figure/figcaption for semantic
+- [ ] use aria-modal/aria-hidden where relevant
+- [ ] research how to make an accessible lightbox
+- [ ] modals fill 100% of screen on mobile
+- [ ] tab, enter and space to move around in ThumbnailGrid
+- [ ] WCAG AAA for lightbox text
+- [ ] proper ARIA titles
+- [ ] try axe-core in testing
+- [ ] implement tests to fill must-reqs
+- [ ] implement tests to fill should-reqs
+- [ ] implement tests to fill nicetohave-reqs
 
   22.1.2022
 
 - [x] fix optimization issue in lightbox when used with keyboard (created event listener on every state change...)
 - [x] fix lightbox exit from outside image (it was a problem with stacking context)
+- [x] document requirements of the service
+- [x] research how to do accessibility for this kind of thing
 
   20.1.2022
 
