@@ -21,6 +21,16 @@ label {
   display: block;
 }
 button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  transition: 0.5s;
+}
+#button {
   position: relative;
   margin: 8px 0;
   padding: 4px 20px;
@@ -29,6 +39,9 @@ button {
   color: white;
   font-weight: 700;
   border-radius: 20px;
+  &:focus {
+    border: 2px solid red;
+  }
 
   &:hover {
     background-color: $button-hover;
@@ -85,8 +98,10 @@ input {
       width: 300px;
       height: 300px;
       overflow: hidden;
-      padding: 10px;
+      margin: 10px;
       transition: 0.5s;
+
+      &:focus,
       &:hover {
         opacity: 0.9;
         transition: 0.5s;
@@ -94,7 +109,7 @@ input {
       & > img {
         cursor: pointer;
         width: 500px;
-        height: auto;
+        height: 100%;
       }
     }
   }

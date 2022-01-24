@@ -9,7 +9,7 @@ const Notification = () => {
     <div id="notification" className={notification.type}>
       <div>
         <span>{notification.content}</span>
-        <img src={notification.type === "success" ? success : error} />
+        <img src={notification.type === "success" ? success : error} alt="" />
       </div>
     </div>
   );

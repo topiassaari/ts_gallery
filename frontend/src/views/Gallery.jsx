@@ -11,9 +11,14 @@ const Gallery = () => {
   const images = useSelector((state) => state.images);
   const [lightboxCurrent, setLightboxCurrent] = useState(null);
   const [filteredImages, setFiltered] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleLightbox = (value) => {
     setLightboxCurrent(value);
+    if (value) {
+      return setIsOpen(true);
+    }
+    setIsOpen(false);
   };
   const handleLightboxPrev = () => {
     setLightboxCurrent(
@@ -44,7 +49,11 @@ const Gallery = () => {
 
   return (
     <>
-      <Filter byYear={filterGalleryByYear} content={filteredImages} />
+      <Filter
+        byYear={filterGalleryByYear}
+        content={filteredImages}
+        isOpen={isOpen}
+      />
       <div className="Gallery">
         {lightboxCurrent ? (
           <Lightbox
@@ -53,6 +62,7 @@ const Gallery = () => {
             handlePrev={handleLightboxPrev}
             handleNext={handleLightboxNext}
             close={handleLightbox}
+            isOpen={isOpen}
           />
         ) : null}
 
@@ -60,6 +70,8 @@ const Gallery = () => {
           <ThumbnailGrid
             content={filteredImages ? filteredImages : images}
             openLightbox={handleLightbox}
+            isOpen={isOpen}
+            setOpen={setIsOpen}
           />
         ) : null}
       </div>

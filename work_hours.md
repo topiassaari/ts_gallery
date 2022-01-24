@@ -20,4 +20,6 @@
 | 19.1.  | 3    | add notifications, fix authentication                                     |
 | 20.1.  | 2    | research strict mode, try out stat logic alts., add notification styles   |
 | 22.1.  | 4    | fix lightbox exit and issue with keyboard controls, write reqs, plan a11y |
-| total  | 59   |                                                                           |
+|  ----  | ---  | ------------------------------------------------------------------------- |
+| 24.1.  | 7    | vite -> CRA, fix linter problems, implement a11y features, init testing   |
+| total  | 66   |                                                                           |

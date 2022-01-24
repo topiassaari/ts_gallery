@@ -14,18 +14,27 @@ in no specific order, always put done items at bottom
 - [ ] implement sorting in admin view
 - [ ] refactor Gallery view to be clearer
 - [ ] dockerize the whole thing
-- [ ] add empty alt-tags for screenreaders
 - [ ] use figure/figcaption for semantic
 - [ ] use aria-modal/aria-hidden where relevant
-- [ ] research how to make an accessible lightbox
 - [ ] modals fill 100% of screen on mobile
-- [ ] tab, enter and space to move around in ThumbnailGrid
 - [ ] WCAG AAA for lightbox text
 - [ ] proper ARIA titles
 - [ ] try axe-core in testing
 - [ ] implement tests to fill must-reqs
 - [ ] implement tests to fill should-reqs
 - [ ] implement tests to fill nicetohave-reqs
+- [ ] improve focus indicator in thumbnailGrid
+
+  24.1.2022
+
+- [x] research how to make an accessible lightbox
+- [x] tab, enter and space to move around in ThumbnailGrid
+- [x] fix linter errors
+- [x] add empty alt-tags for screenreaders
+- [x] make test-test (initial one test that stuff works)
+- [x] add jest
+- [x] vite --> CRA
+- [x] vite and jest? (too much manual babeling)
 
   22.1.2022
 

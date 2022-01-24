@@ -21,6 +21,7 @@ const Button = (props) => {
     <button
       onClick={props.onClick}
       className={props.variant}
+      id="button"
       disabled={props.disabled}
     >
       {title()}

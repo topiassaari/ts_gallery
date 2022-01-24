@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
 import { useDispatch } from "react-redux";
 import { updateImage, deleteImage, addImage } from "../reducers/imageReducer";
-import { setNotification } from "../reducers/NotificationReducer";
+import { setNotification } from "../reducers/notificationReducer";
 import Button from "./Button";
 
 const ImageForm = (props) => {
@@ -55,7 +55,7 @@ const ImageForm = (props) => {
   return (
     <div className="form">
       <div className="preview">
-        <img src={url ? url : placeholder} />
+        <img src={url ? url : placeholder} alt="preview" />
       </div>
       <div>
         <form onSubmit={handleSubmit} id="form">

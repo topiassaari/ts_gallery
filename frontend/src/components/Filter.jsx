@@ -21,6 +21,11 @@ const Filter = (props) => {
       return props.byYear(yr);
     }
   };
+  const keydown = (e, yr) => {
+    if (e.code === "Enter") {
+      filterByYear(yr);
+    }
+  };
   return (
     <div id="filter">
       <div>
@@ -28,10 +33,13 @@ const Filter = (props) => {
           <div>
             {years.map((yr) => (
               <span
+                tabIndex={props.isOpen ? -1 : 0}
                 key={yr}
                 id={yr}
                 className="yearFilters"
                 onClick={() => filterByYear(yr)}
+                role="button"
+                onKeyDown={(ev) => keydown(ev, yr)}
               >
                 {yr}
               </span>

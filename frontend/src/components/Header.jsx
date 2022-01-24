@@ -17,16 +17,18 @@ const Header = () => {
     });
   };
   return (
-    <div id="headerContainer">
+    <div id="headerContainer" role="navigation">
       <Link to="/">
-        <img src={signature} id="signature" />
+        <img src={signature} id="signature" alt="home" />
       </Link>
       <div>
         <Link to="/admin">
-          <img src={admin} id="admin" />
+          <img src={admin} id="admin" alt="admin" />
         </Link>
         {login.token ? (
-          <img src={logoutImg} onClick={handleLogout} id="logout" />
+          <button onClick={handleLogout} onKeyDown={handleLogout}>
+            <img src={logoutImg} id="logout" alt="logout" />
+          </button>
         ) : null}
       </div>
     </div>

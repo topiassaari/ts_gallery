@@ -4,20 +4,25 @@ module.exports = {
     es2021: true,
     node: true,
     browser: true,
+    jest: true,
   },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
     "prettier",
+    "plugin:prettier/recommended",
     "plugin:jsx-a11y/recommended",
   ],
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: "latest",
     sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  plugins: ["react", "jsx-a11y"],
+  plugins: ["react", "jsx-a11y", "jest", "prettier"],
   rules: {
-    indent: ["error", 2],
+    indent: ["error", 2, { SwitchCase: 1 }],
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],

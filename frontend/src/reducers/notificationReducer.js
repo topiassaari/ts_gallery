@@ -1,12 +1,12 @@
 let timer;
 const notificationReducer = (state = "", action) => {
   switch (action.type) {
-  case "SET":
-    return action.data;
-  case "REMOVE":
-    return "";
-  default:
-    return state;
+    case "SET":
+      return action.data;
+    case "REMOVE":
+      return "";
+    default:
+      return state;
   }
 };
 const addNotification = (content, type) => {
@@ -28,7 +28,7 @@ export const setNotification = (content, type, time) => {
     clearTimeout(timer);
   }
   return async (dispatch) => {
-    dispatch(addNotification(content,type));
+    dispatch(addNotification(content, type));
     timer = setTimeout(() => {
       dispatch(removeNotification());
     }, time * 1000);

@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useSelector } from "react-redux";
@@ -16,16 +17,16 @@ const ImageTable = (props) => {
       <tbody>
         {images
           ? images.map((img, index) => {
-            return (
-              <tr key={index} onClick={() => props.edit(img)}>
-                <td>
-                  <img src={img.url}></img>
-                </td>
-                <td>{img.desc}</td>
-                <td>{img.year}</td>
-              </tr>
-            );
-          })
+              return (
+                <tr key={index} onClick={() => props.edit(img)}>
+                  <td>
+                    <img src={img.url} alt=""></img>
+                  </td>
+                  <td>{img.desc}</td>
+                  <td>{img.year}</td>
+                </tr>
+              );
+            })
           : null}
       </tbody>
     </table>
