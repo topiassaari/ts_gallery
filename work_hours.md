@@ -22,4 +22,5 @@
 | 22.1.  | 4    | fix lightbox exit and issue with keyboard controls, write reqs, plan a11y |
 |  ----  | ---  | ------------------------------------------------------------------------- |
 | 24.1.  | 7    | vite -> CRA, fix linter problems, implement a11y features, init testing   |
+| 25.1.  | 3    | unit tests for lightbox,button and filter                                 |
 | total  | 66   |                                                                           |

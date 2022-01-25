@@ -55,16 +55,14 @@ const Gallery = () => {
         isOpen={isOpen}
       />
       <div className="Gallery">
-        {lightboxCurrent ? (
-          <Lightbox
-            img={lightboxCurrent}
-            content={filteredImages ? filteredImages : images}
-            handlePrev={handleLightboxPrev}
-            handleNext={handleLightboxNext}
-            close={handleLightbox}
-            isOpen={isOpen}
-          />
-        ) : null}
+        <Lightbox
+          img={lightboxCurrent}
+          content={filteredImages ? filteredImages : images}
+          handlePrev={handleLightboxPrev}
+          handleNext={handleLightboxNext}
+          close={handleLightbox}
+          isOpen={isOpen}
+        />
 
         {images ? (
           <ThumbnailGrid

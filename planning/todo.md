@@ -24,6 +24,19 @@ in no specific order, always put done items at bottom
 - [ ] implement tests to fill should-reqs
 - [ ] implement tests to fill nicetohave-reqs
 - [ ] improve focus indicator in thumbnailGrid
+- [ ] add test for filtering the content
+- [] implement unit test for admin panel
+- [] implement unit test for header
+- [] implement unit test for imageform
+- [] implement unit test for login form
+- [] implement unit test for modal
+- [] implement unit test for thumbnailGrid
+
+  25.1.2022
+
+- [x] implement unit test for button
+- [x] implement unit test for lightbox
+- [x] implement unit test for filter
 
   24.1.2022
 

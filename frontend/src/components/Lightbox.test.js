@@ -1,7 +1,8 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import Lightbox from "./Lightbox";
+import "@testing-library/jest-dom";
 
 const testData = [
   {
@@ -26,12 +27,55 @@ const testData = [
     dateAdded: "2022-01-18T08:58:29.189Z",
   },
 ];
-const mockHandler = jest.fn();
-const component = render(
-  <Lightbox img={testData[0]} content={testData} close={mockHandler} />
-);
+describe("the basics", () => {
+  test("component visible", () => {
+    const component = render(<Lightbox img={testData[0]} content={testData} />);
+    expect(component.container.querySelector("#lightbox")).toBeInTheDocument();
+  });
+  test("hidden if no content", () => {
+    const component = render(<Lightbox />);
+    expect(
+      component.container.querySelector("#lightbox")
+    ).not.toBeInTheDocument();
+  });
+});
 
-test("renders content", () => {
-  const lightbox = component.container;
-  expect(lightbox).toBeVisible();
+describe("lightbox buttons work", () => {
+  let component;
+  let mockHandler;
+  let next;
+  let prev;
+  let close;
+  beforeEach(() => {
+    mockHandler = jest.fn();
+    component = render(
+      <Lightbox
+        img={testData[0]}
+        content={testData}
+        close={mockHandler}
+        handlePrev={mockHandler}
+        handleNext={mockHandler}
+      />
+    );
+    prev = component.getByText("prev");
+    next = component.getByText("next");
+    close = component.getByText("x");
+  });
+  test("close button", () => {
+    expect(close).toBeDefined();
+    fireEvent.click(close);
+    expect(mockHandler.mock.calls).toHaveLength(1);
+  });
+  test("next button goes forward and prev button goes back", () => {
+    fireEvent.click(next);
+    expect(component.img === testData[1]);
+    fireEvent.click(prev);
+    expect(component.img === testData[0]);
+    expect(mockHandler.mock.calls).toHaveLength(1);
+  });
+  test("prev button disabled in first", () => {
+    const prev = component.getByText("prev");
+    expect(prev).toBeDisabled();
+    expect(next).not.toBeDisabled();
+  });
 });

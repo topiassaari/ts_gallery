@@ -28,11 +28,8 @@ const Lightbox = (props) => {
       };
     }
   });
-  return (
-    <div
-      id="lightbox"
-      style={props.img ? { display: "flex" } : { display: "none" }}
-    >
+  return props.img ? (
+    <div id="lightbox">
       <div id="content">
         <div id="lightboxClose">
           <Button
@@ -79,6 +76,6 @@ const Lightbox = (props) => {
         onKeyDown={() => props.close()}
       />
     </div>
-  );
+  ) : null;
 };
 export default Lightbox;

@@ -9,12 +9,6 @@ const Button = (props) => {
     if (props.variant === "close") {
       return "x";
     }
-    if (props.variant === "prev") {
-      return "<";
-    }
-    if (props.variant === "next") {
-      return ">";
-    }
     return props.variant;
   };
   return (
