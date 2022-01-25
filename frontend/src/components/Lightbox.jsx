@@ -68,13 +68,7 @@ const Lightbox = (props) => {
           </div>
         </div>
       </div>
-      <div
-        role="button"
-        tabIndex={0}
-        id="background"
-        onClick={() => props.close()}
-        onKeyDown={() => props.close()}
-      />
+      <div id="background" />
     </div>
   ) : null;
 };

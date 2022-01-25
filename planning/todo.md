@@ -17,9 +17,6 @@ in no specific order, always put done items at bottom
 - [ ] use figure/figcaption for semantic
 - [ ] use aria-modal/aria-hidden where relevant
 - [ ] modals fill 100% of screen on mobile
-- [ ] WCAG AAA for lightbox text
-- [ ] proper ARIA titles
-- [ ] try axe-core in testing
 - [ ] implement tests to fill must-reqs
 - [ ] implement tests to fill should-reqs
 - [ ] implement tests to fill nicetohave-reqs
@@ -31,9 +28,15 @@ in no specific order, always put done items at bottom
 - [] implement unit test for login form
 - [] implement unit test for modal
 - [] implement unit test for thumbnailGrid
+- [] create a 404 page
 
   25.1.2022
 
+- [x] proper ARIA titles
+- [x] WCAG AAA for lightbox text
+- [x] try jest-axe in testing
+- [x] fix issues from jest-axe
+- [x] try axe DevTools and fix gallery issues
 - [x] implement unit test for button
 - [x] implement unit test for lightbox
 - [x] implement unit test for filter

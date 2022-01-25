@@ -12,6 +12,7 @@ const ThumbnailGrid = (props) => {
       {props.content.map((img, index) => {
         return (
           <button
+            aria-label="gallery image"
             key={index}
             className="thumbnail"
             onClick={() => props.openLightbox(img)}

@@ -26,6 +26,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
+    "jest-axe": "^5.0.1",
     "prettier": "2.5.0",
     "react-redux": "^7.2.6",
     "react-scripts": "^5.0.0",

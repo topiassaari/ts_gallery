@@ -8,16 +8,16 @@ const Filter = (props) => {
     const all = document.querySelectorAll(".yearFilters");
     const el = document.getElementById(yr);
     if (!props.content) {
-      el.style.color = "black";
+      el.style.textDecoration = "underline";
       return props.byYear(yr);
     }
     if (props.content && props.content.map((img) => img.year).includes(yr)) {
-      el.style.color = "gray";
+      el.style.textDecoration = "none";
       return props.byYear(yr);
     }
     if (props.content) {
-      all.forEach((year) => (year.style.color = "gray"));
-      el.style.color = "black";
+      all.forEach((year) => (year.style.textDecoration = "none"));
+      el.style.textDecoration = "underline";
       return props.byYear(yr);
     }
   };

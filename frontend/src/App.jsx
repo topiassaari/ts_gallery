@@ -19,7 +19,7 @@ const App = () => {
     dispatch(userValidation());
   }, []);
   return (
-    <div className="App">
+    <div className="App" role="main">
       <Header />
       <Notification />
       <Routes>

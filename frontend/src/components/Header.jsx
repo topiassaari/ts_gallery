@@ -21,6 +21,7 @@ const Header = () => {
       <Link to="/">
         <img src={signature} id="signature" alt="home" />
       </Link>
+      <h1>A GALLERY OF IMAGES I&apos;VE MADE IN THE PAST 6 YEARS</h1>
       <div>
         <Link to="/admin">
           <img src={admin} id="admin" alt="admin" />

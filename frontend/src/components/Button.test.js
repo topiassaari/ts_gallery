@@ -1,9 +1,14 @@
 import React from "react";
-import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent } from "@testing-library/react";
+import { axe } from "jest-axe";
 import Button from "./Button";
-import "@testing-library/jest-dom";
 //import { prettyDOM } from "@testing-library/dom";
+
+it("should not have basic accessibility issues", async () => {
+  const component = render(<Button variant="submit" />);
+  const results = await axe(component.container);
+  expect(results).toHaveNoViolations();
+});
 
 describe("the basics", () => {
   test("variant name turns into button text", () => {

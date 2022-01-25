@@ -14,8 +14,7 @@ const Button = (props) => {
   return (
     <button
       onClick={props.onClick}
-      className={props.variant}
-      id="button"
+      className={"button " + props.variant}
       disabled={props.disabled}
     >
       {title()}

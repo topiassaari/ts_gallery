@@ -1,8 +1,7 @@
 import React from "react";
-import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent } from "@testing-library/react";
 import Lightbox from "./Lightbox";
-import "@testing-library/jest-dom";
+import { axe } from "jest-axe";
 
 const testData = [
   {
@@ -27,6 +26,13 @@ const testData = [
     dateAdded: "2022-01-18T08:58:29.189Z",
   },
 ];
+
+it("should not have basic accessibility issues", async () => {
+  const component = render(<Lightbox img={testData[0]} content={testData} />);
+  const results = await axe(component.container);
+  expect(results).toHaveNoViolations();
+});
+
 describe("the basics", () => {
   test("component visible", () => {
     const component = render(<Lightbox img={testData[0]} content={testData} />);

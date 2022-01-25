@@ -1,9 +1,14 @@
 import React from "react";
-import "@testing-library/jest-dom/extend-expect";
+import { axe } from "jest-axe";
 import { render, fireEvent } from "@testing-library/react";
 import Filter from "./Filter";
-import "@testing-library/jest-dom";
 //import { prettyDOM } from "@testing-library/dom";
+
+it("should not have basic accessibility issues", async () => {
+  const component = render(<Filter />);
+  const results = await axe(component.container);
+  expect(results).toHaveNoViolations();
+});
 
 describe("the basics", () => {
   let component;
@@ -23,7 +28,7 @@ describe("the basics", () => {
     expect(filter[0]).toHaveTextContent(2022);
     fireEvent.click(filter[0]);
     expect(component.container.querySelector(".yearFilters")).toHaveStyle(
-      "color:black"
+      "text-decoration:underline;"
     );
   });
   // test("active state is removed after clicking again", () => {

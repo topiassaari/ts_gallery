@@ -16,9 +16,15 @@ $button-disabled: #cccccc;
 $button-delete: rgb(255, 0, 0);
 $button-delete-hover: rgb(204, 0, 0);
 
+body {
+  min-width: 350px;
+}
 input,
 label {
   display: block;
+}
+h1 {
+  margin: 0;
 }
 button {
   background: none;
@@ -30,7 +36,7 @@ button {
   outline: inherit;
   transition: 0.5s;
 }
-#button {
+.button {
   position: relative;
   margin: 8px 0;
   padding: 4px 20px;
@@ -276,8 +282,8 @@ input {
         margin: 4px;
         cursor: pointer;
         user-select: none;
-        color: gray;
-        font-weight: 800;
+        color: black;
+        font-weight: 600;
       }
     }
   }
