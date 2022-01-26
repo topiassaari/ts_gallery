@@ -23,4 +23,5 @@
 |  ----  | ---  | ------------------------------------------------------------------------- |
 | 24.1.  | 7    | vite -> CRA, fix linter problems, implement a11y features, init testing   |
 | 25.1.  | 5    | unit tests for lightbox,button and filter. add jest-axe and fix issues    |
-| total  | 71   |                                                                           |
+| 26.1.  | 6    | unit tests for rest of components. a couple small refactors in forms      |
+| total  | 77   |                                                                           |

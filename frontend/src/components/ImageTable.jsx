@@ -1,10 +1,8 @@
 /* eslint-disable indent */
 /* eslint-disable react/prop-types */
 import React from "react";
-import { useSelector } from "react-redux";
 
 const ImageTable = (props) => {
-  const images = useSelector((state) => state.images);
   return (
     <table>
       <thead>
@@ -15,8 +13,8 @@ const ImageTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {images
-          ? images.map((img, index) => {
+        {props.images
+          ? props.images.map((img, index) => {
               return (
                 <tr key={index} onClick={() => props.edit(img)}>
                   <td>

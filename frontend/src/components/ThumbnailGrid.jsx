@@ -7,7 +7,7 @@ const ThumbnailGrid = (props) => {
       props.openLightbox(img);
     }
   };
-  return (
+  return props.content ? (
     <div id="thumbnailGrid">
       {props.content.map((img, index) => {
         return (
@@ -24,6 +24,6 @@ const ThumbnailGrid = (props) => {
         );
       })}
     </div>
-  );
+  ) : null;
 };
 export default ThumbnailGrid;

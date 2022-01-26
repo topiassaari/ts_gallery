@@ -1,37 +1,38 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { useDispatch } from "react-redux";
-import { userLogin } from "../reducers/loginReducer";
 import Button from "./Button";
-import { setNotification } from "../reducers/notificationReducer";
+import { useState } from "react";
 
-const LoginForm = () => {
-  const dispatch = useDispatch();
-
-  const handleLogin = async (event) => {
-    event.preventDefault();
-    dispatch(
-      userLogin(event.target.username.value, event.target.password.value)
-    ).then(() =>
-      dispatch(
-        setNotification(
-          "logged in " + event.target.username.value,
-          "success",
-          5
-        )
-      )
-    );
+const LoginForm = (props) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const handleUsername = (event) => {
+    setUsername(event.target.value);
   };
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleLogin = (event) => {
+    event.preventDefault();
+    props.login(username, password);
+  };
+
   return (
-    <div id="loginForm">
+    <div className="formContainer">
       <div>
         <form onSubmit={handleLogin}>
           <div>
             <label htmlFor="username">username</label>
-            <input id="username" name="username" />
+            <input id="username" name="username" onChange={handleUsername} />
           </div>
           <div>
             <label htmlFor="password">password</label>
-            <input id="password" type="password" name="password" />
+            <input
+              id="password"
+              type="password"
+              name="password"
+              onChange={handlePassword}
+            />
           </div>
           <Button variant="login" />
         </form>

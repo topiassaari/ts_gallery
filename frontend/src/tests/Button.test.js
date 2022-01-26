@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { axe } from "jest-axe";
-import Button from "./Button";
+import Button from "../components/Button";
 //import { prettyDOM } from "@testing-library/dom";
 
 it("should not have basic accessibility issues", async () => {

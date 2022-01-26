@@ -64,14 +64,11 @@ const Gallery = () => {
           isOpen={isOpen}
         />
 
-        {images ? (
-          <ThumbnailGrid
-            content={filteredImages ? filteredImages : images}
-            openLightbox={handleLightbox}
-            isOpen={isOpen}
-            setOpen={setIsOpen}
-          />
-        ) : null}
+        <ThumbnailGrid
+          content={filteredImages ? filteredImages : images}
+          openLightbox={handleLightbox}
+          isOpen={isOpen}
+        />
       </div>
     </>
   );

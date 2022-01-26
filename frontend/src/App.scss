@@ -184,7 +184,7 @@ input {
   margin: 10px;
 }
 
-.form {
+.formContainer {
   @include flexCenter;
   flex-direction: column;
   flex-wrap: wrap;

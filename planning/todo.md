@@ -22,13 +22,16 @@ in no specific order, always put done items at bottom
 - [ ] implement tests to fill nicetohave-reqs
 - [ ] improve focus indicator in thumbnailGrid
 - [ ] add test for filtering the content
-- [] implement unit test for admin panel
-- [] implement unit test for header
-- [] implement unit test for imageform
-- [] implement unit test for login form
-- [] implement unit test for modal
-- [] implement unit test for thumbnailGrid
 - [] create a 404 page
+
+  26.1.2022
+
+- [x] implement unit tests for admin panel
+- [x] implement unit tests for modal
+- [x] implement unit tests for imageForm
+- [x] implement unit tests for loginForm
+- [x] implement unit tests for thumbnailGrid
+- [x] implement unit tests for imageTable
 
   25.1.2022
 

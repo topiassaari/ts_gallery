@@ -1,7 +1,7 @@
 import React from "react";
 import { axe } from "jest-axe";
 import { render, fireEvent } from "@testing-library/react";
-import Filter from "./Filter";
+import Filter from "../components/Filter";
 //import { prettyDOM } from "@testing-library/dom";
 
 it("should not have basic accessibility issues", async () => {

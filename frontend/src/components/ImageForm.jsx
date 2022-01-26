@@ -2,9 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
-import { useDispatch } from "react-redux";
-import { updateImage, deleteImage, addImage } from "../reducers/imageReducer";
-import { setNotification } from "../reducers/notificationReducer";
+
 import Button from "./Button";
 
 const ImageForm = (props) => {
@@ -17,32 +15,10 @@ const ImageForm = (props) => {
     };
   }, []);
 
-  const dispatch = useDispatch();
   const [url, setUrl] = useState(props.img?.url ? props.img.url : "");
   const [desc, setDesc] = useState(props.img?.desc ? props.img.desc : "");
   const [year, setYear] = useState(props.img?.year ? props.img.year : 2017);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (props.img?.id) {
-      return dispatch(updateImage({ id: props.img.id, url, desc, year })).then(
-        () => {
-          dispatch(setNotification("img updated", "success", 5));
-          return props.onClose();
-        }
-      );
-    }
-    dispatch(addImage({ url, desc, year })).then(() => {
-      dispatch(setNotification("img added", "success", 5));
-      return props.onClose();
-    });
-  };
-  const deleteImg = async () => {
-    dispatch(deleteImage(props.img.id)).then(() => {
-      dispatch(setNotification("img deleted", "success", 5));
-      props.onClose();
-    });
-  };
   const handleUrl = (event) => {
     setUrl(event.target.value);
   };
@@ -52,51 +28,63 @@ const ImageForm = (props) => {
   const handleYear = (event) => {
     setYear(event.target.value);
   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let img = { url, desc, year };
+    if (props.img?.id) {
+      img = { id: props.img.id, ...img };
+    }
+    props.handleSubmit(img);
+  };
   return (
-    <div className="form">
+    <div className="formContainer">
       <div className="preview">
         <img src={url ? url : placeholder} alt="preview" />
       </div>
       <div>
-        <form onSubmit={handleSubmit} id="form">
+        <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="url">url</label>
+            <label htmlFor="formUrl">url</label>
             <input
               value={url}
               onChange={handleUrl}
               type="url"
               name="url"
-              id="url"
+              id="formUrl"
               required
             ></input>
           </div>
           <div>
-            <label htmlFor="desc">desc</label>
+            <label htmlFor="formDesc">desc</label>
             <input
               value={desc}
               onChange={handleDesc}
               type="text"
               name="desc"
-              id="desc"
+              id="formDesc"
               required
             ></input>
           </div>
           <div>
-            <label htmlFor="year">year</label>
+            <label htmlFor="formYear">year</label>
             <input
               value={year}
               onChange={handleYear}
               type="number"
               min="2017"
               name="year"
-              id="year"
+              id="formYear"
               required
             ></input>
           </div>
           {props.img ? (
             <>
               <Button variant="update" />
-              <Button variant="delete" onClick={deleteImg} type="reset" />
+              <Button
+                variant="delete"
+                onClick={() => props.deleteImg(props.img)}
+                type="reset"
+              />
             </>
           ) : (
             <Button variant="submit" />
