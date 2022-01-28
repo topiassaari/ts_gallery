@@ -4,29 +4,27 @@ import Button from "./Button";
 import { useEffect } from "react";
 
 const Lightbox = (props) => {
-  useEffect(() => {
-    const handleKey = (event) => {
-      switch (event.keyCode) {
-        case 37:
-          if (props.content.indexOf(props.img) !== 0) {
-            props.handlePrev();
-          }
-          break;
-        case 39:
-          if (props.content.indexOf(props.img) !== props.content.length - 1) {
-            props.handleNext();
-          }
-          break;
-        case 27:
-          return props.close();
-      }
-    };
-    if (document.getElementById("lightbox")) {
-      document.addEventListener("keydown", handleKey);
-      return () => {
-        document.removeEventListener("keydown", handleKey);
-      };
+  const handleKey = (event) => {
+    switch (event.keyCode) {
+      case 37:
+        if (props.content.indexOf(props.img) !== 0) {
+          props.handlePrev();
+        }
+        break;
+      case 39:
+        if (props.content.indexOf(props.img) !== props.content.length - 1) {
+          props.handleNext();
+        }
+        break;
+      case 27:
+        return props.close();
     }
+  };
+  useEffect(() => {
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+    };
   });
   return props.img ? (
     <div id="lightbox">

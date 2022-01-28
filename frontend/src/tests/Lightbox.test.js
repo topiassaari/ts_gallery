@@ -62,3 +62,44 @@ describe("lightbox buttons work", () => {
     expect(next).not.toBeDisabled();
   });
 });
+/*
+none of this works...handlePrev and handleNext are not called when arrows are pressed. for some reason jest rendering doesn't seem to follow eventListeners?
+
+describe("keyboard controls work", () => {
+  let component;
+  let mockHandler;
+
+  beforeEach(() => {
+    mockHandler = jest.fn();
+    component = render(
+      <Lightbox
+        img={testData[0]}
+        content={testData}
+        handlePrev={mockHandler}
+        handleNext={mockHandler}
+      />
+    );
+  });
+  test("keyboard ArrowRight goes to next img", () => {
+    fireEvent.keyDown(component.container, { key: "ArrowRight", code: 39 });
+    expect(mockHandler.mock.calls[0]).toHaveLength(1);
+  });
+  test("keyboard ArrowLeft goes to prew img", () => {
+    fireEvent.click(component.getByText("next"));
+    fireEvent.keyDown(component.container, { key: "ArrowLeft", code: 37 });
+    expect(mockHandler.mock.calls).toHaveLength(1);
+  });
+  test("keyboard ArrowLeft doesn't go anywhere if button disabled", () => {
+    fireEvent.keyDown(component.container, { key: "ArrowLeft", code: 37 });
+    expect(mockHandler.mock.calls).toHaveLength(0);
+    expect(component.container.querySelector("#lightbox")).toBeVisible();
+  });
+  test("keyboard ArrowRight doesn't go anywhere if button disabled", () => {
+    fireEvent.click(component.getByText("next"));
+    fireEvent.click(component.getByText("next"));
+    fireEvent.click(component.getByText("next"));
+    fireEvent.keyDown(component.container, { key: "ArrowRight", code: 39 });
+    expect(mockHandler.mock.calls).toHaveLength(3);
+    expect(component.container.querySelector("#lightbox")).toBeVisible();
+  });
+}); */

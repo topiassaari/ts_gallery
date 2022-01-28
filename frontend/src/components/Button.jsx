@@ -9,6 +9,9 @@ const Button = (props) => {
     if (props.variant === "close") {
       return "x";
     }
+    if (props.variant === "previous") {
+      return "prev";
+    }
     return props.variant;
   };
   return (
@@ -16,6 +19,7 @@ const Button = (props) => {
       onClick={props.onClick}
       className={"button " + props.variant}
       disabled={props.disabled}
+      label={props.variant}
     >
       {title()}
     </button>

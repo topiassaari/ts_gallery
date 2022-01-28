@@ -31,17 +31,4 @@ describe("the basics", () => {
       "text-decoration:underline;"
     );
   });
-  // test("active state is removed after clicking again", () => {
-  //   const filter = component.getAllByRole("button");
-  //   expect(filter[0]).toHaveTextContent(2022);
-  //   fireEvent.click(filter[0]);
-  //   expect(component.container.querySelector(".yearFilters")).toHaveStyle(
-  //     "color:black"
-  //   );
-  //   fireEvent.click(filter[0]);
-  //   console.log(prettyDOM());
-  //   expect(component.container.querySelector(".yearFilters")).toHaveStyle(
-  //     "color:gray"
-  //   );
-  // });
 });
