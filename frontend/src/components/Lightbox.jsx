@@ -8,12 +8,12 @@ const Lightbox = (props) => {
     switch (event.keyCode) {
       case 37:
         if (props.content.indexOf(props.img) !== 0) {
-          props.handlePrev();
+          return props.handlePrev();
         }
         break;
       case 39:
         if (props.content.indexOf(props.img) !== props.content.length - 1) {
-          props.handleNext();
+          return props.handleNext();
         }
         break;
       case 27:
@@ -47,14 +47,12 @@ const Lightbox = (props) => {
               <Button
                 variant="prev"
                 id="prev"
-                data-testid="prev"
                 disabled={props.content.indexOf(props.img) === 0}
                 onClick={() => props.handlePrev()}
                 tabIndex={0}
               />
               <Button
                 variant="next"
-                test-id="next"
                 disabled={
                   props.content.indexOf(props.img) === props.content.length - 1
                 }

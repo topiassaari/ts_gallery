@@ -25,4 +25,5 @@
 | 25.1.  | 5    | unit tests for lightbox,button and filter. add jest-axe and fix issues    |
 | 26.1.  | 6    | unit tests for rest of components. a couple small refactors in forms      |
 | 28.1.  | 4    | try to (unsuccesfully) test keydown events...                             |
-| total  | 81   |                                                                           |
+| 30.1.  | 1    | fix keydown tests for lightbox                                            |
+| total  | 82   |                                                                           |
