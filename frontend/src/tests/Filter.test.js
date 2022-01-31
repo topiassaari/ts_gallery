@@ -32,3 +32,18 @@ describe("the basics", () => {
     );
   });
 });
+
+describe("also with keyboard", () => {
+  let component;
+  let mockHandler;
+
+  beforeEach(() => {
+    mockHandler = jest.fn();
+    component = render(<Filter byYear={mockHandler} />);
+  });
+  test("select filter with enter", () => {
+    const filters = component.getAllByRole("button");
+    fireEvent.keyDown(filters[0], { key: "Enter", keyCode: 13 });
+    expect(mockHandler.mock.calls).toHaveLength(1);
+  });
+});

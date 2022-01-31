@@ -3,7 +3,7 @@ import React from "react";
 
 const ThumbnailGrid = (props) => {
   const keydown = (e, img) => {
-    if (e.code === "Enter") {
+    if (e.key === "Enter" || e.keyCode === 13) {
       props.openLightbox(img);
     }
   };

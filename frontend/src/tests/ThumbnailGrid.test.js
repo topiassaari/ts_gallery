@@ -11,7 +11,7 @@ describe("accessibility", () => {
     expect(results).toHaveNoViolations();
   });
 });
-describe("thumbnailGrid works", () => {
+describe("does the thing", () => {
   let component;
   let mockHandler;
 
@@ -42,5 +42,22 @@ describe("thumbnailGrid works", () => {
     const emptyComponent = render(<ThumbnailGrid />);
     expect(emptyComponent.container.querySelectorAll(".thumbnail")).not
       .toBeInTheDocument;
+  });
+});
+describe("also with keyboard", () => {
+  let component;
+  let mockHandler;
+
+  beforeEach(() => {
+    mockHandler = jest.fn();
+    component = render(
+      <ThumbnailGrid content={testData} openLightbox={mockHandler} />
+    );
+  });
+  test("all thumbnails are visible", () => {
+    const thumbnails = component.container.querySelectorAll(".thumbnail");
+    fireEvent.keyDown(thumbnails[0], { key: "Enter", keyCode: 13 });
+    expect(mockHandler.mock.calls).toHaveLength(1);
+    expect(mockHandler.mock.calls[0][0]).toEqual(testData[0]);
   });
 });

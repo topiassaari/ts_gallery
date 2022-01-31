@@ -5,6 +5,7 @@ module.exports = {
     node: true,
     browser: true,
     jest: true,
+    "cypress/globals": true,
   },
   extends: [
     "eslint:recommended",
@@ -20,7 +21,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["react", "jsx-a11y", "jest", "prettier"],
+  plugins: ["react", "jsx-a11y", "jest", "prettier", "cypress"],
   rules: {
     indent: ["error", 2, { SwitchCase: 1 }],
     "linebreak-style": ["error", "unix"],

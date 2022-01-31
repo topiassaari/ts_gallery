@@ -5,7 +5,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -20,8 +21,10 @@
     "@testing-library/react": "^11.1.1",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",
+    "cypress": "^9.3.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^24.3.5",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",

@@ -22,7 +22,7 @@ const Filter = (props) => {
     }
   };
   const keydown = (e, yr) => {
-    if (e.code === "Enter") {
+    if (e.key === "Enter" || e.keyCode === 13) {
       filterByYear(yr);
     }
   };

@@ -26,4 +26,6 @@
 | 26.1.  | 6    | unit tests for rest of components. a couple small refactors in forms      |
 | 28.1.  | 4    | try to (unsuccesfully) test keydown events...                             |
 | 30.1.  | 1    | fix keydown tests for lightbox                                            |
-| total  | 82   |                                                                           |
+|  ----  | ---  | ------------------------------------------------------------------------- |
+| 31.1.  | 3    | unit test for filter and thumbnails, e2e for gallery                      |
+| total  | 85   |                                                                           |
