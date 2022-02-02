@@ -2,14 +2,10 @@ in no specific order, always put done items at bottom
 
 - [ ] plan integration to site
 - [ ] design mobile view
-- [ ] plan unit tests for admin
-- [ ] plan unit tests for gallery
-- [ ] plan e2e tests for gallery
 - [ ] plan e2e tests for admin
-- [ ] hover desc in gallery
 - [ ] explore optional style ideas
 - [ ] plan deployment
-- [ ] landscape mobile view
+- [ ] landscape mobile view --> lightbox button placement
 - [ ] close button text alignment wrong
 - [ ] implement sorting in admin view
 - [ ] refactor Gallery view to be clearer
@@ -22,7 +18,24 @@ in no specific order, always put done items at bottom
 - [ ] implement tests to fill nicetohave-reqs
 - [ ] improve focus indicator in thumbnailGrid
 - [ ] add test for filtering the content
-- [] create a 404 page
+- [ ] create a 404 page
+- [ ] add prop-type validation (remove the eslint skippers)
+
+  2.2.2022
+
+- [x] research theme switcher
+- [x] CSS color variables for a dark mode
+- [x] admin view doesn't fit small screen
+- [x] refactor css away from static px
+- [x] research px/em/rem
+- [x] refactor admin view to match gallery (remove adminPanel as it is a container mostly)
+
+  30.1.2022
+
+- [x] plan e2e tests for gallery
+- [x] hover desc in gallery
+- [x] plan unit tests for admin
+- [x] plan unit tests for gallery
 
   26.1.2022
 

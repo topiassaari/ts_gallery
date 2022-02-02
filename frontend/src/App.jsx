@@ -2,8 +2,9 @@ import React from "react";
 import Gallery from "./views/Gallery";
 import Admin from "./views/Admin";
 import Header from "./components/Header";
+import Theme from "./components/Theme";
 import { useEffect } from "react";
-import "./App.scss";
+import "./styles/App.scss";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getAll } from "./reducers/imageReducer";
@@ -20,12 +21,14 @@ const App = () => {
   }, []);
   return (
     <div className="App" role="main">
-      <Header />
-      <Notification />
-      <Routes>
-        <Route path="/" element={<Gallery />} />
-        <Route path="admin" element={<Admin />} />
-      </Routes>
+      <Theme>
+        <Header />
+        <Notification />
+        <Routes>
+          <Route path="/" element={<Gallery />} />
+          <Route path="admin" element={<Admin />} />
+        </Routes>
+      </Theme>
     </div>
   );
 };

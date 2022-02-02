@@ -28,4 +28,5 @@
 | 30.1.  | 1    | fix keydown tests for lightbox                                            |
 |  ----  | ---  | ------------------------------------------------------------------------- |
 | 31.1.  | 3    | unit test for filter and thumbnails, e2e for gallery                      |
-| total  | 85   |                                                                           |
+|  2.2.  | 4    | change px-->rem/em, research and begin implementation on theme switcher   |
+| total  | 89   |                                                                           |

@@ -2,12 +2,12 @@ requirements
 
 must:
 
-- [ ] user can see a list of images...
-- [ ] ...right when they land on the page
-- [ ] user is able to see a detailed view of each image
-- [ ] user can view images just from a specific year
-- [ ] user can use the service on a keyboard
-- [ ] text colors (especially in gallery) are WCAG AAA
+- [x] user can see a list of images...
+- [x] ...right when they land on the page
+- [x] user is able to see a detailed view of each image
+- [x] user can view images just from a specific year
+- [x] user can use the service on a keyboard
+- [x] text colors (especially in gallery) are WCAG AAA
 - [ ] only admin can add/edit/remove images
 - [ ] user can use the service on a phone
 

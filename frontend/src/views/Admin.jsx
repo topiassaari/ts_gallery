@@ -58,7 +58,7 @@ const Admin = () => {
       {!login.token ? (
         <LoginForm login={handleLogin} />
       ) : (
-        <>
+        <div className="adminContainer">
           <Modal open={modal} onClose={closeModal}>
             {modal ? (
               <ImageForm
@@ -72,7 +72,7 @@ const Admin = () => {
             <ImageTable images={images} edit={editImage} />
             <Button variant="add" onClick={newImg} />
           </div>
-        </>
+        </div>
       )}
     </>
   );

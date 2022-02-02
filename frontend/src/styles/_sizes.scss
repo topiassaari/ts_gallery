@@ -10,21 +10,32 @@
   left: 0;
   position: fixed;
 }
-$button: #000000;
-$button-hover: #2e2e2e;
-$button-disabled: #cccccc;
-$button-delete: rgb(255, 0, 0);
-$button-delete-hover: rgb(204, 0, 0);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
 
 body {
-  min-width: 350px;
+  margin: 0;
+  font-size: 1.6rem;
 }
+
 input,
 label {
   display: block;
 }
 h1 {
   margin: 0;
+  font-size: 2.4rem;
+}
+#titleContainer {
+  @media screen and (max-width: 35em) {
+    display: none;
+  }
 }
 button {
   background: none;
@@ -38,15 +49,15 @@ button {
 }
 .button {
   position: relative;
-  margin: 8px 0;
-  padding: 4px 20px;
-  background-color: $button;
-  border: 1px solid $button;
+  margin: 1em 0;
+  padding: 0.5em 1.5em;
+  background-color: $button-bg;
+  border: 0.1em solid $button-bg;
   color: white;
   font-weight: 700;
-  border-radius: 20px;
+  border-radius: 2em;
   &:focus {
-    border: 2px solid red;
+    border: 0.2em solid $button-focus;
   }
 
   &:hover {
@@ -62,16 +73,16 @@ button {
     cursor: default;
   }
   &.add {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
     padding: 0;
     font-size: x-large;
   }
   &.close {
-    width: 25px;
-    height: 25px;
-    border-radius: 50px;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
     padding: 0;
     font-weight: 800;
   }
@@ -85,26 +96,26 @@ button {
   }
 }
 input {
-  border: 2px solid black;
-  padding: 4px;
+  border: 0.2em solid black;
+  padding: 0.4em;
 }
 
 .Gallery {
   @include flexCenter;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 
   & > #thumbnailGrid {
     flex-wrap: wrap;
     @include flexCenter;
-    max-width: 1200px;
+    max-width: 120em;
     position: relative;
     z-index: 1;
 
     & > .thumbnail {
-      width: 300px;
-      height: 300px;
+      width: 30rem;
+      height: 30rem;
       overflow: hidden;
-      margin: 10px;
+      margin: 1rem;
       transition: 0.5s;
 
       &:focus,
@@ -114,7 +125,7 @@ input {
       }
       & > img {
         cursor: pointer;
-        width: 500px;
+        width: 50rem;
         height: auto;
       }
     }
@@ -125,7 +136,7 @@ input {
     z-index: 5;
 
     & > #content {
-      padding: 20px;
+      padding: 2rem;
       position: relative;
       z-index: 20;
 
@@ -135,14 +146,15 @@ input {
       & img {
         max-height: 70vh;
         height: auto;
+        max-width: 90vw;
       }
       & > div {
         @include flexCenter;
         & > div {
           & p {
             text-align: center;
-            color: rgb(255, 255, 255);
-            font-size: large;
+            color: $lightbox-text;
+            font-size: 1.5rem;
           }
           & > div {
             @include flexCenter;
@@ -151,7 +163,7 @@ input {
       }
     }
     #background {
-      background-color: rgba(39, 39, 39, 0.8);
+      background-color: $lightbox-bg;
       @include overlay;
       z-index: 6;
       cursor: pointer;
@@ -162,7 +174,7 @@ input {
   display: flex;
   align-content: flex-end;
   justify-content: space-between;
-  padding: 20px;
+  padding: 2rem;
 }
 #signature,
 #admin,
@@ -173,33 +185,31 @@ input {
   }
 }
 #signature {
-  height: 50px;
+  height: 5rem;
 }
-#admin {
-  height: 25px;
-  margin: 10px;
-}
+#admin,
 #logout {
-  height: 25px;
-  margin: 10px;
+  height: 2.5rem;
+  margin: 1rem;
 }
 
 .formContainer {
   @include flexCenter;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 30px;
+  min-width: 35rem;
+  max-width: 90vw;
+
   & > div > form > div {
-    padding: 2px 0;
+    padding: 0.2rem 0;
   }
   & > .preview {
     @include flexCenter;
-    width: 400px;
     height: auto;
     & > img {
-      background-color: grey;
-      height: auto;
-      max-width: 400px;
+      background-color: $preview-placeholder;
+      max-height: 20rem;
+      max-width: 20rem;
     }
   }
 }
@@ -212,29 +222,29 @@ input {
   flex-direction: column;
   table {
     border-collapse: collapse;
-    width: 600px;
+    width: 80vw;
   }
   thead {
     font-weight: 800;
-    border-bottom: 4px solid black;
-    border-top: 0px solid black;
+    border-bottom: 0.3rem solid $table-border;
+    border-top: 0px solid transparent;
   }
   tbody {
     tr {
       transition: 0.5s;
       & > td > img {
-        height: 20px;
+        height: 2rem;
         &:hover {
           cursor: pointer;
         }
       }
       &:hover {
-        background-color: lightgrey;
+        background-color: $table-hover;
       }
     }
 
     td {
-      padding: 4px;
+      padding: 0.5rem;
 
       overflow: hidden;
     }
@@ -245,20 +255,20 @@ input {
   @include overlay;
   & > .modal {
     width: fit-content;
-    border: 6px solid black;
+    border: 0.5rem solid $modal-border;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     top: 10vh;
     left: 0;
     right: 0;
-    background-color: white;
-    padding: 25px;
+    background-color: $modal-bg;
+
     & > .modalHeader {
       display: flex;
       justify-content: right;
       & > button {
-        margin: 12px;
+        margin: 1rem;
       }
     }
   }
@@ -268,21 +278,14 @@ input {
   @include flexCenter;
   & > div {
     @include flexCenter;
-    width: 1200px;
-    & > img {
-      height: 40px;
-      cursor: pointer;
-    }
+    width: 120em;
     & > div {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
+      @include flexCenter;
       & > div > span {
-        margin: 4px;
+        margin: 0.5rem;
         cursor: pointer;
         user-select: none;
-        color: black;
+        color: $filter-color;
         font-weight: 600;
       }
     }
@@ -292,18 +295,24 @@ input {
 #notification {
   display: block;
   position: absolute;
-  right: 50px;
-  top: 100px;
-  background-color: white;
-  border: #000000 1px solid;
+  right: 5rem;
+  top: 10rem;
+  background-color: $notification-bg;
+  border: 0.1rem solid $notification-border;
   width: fit-content;
   transition: 0.5s;
   & > div {
-    padding: 20px;
+    padding: 2rem;
     @include flexCenter;
     & > img {
-      margin-left: 10px;
-      width: 20px;
+      margin-left: 0.1rem;
+      width: 2rem;
     }
   }
+}
+
+.adminContainer {
+  @include flexCenter;
+  padding: 2rem;
+  max-width: 120rem;
 }
