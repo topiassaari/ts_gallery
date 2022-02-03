@@ -1,97 +1,98 @@
-  $button-bg-dark: white;
-  $button-text-dark: black;
-  $button-focus-dark: #b8b8b8;
-  $button-hover-dark: #b8b8b8;
-  $button-disabled-dark: #4b4b4b;
-  $button-delete-dark: rgb(255, 0, 0);
-  $button-delete-hover-dark: rgb(204, 0, 0);
-  $app-bg-dark: black;
-  $main-font-dark: white;
-  $lightbox-bg-dark: rgba(39, 39, 39, 0.8);
-  $lightbox-text-dark: white;
-  $preview-placeholder-dark: grey;
-  $notification-bg-dark: black;
-  $notification-border-dark: white;
-  $modal-bg-dark: black;
-  $modal-border-dark: white;
-  $table-font-dark: white;
-  $table-bg-dark: black;
-  $table-hover-dark: rgba(39, 39, 39, 0.8);
-  $table-border-dark: white;
-  $filter-color-dark: white;
-  $input-bg-dark: black;
-  $input-text-dark: white;
-  $input-border-dark: white;
+$button-bg-dark: white;
+$button-text-dark: black;
+$button-focus-dark: #b8b8b8;
+$button-hover-dark: #b8b8b8;
+$button-disabled-dark: #4b4b4b;
+$button-delete-dark: rgb(255, 0, 0);
+$button-delete-hover-dark: rgb(204, 0, 0);
+$app-bg-dark: rgb(29, 29, 29);
+$main-font-dark: white;
+$lightbox-bg-dark: rgba(39, 39, 39, 0.8);
+$lightbox-text-dark: white;
+$preview-placeholder-dark: grey;
+$notification-bg-dark: black;
+$notification-border-dark: white;
+$modal-bg-dark: rgba(39, 39, 39, 0.8);
+$modal-border-dark: white;
+$table-font-dark: white;
+$table-bg-dark: black;
+$table-hover-dark: rgba(39, 39, 39, 0.8);
+$table-border-dark: white;
+$filter-color-dark: white;
+$input-bg-dark: black;
+$input-text-dark: white;
+$input-border-dark: white;
 
-  .dark {
-    .App {
-      background-color: $app-bg-dark;
-      color: $main-font-dark;
+.dark {
+  .App {
+    background-color: $app-bg-dark;
+    color: $main-font-dark;
+  }
+  #lightbox {
+    & p {
+      color: $lightbox-text-dark;
     }
-    #lightbox {
-      & p {
-        color: $lightbox-text-dark;
-      }
-      #background {
-        background-color: $lightbox-bg-dark;
-      }
+    #background {
+      background-color: $lightbox-bg-dark;
     }
-    .preview > img {
+  }
+  .preview > img {
+    background-color: $preview-placeholder-dark;
+  }
+  .formContainer {
+    & input {
+      background-color: $input-bg-dark;
+      border-color: $input-border-dark;
+      color: $input-text-dark;
+    }
+    & > .preview > img {
       background-color: $preview-placeholder-dark;
     }
-    .formContainer {
-      & input {
-        background-color: $input-bg-dark;
-        border-color: $input-border-dark;
-        color: $input-text-dark;
-      }
-      & > .preview > img {
-        background-color: $preview-placeholder-dark;
-      }
+  }
+  #imgTable {
+    thead {
+      border-bottom-color: $table-border-dark;
     }
-    #imgTable {
-      thead {
-        border-bottom-color: $table-border-dark;
-      }
-      tbody > tr:hover {
-        background-color: $table-hover-dark;
-      }
+    tbody > tr:hover {
+      background-color: $table-hover-dark;
     }
-    .modal {
-      border-color: $modal-border-dark;
-      background-color: $modal-bg-dark;
+  }
+  .modal {
+    border-color: $modal-border-dark;
+    background-color: $modal-bg-dark;
+  }
+  #filter {
+    & > div > div > div > span {
+      color: $filter-color-dark;
     }
-    #filter {
-      & > div > div > div > span {
-        color: $filter-color-dark;
-      }
+  }
+  #notification {
+    background-color: $notification-bg-dark;
+    border-color: $notification-border-dark;
+  }
+  .button {
+    background-color: $button-bg-dark;
+    border-color: $button-bg-dark;
+    color: $button-text-dark;
+    &:hover {
+      background-color: $button-hover-dark;
+      border-color: $button-hover-dark;
     }
-    #notification {
-      background-color: $notification-bg-dark;
-      border-color: $notification-border-dark;
+    &:focus {
+      border-color: $button-focus-dark;
     }
-    .button {
-      background-color: $button-bg-dark;
-      border-color: $button-bg-dark;
-      color: $button-text-dark;
+    &:disabled {
+      background-color: $button-disabled-dark;
+      border-color: $button-disabled-dark;
+    }
+    &.delete {
+      background-color: $button-delete-dark;
+      border-color: $button-delete-dark;
+      color: $main-font-dark;
       &:hover {
-        background-color: $button-hover-dark;
-        border-color: $button-hover-dark;
-      }
-      &:focus {
-        border-color: $button-focus-dark;
-      }
-      &:disabled {
-        background-color: $button-disabled-dark;
-        border-color: $button-disabled-dark;
-      }
-      &.delete {
-        background-color: $button-delete-dark;
-        border-color: $button-delete-dark;
-        &:hover {
-          background-color: $button-delete-hover-dark;
-          border-color: $button-delete-hover-dark;
-        }
+        background-color: $button-delete-hover-dark;
+        border-color: $button-delete-hover-dark;
       }
     }
   }
+}

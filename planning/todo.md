@@ -21,11 +21,16 @@ in no specific order, always put done items at bottom
 - [ ] create a 404 page
 - [ ] add prop-type validation (remove the eslint skippers)
 - [ ] maybe separate input component
-- [ ] make bg not black but dark grey in dark theme
-- [ ] 
+- [ ] think more about the modal styling to reach an actual design
+- [ ] keyboard support for admin panel
+- [ ] keyboard support for modal
+- [ ] hamburger menu for mobile view
+- [ ] filter options bigger for mobile (under hamburger?)
 
   3.2.2022
 
+- [x] think about modal styling again...its pretty ugly atm.
+- [x] make bg not black but dark grey in dark theme
 - [x] implement theme switcher
 - [x] dark theme icons
 - [x] fine tune styles for dark theme

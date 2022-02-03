@@ -16,7 +16,7 @@ const ImageTable = (props) => {
         {props.images
           ? props.images.map((img, index) => {
               return (
-                <tr key={index} onClick={() => props.edit(img)}>
+                <tr key={index} onClick={() => props.edit(img)} tabIndex={0}>
                   <td>
                     <img src={img.url} alt=""></img>
                   </td>

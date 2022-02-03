@@ -41,7 +41,7 @@ const ImageForm = (props) => {
       <div className="preview">
         <img src={url ? url : placeholder} alt="preview" />
       </div>
-      <div>
+      <div className="form">
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="formUrl">url</label>

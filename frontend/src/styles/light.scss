@@ -57,6 +57,9 @@ $input-border-light: black;
       background-color: $table-hover-light;
     }
   }
+  .modalContainer {
+    background-color: $lightbox-bg-light;
+  }
   .modal {
     border-color: $modal-border-light;
     background-color: $modal-bg-light;

@@ -28,7 +28,7 @@ export const darkTheme = () => {
   return async (dispatch) => {
     document.getElementById("root").classList.remove("light");
     document.getElementById("root").classList.add("dark");
-    document.querySelector("html").style.backgroundColor = "black";
+    document.querySelector("html").style.backgroundColor = "#1D1D1D";
     const data = "dark";
     dispatch({
       type: "DARK",
