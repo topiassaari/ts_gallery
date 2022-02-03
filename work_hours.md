@@ -29,5 +29,5 @@
 |  ----  | ---  | ------------------------------------------------------------------------- |
 | 31.1.  | 3    | unit test for filter and thumbnails, e2e for gallery                      |
 |  2.2.  | 4    | change px-->rem/em, research and begin implementation on theme switcher   |
-|  3.2.  | 2    | implement theme switcher (WIP)                                            |
-| total  | 91   |                                                                           |
+|  3.2.  | 4    | implement theme switcher                                                  |
+| total  | 93   |                                                                           |

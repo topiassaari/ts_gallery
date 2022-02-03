@@ -1,6 +1,6 @@
 $button-bg-light: black;
 $button-text-light: white;
-$button-focus-light: rgb(255, 0, 0);
+$button-focus-light: rgb(189, 189, 189);
 $button-hover-light: #2e2e2e;
 $button-disabled-light: #cccccc;
 $button-delete-light: rgb(255, 0, 0);
@@ -20,6 +20,8 @@ $table-hover-light: lightgrey;
 $table-border-light: black;
 $filter-color-light: black;
 $input-bg-light: white;
+$input-text-light: black;
+$input-border-light: black;
 
 .light {
   .App {
@@ -40,6 +42,8 @@ $input-bg-light: white;
   .formContainer {
     & input {
       background-color: $input-bg-light;
+      border-color: $input-border-light;
+      color: $input-text-light;
     }
     & > .preview > img {
       background-color: $preview-placeholder-light;

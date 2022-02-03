@@ -17,8 +17,11 @@
 
 html {
   font-size: 62.5%;
+  transition: 0.1s;
 }
-
+.App {
+  transition: 0.5s;
+}
 body {
   margin: 0;
   font-size: 1.6rem;
@@ -38,6 +41,7 @@ h1 {
   }
 }
 button {
+  transition: 0.5s;
   background: none;
   color: inherit;
   border: none;
@@ -45,13 +49,14 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  transition: 0.5s;
 }
 
 .button {
+  transition: 0.5s;
   position: relative;
   margin: 1em 0;
   padding: 0.5em 1.5em;
+  border: 0.2em solid;
 
   font-weight: 700;
   border-radius: 2em;
@@ -60,6 +65,7 @@ button {
   }
 
   &:hover {
+    border: 0.2em solid;
     cursor: pointer;
   }
 
@@ -160,6 +166,10 @@ input {
   align-content: flex-end;
   justify-content: space-between;
   padding: 2rem;
+  & > .iconContainer,
+  #titleContainer {
+    @include flexCenter;
+  }
 }
 #signature,
 #admin,

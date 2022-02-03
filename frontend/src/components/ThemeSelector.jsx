@@ -1,6 +1,6 @@
 import React from "react";
-import light from "../assets/light.png";
-import dark from "../assets/dark.png";
+import lightbulbLight from "../assets/lightbulb_light.svg";
+import lightbulbDark from "../assets/lightbulb_dark.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { lightTheme, darkTheme } from "../reducers/themeReducer";
 
@@ -18,7 +18,10 @@ const ThemeSelector = () => {
   };
   return (
     <button id="themeSelector" onClick={changeTheme}>
-      <img src={currentTheme === "light" ? light : dark} alt="theme selector" />
+      <img
+        src={currentTheme === "light" ? lightbulbLight : lightbulbDark}
+        alt="theme selector"
+      />
     </button>
   );
 };

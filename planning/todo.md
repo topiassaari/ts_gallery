@@ -20,9 +20,15 @@ in no specific order, always put done items at bottom
 - [ ] add test for filtering the content
 - [ ] create a 404 page
 - [ ] add prop-type validation (remove the eslint skippers)
+- [ ] maybe separate input component
+- [ ] make bg not black but dark grey in dark theme
+- [ ] 
 
   3.2.2022
+
 - [x] implement theme switcher
+- [x] dark theme icons
+- [x] fine tune styles for dark theme
 
   2.2.2022
 
