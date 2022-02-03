@@ -21,6 +21,9 @@ in no specific order, always put done items at bottom
 - [ ] create a 404 page
 - [ ] add prop-type validation (remove the eslint skippers)
 
+  3.2.2022
+- [x] implement theme switcher
+
   2.2.2022
 
 - [x] research theme switcher

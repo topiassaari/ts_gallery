@@ -6,7 +6,7 @@ import logoutImg from "../assets/logout.png";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/loginReducer";
 import { setNotification } from "../reducers/notificationReducer";
-
+import ThemeSelector from "./ThemeSelector";
 const Header = () => {
   const login = useSelector((state) => state.login);
   const dispatch = useDispatch();
@@ -34,6 +34,7 @@ const Header = () => {
             <img src={logoutImg} id="logout" alt="logout" />
           </button>
         ) : null}
+        <ThemeSelector />
       </div>
     </div>
   );

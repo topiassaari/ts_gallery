@@ -1,0 +1,93 @@
+$button-bg-dark: white;
+$button-text-dark: black;
+$button-focus-dark: rgb(255, 0, 0);
+$button-hover-dark: #b8b8b8;
+$button-disabled-dark: #4b4b4b;
+$button-delete-dark: rgb(255, 0, 0);
+$button-delete-hover-dark: rgb(204, 0, 0);
+$app-bg-dark: black;
+$main-font-dark: white;
+$darkbox-bg-dark: rgba(184, 184, 184, 0.8);
+$darkbox-text-dark: black;
+$preview-placeholder-dark: grey;
+$notification-bg-dark: black;
+$notification-border-dark: white;
+$modal-bg-dark: black;
+$modal-border-dark: white;
+$table-font-dark: white;
+$table-bg-dark: black;
+$table-hover-dark: lightgrey;
+$table-border-dark: white;
+$filter-color-dark: white;
+$input-bg-dark: black;
+
+.dark {
+  .App {
+    background-color: $app-bg-dark;
+    color: $main-font-dark;
+  }
+  #lightbox {
+    & p {
+      color: $darkbox-text-dark;
+    }
+    #background {
+      background-color: $darkbox-bg-dark;
+    }
+  }
+  .preview > img {
+    background-color: $preview-placeholder-dark;
+  }
+  .formContainer {
+    & input {
+      background-color: $input-bg-dark;
+    }
+    & > .preview > img {
+      background-color: $preview-placeholder-dark;
+    }
+  }
+  #imgTable {
+    thead {
+      border-bottom-color: $table-border-dark;
+    }
+    tbody > tr:hover {
+      background-color: $table-hover-dark;
+    }
+  }
+  .modal {
+    border-color: $modal-border-dark;
+    background-color: $modal-bg-dark;
+  }
+  #filter {
+    & > div > div > div > span {
+      color: $filter-color-dark;
+    }
+  }
+  #notification {
+    background-color: $notification-bg-dark;
+    border-color: $notification-border-dark;
+  }
+  .button {
+    background-color: $button-bg-dark;
+    border-color: $button-bg-dark;
+    color: $button-text-dark;
+    &:hover {
+      background-color: $button-hover-dark;
+      border-color: $button-hover-dark;
+    }
+    &:focus {
+      border-color: $button-focus-dark;
+    }
+    &:disabled {
+      background-color: $button-disabled-dark;
+      border-color: $button-disabled-dark;
+    }
+    &.delete {
+      background-color: $button-delete-dark;
+      border-color: $button-delete-dark;
+      &:hover {
+        background-color: $button-delete-hover-dark;
+        border-color: $button-delete-hover-dark;
+      }
+    }
+  }
+}

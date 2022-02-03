@@ -1,0 +1,93 @@
+$button-bg-light: black;
+$button-text-light: white;
+$button-focus-light: rgb(255, 0, 0);
+$button-hover-light: #2e2e2e;
+$button-disabled-light: #cccccc;
+$button-delete-light: rgb(255, 0, 0);
+$button-delete-hover-light: rgb(204, 0, 0);
+$app-bg-light: white;
+$main-font-light: black;
+$lightbox-bg-light: rgba(39, 39, 39, 0.8);
+$lightbox-text-light: white;
+$preview-placeholder-light: grey;
+$notification-bg-light: white;
+$notification-border-light: black;
+$modal-bg-light: white;
+$modal-border-light: black;
+$table-font-light: black;
+$table-bg-light: white;
+$table-hover-light: lightgrey;
+$table-border-light: black;
+$filter-color-light: black;
+$input-bg-light: white;
+
+.light {
+  .App {
+    background-color: $app-bg-light;
+    color: $main-font-light;
+  }
+  #lightbox {
+    & p {
+      color: $lightbox-text-light;
+    }
+    #background {
+      background-color: $lightbox-bg-light;
+    }
+  }
+  .preview > img {
+    background-color: $preview-placeholder-light;
+  }
+  .formContainer {
+    & input {
+      background-color: $input-bg-light;
+    }
+    & > .preview > img {
+      background-color: $preview-placeholder-light;
+    }
+  }
+  #imgTable {
+    thead {
+      border-bottom-color: $table-border-light;
+    }
+    tbody > tr:hover {
+      background-color: $table-hover-light;
+    }
+  }
+  .modal {
+    border-color: $modal-border-light;
+    background-color: $modal-bg-light;
+  }
+  #filter {
+    & > div > div > div > span {
+      color: $filter-color-light;
+    }
+  }
+  #notification {
+    background-color: $notification-bg-light;
+    border-color: $notification-border-light;
+  }
+  .button {
+    background-color: $button-bg-light;
+    border-color: $button-bg-light;
+    color: $button-text-light;
+    &:hover {
+      background-color: $button-hover-light;
+      border-color: $button-hover-light;
+    }
+    &:focus {
+      border-color: $button-focus-light;
+    }
+    &:disabled {
+      background-color: $button-disabled-light;
+      border-color: $button-disabled-light;
+    }
+    &.delete {
+      background-color: $button-delete-light;
+      border-color: $button-delete-light;
+      &:hover {
+        background-color: $button-delete-hover-light;
+        border-color: $button-delete-hover-light;
+      }
+    }
+  }
+}
