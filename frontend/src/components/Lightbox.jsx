@@ -28,6 +28,36 @@ const Lightbox = (props) => {
   });
   return props.img ? (
     <div id="lightbox">
+      <div id="mobileControls">
+        <div className="close">
+          <Button
+            variant="close"
+            id="close"
+            onClick={() => props.close()}
+            tabIndex={0}
+          />
+        </div>
+        <div className="prevNext">
+          <div>
+            <Button
+              variant="prev"
+              id="prev"
+              disabled={props.content.indexOf(props.img) === 0}
+              onClick={() => props.handlePrev()}
+              tabIndex={0}
+            />
+            <Button
+              variant="next"
+              disabled={
+                props.content.indexOf(props.img) === props.content.length - 1
+              }
+              id="next"
+              onClick={() => props.handleNext()}
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
       <div id="content">
         <div id="lightboxClose">
           <Button
@@ -37,13 +67,17 @@ const Lightbox = (props) => {
             tabIndex={0}
           />
         </div>
-        <img src={props.img.url} alt="" />
+        <figure>
+          <img src={props.img.url} alt="" />
+        </figure>
         <div>
           <div>
-            <p>
-              {props.img.desc}, {props.img.year}
-            </p>
-            <div>
+            <figcaption>
+              <p>
+                {props.img.desc}, {props.img.year}
+              </p>
+            </figcaption>
+            <div id="desktopControls">
               <Button
                 variant="prev"
                 id="prev"

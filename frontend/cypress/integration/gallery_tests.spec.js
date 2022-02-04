@@ -14,7 +14,6 @@ describe("gallery stuff works", () => {
     });
   });
   it("navigates to admin", () => {
-    cy.contains("2018");
     cy.get("#admin").click();
     cy.contains("username");
     cy.contains("password");
@@ -35,5 +34,40 @@ describe("gallery stuff works", () => {
     cy.contains("prev");
     cy.contains("next");
     cy.contains("Kotka, 2022");
+  });
+  it("filter works", () => {
+    //todo replace static way of testing this
+    cy.get("#thumbnailGrid").children().should("have.length", 28);
+    cy.contains("2017").click();
+    cy.get("#thumbnailGrid").children().should("have.length", 4);
+  });
+  it("dark theme works", () => {
+    cy.get("#root").should("have.class", "light");
+    cy.get(".App").should("have.css", "background-color", "rgb(255, 255, 255)");
+
+    cy.get("#themeSelector").click();
+    cy.get("#root").should("have.class", "dark");
+    cy.get(".App").should("have.css", "background-color", "rgb(29, 29, 29)");
+  });
+});
+describe("mobile view works", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:3000");
+  });
+  it("lightbox controls available in mobile", () => {
+    cy.viewport(375, 667);
+    cy.get(".thumbnail").first().click();
+    cy.get("#mobileControls").should("not.be.visible");
+    cy.get("#desktopControls").should("be.visible");
+  });
+  it("lightbox controls available in landscape mobile", () => {
+    cy.viewport(667, 375);
+    cy.get(".thumbnail").first().click();
+    cy.get("#mobileControls").should("be.visible");
+    cy.get("#desktopControls").should("not.be.visible");
+  });
+  it("title is not visible", () => {
+    cy.viewport(375, 667);
+    cy.get("#titleContainer").should("not.be.visible");
   });
 });

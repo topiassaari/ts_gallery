@@ -9,7 +9,7 @@ must:
 - [x] user can use the service on a keyboard
 - [x] text colors (especially in gallery) are WCAG AAA
 - [x] only admin can add/edit/remove images
-- [ ] user can use the service on a phone
+- [x] user can use the service on a phone
 
 should:
 

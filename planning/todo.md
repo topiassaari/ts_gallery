@@ -1,22 +1,14 @@
 in no specific order, always put done items at bottom
 
 - [ ] plan integration to site
-- [ ] design mobile view
 - [ ] explore optional style ideas
 - [ ] plan deployment
-- [ ] landscape mobile view --> lightbox button placement
-- [ ] close button text alignment wrong
 - [ ] implement sorting in admin view
-- [ ] refactor Gallery view to be clearer
 - [ ] dockerize the whole thing
-- [ ] use figure/figcaption for semantic
-- [ ] use aria-modal/aria-hidden where relevant
 - [ ] modals fill 100% of screen on mobile
-- [ ] implement tests to fill must-reqs
 - [ ] implement tests to fill should-reqs
 - [ ] implement tests to fill nicetohave-reqs
 - [ ] improve focus indicator in thumbnailGrid
-- [ ] add test for filtering the content
 - [ ] create a 404 page
 - [ ] maybe separate input component
 - [ ] think more about the modal styling to reach an actual design
@@ -24,12 +16,19 @@ in no specific order, always put done items at bottom
 - [ ] keyboard support for modal
 - [ ] hamburger menu for mobile view
 - [ ] filter options bigger for mobile (under hamburger?)
+- [ ] make web 1.0 version
 
   4.2.2022
 
+- [x] implement tests to fill must-reqs
+- [x] use aria-modal/aria-hidden where relevant
+- [x] use figure/figcaption for semantic
+- [x] add test for filtering the content
 - [x] add prop-type validation (remove the eslint skippers)
 - [x] plan e2e tests for admin
 - [x] implement admin e2e
+- [x] close button text alignment wrong
+- [x] landscape mobile view --> lightbox button placement
 
   3.2.2022
 

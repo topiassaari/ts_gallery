@@ -7,7 +7,7 @@ const Modal = (props) => {
       className={"modalContainer"}
       style={{ display: props.open ? "block" : "none" }}
     >
-      <div className="modal">
+      <div aria-modal className="modal">
         <div className="modalHeader">
           <Button variant="close" onClick={() => props.onClose()} />
         </div>
@@ -20,7 +20,7 @@ export default Modal;
 
 import PropTypes from "prop-types";
 Modal.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
   onClose: PropTypes.func,
   open: PropTypes.bool,
 };

@@ -53,7 +53,7 @@ const Filter = (props) => {
 export default Filter;
 
 Filter.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.array,
   byYear: PropTypes.func,
   isOpen: PropTypes.bool,
 };
