@@ -20,7 +20,7 @@ export default Modal;
 
 import PropTypes from "prop-types";
 Modal.propTypes = {
-  children: PropTypes.children,
+  children: PropTypes.func,
   onClose: PropTypes.func,
   open: PropTypes.bool,
 };

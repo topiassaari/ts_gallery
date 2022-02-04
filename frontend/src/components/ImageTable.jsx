@@ -34,6 +34,6 @@ const ImageTable = (props) => {
 export default ImageTable;
 
 ImageTable.propTypes = {
-  images: PropTypes.object,
+  images: PropTypes.array,
   edit: PropTypes.func,
 };
