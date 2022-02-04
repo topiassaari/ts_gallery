@@ -30,4 +30,5 @@
 | 31.1.  | 3    | unit test for filter and thumbnails, e2e for gallery                      |
 |  2.2.  | 4    | change px-->rem/em, research and begin implementation on theme switcher   |
 |  3.2.  | 6    | implement theme switcher and start re-design of modal                     |
-| total  | 95   |                                                                           |
+|  4.2.  | 2    | admin e2e tests and prop-types for components                             |
+| total  | 97   |                                                                           |

@@ -2,7 +2,6 @@ in no specific order, always put done items at bottom
 
 - [ ] plan integration to site
 - [ ] design mobile view
-- [ ] plan e2e tests for admin
 - [ ] explore optional style ideas
 - [ ] plan deployment
 - [ ] landscape mobile view --> lightbox button placement
@@ -19,13 +18,18 @@ in no specific order, always put done items at bottom
 - [ ] improve focus indicator in thumbnailGrid
 - [ ] add test for filtering the content
 - [ ] create a 404 page
-- [ ] add prop-type validation (remove the eslint skippers)
 - [ ] maybe separate input component
 - [ ] think more about the modal styling to reach an actual design
 - [ ] keyboard support for admin panel
 - [ ] keyboard support for modal
 - [ ] hamburger menu for mobile view
 - [ ] filter options bigger for mobile (under hamburger?)
+
+  4.2.2022
+
+- [x] add prop-type validation (remove the eslint skippers)
+- [x] plan e2e tests for admin
+- [x] implement admin e2e
 
   3.2.2022
 
