@@ -1,6 +1,7 @@
 /* eslint-disable indent */
-/* eslint-disable react/prop-types */
+
 import React from "react";
+import PropTypes from "prop-types";
 
 const ImageTable = (props) => {
   return (
@@ -31,3 +32,8 @@ const ImageTable = (props) => {
   );
 };
 export default ImageTable;
+
+ImageTable.propTypes = {
+  images: PropTypes.object,
+  edit: PropTypes.func,
+};

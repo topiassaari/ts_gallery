@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import Button from "./Button";
 
@@ -18,3 +17,10 @@ const Modal = (props) => {
   );
 };
 export default Modal;
+
+import PropTypes from "prop-types";
+Modal.propTypes = {
+  children: PropTypes.children,
+  onClose: PropTypes.func,
+  open: PropTypes.bool,
+};

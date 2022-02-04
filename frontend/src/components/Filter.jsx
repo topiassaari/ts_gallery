@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import React from "react";
 
 const Filter = (props) => {
@@ -51,3 +51,9 @@ const Filter = (props) => {
   );
 };
 export default Filter;
+
+Filter.propTypes = {
+  content: PropTypes.object,
+  byYear: PropTypes.func,
+  isOpen: PropTypes.bool,
+};

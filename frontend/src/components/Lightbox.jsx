@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import React from "react";
 import Button from "./Button";
 import { useEffect } from "react";
@@ -69,3 +69,11 @@ const Lightbox = (props) => {
   ) : null;
 };
 export default Lightbox;
+
+Lightbox.propTypes = {
+  content: PropTypes.object,
+  img: PropTypes.object,
+  handleNext: PropTypes.func,
+  handlePrev: PropTypes.func,
+  close: PropTypes.func,
+};

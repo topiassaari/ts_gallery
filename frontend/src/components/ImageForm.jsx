@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { useState, useEffect } from "react";
 import placeholder from "../assets/placeholder.png";
-
+import PropTypes from "prop-types";
 import Button from "./Button";
 
 const ImageForm = (props) => {
@@ -93,5 +92,11 @@ const ImageForm = (props) => {
       </div>
     </div>
   );
+};
+
+ImageForm.propTypes = {
+  img: PropTypes.object,
+  handleSubmit: PropTypes.func,
+  deleteImg: PropTypes.func,
 };
 export default ImageForm;

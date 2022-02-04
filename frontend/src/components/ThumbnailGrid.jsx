@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 
 const ThumbnailGrid = (props) => {
   const keydown = (e, img) => {
@@ -27,3 +27,9 @@ const ThumbnailGrid = (props) => {
   ) : null;
 };
 export default ThumbnailGrid;
+
+ThumbnailGrid.propTypes = {
+  content: PropTypes.object,
+  openLightbox: PropTypes.func,
+  isOpen: PropTypes.bool,
+};

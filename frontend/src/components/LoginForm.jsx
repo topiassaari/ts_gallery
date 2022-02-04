@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import Button from "./Button";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const LoginForm = (props) => {
   const [username, setUsername] = useState("");
@@ -41,3 +41,7 @@ const LoginForm = (props) => {
   );
 };
 export default LoginForm;
+
+LoginForm.propTypes = {
+  login: PropTypes.func,
+};

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 
 const Button = (props) => {
   const title = () => {
@@ -25,4 +25,11 @@ const Button = (props) => {
     </button>
   );
 };
+
+Button.propTypes = {
+  variant: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+};
+
 export default Button;
