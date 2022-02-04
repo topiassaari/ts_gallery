@@ -71,7 +71,7 @@ const Lightbox = (props) => {
 export default Lightbox;
 
 Lightbox.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.array,
   img: PropTypes.object,
   handleNext: PropTypes.func,
   handlePrev: PropTypes.func,

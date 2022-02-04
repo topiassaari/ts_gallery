@@ -29,7 +29,7 @@ const ThumbnailGrid = (props) => {
 export default ThumbnailGrid;
 
 ThumbnailGrid.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.array,
   openLightbox: PropTypes.func,
   isOpen: PropTypes.bool,
 };
