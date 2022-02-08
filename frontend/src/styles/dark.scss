@@ -22,6 +22,7 @@ $filter-color-dark: white;
 $input-bg-dark: black;
 $input-text-dark: white;
 $input-border-dark: white;
+$thumbnail-border-dark: white;
 
 .dark {
   .App {
@@ -93,6 +94,12 @@ $input-border-dark: white;
         background-color: $button-delete-hover-dark;
         border-color: $button-delete-hover-dark;
       }
+    }
+  }
+  #thumbnailGrid > .thumbnail {
+    &:focus,
+    &:hover {
+      border-color: $thumbnail-border-dark;
     }
   }
 }

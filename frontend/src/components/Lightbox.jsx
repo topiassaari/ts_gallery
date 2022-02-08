@@ -68,7 +68,7 @@ const Lightbox = (props) => {
           />
         </div>
         <figure>
-          <img src={props.img.url} alt="" />
+          <img src={props.img.url} alt={"Gallery image of " + props.img.desc} />
         </figure>
         <div>
           <div>

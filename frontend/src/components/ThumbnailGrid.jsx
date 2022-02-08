@@ -19,7 +19,10 @@ const ThumbnailGrid = (props) => {
             onKeyDown={(e) => keydown(e, img)}
             tabIndex={props.isOpen ? -1 : 0}
           >
-            <img src={img.url} alt="" />
+            <img
+              src={img.url}
+              alt={"Thumbnail of gallery image: " + img.desc}
+            />
           </button>
         );
       })}

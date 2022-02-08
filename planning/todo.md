@@ -6,9 +6,7 @@ in no specific order, always put done items at bottom
 - [ ] implement sorting in admin view
 - [ ] dockerize the whole thing
 - [ ] modals fill 100% of screen on mobile
-- [ ] implement tests to fill should-reqs
 - [ ] implement tests to fill nicetohave-reqs
-- [ ] improve focus indicator in thumbnailGrid
 - [ ] create a 404 page
 - [ ] maybe separate input component
 - [ ] think more about the modal styling to reach an actual design
@@ -17,6 +15,12 @@ in no specific order, always put done items at bottom
 - [ ] hamburger menu for mobile view
 - [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
+
+  8.2.2022
+
+- [x] research what tools for deployment
+- [x] improve focus indicator in thumbnailGrid
+- [x] implement tests to fill should-reqs
 
   4.2.2022
 
