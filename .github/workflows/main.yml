@@ -8,17 +8,13 @@ on:
       branches: [main]
       types: [opened, synchronize]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP}}
+          heroku_app_name: tsgallery
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           procfile: "web: npm start"
-        env:
-          HD_MONGODB_URI: ${{ secrets.MONGODB_URI }}
-          HD_SECRET: ${{ secrets.SECRET }}
-          HD_PORT: ${{ secrets.PORT }}
