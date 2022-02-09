@@ -8,6 +8,32 @@ on:
       branches: [main]
       types: [opened, synchronize]
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - name: npm install
+        run: npm i
+      - name: lint
+        run: npm run lint:frontend
+      - name: build
+        run: npm run build
+      - name: test
+        run: npm run test
+
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          PORT: ${{ secrets.PORT }}
+          SECRET: ${{ secrets.SECRET }}
+        with:
+          command: npm run e2e
+          start: npm run start
+          wait-on: http://localhost:8000
   deploy:
     runs-on: ubuntu-latest
     steps:
