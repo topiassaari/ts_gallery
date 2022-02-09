@@ -14,12 +14,13 @@ in no specific order, always put done items at bottom
 - [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
 - [ ] fix linting
-- [ ] fix tests
-- [ ] make heroku pipeline work
 - [ ] fix dockerfile (bcrypt problem)
+- [ ] create proper environment for e2e
 
   9.2.2022
 
+- [x] make heroku pipeline work
+- [x] fix tests
 - [x] plan deployment
 - [x] dockerize the whole thing
 - [x] deploy to heroku
