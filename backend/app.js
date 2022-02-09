@@ -14,7 +14,7 @@ app.use(middleware.limitHandler);
 morgan.token("content", function (req) {
   return JSON.stringify(req.body);
 });
-
+app.use(express.static("build"));
 app.use(express.json());
 app.use(cors());
 app.use("/api/users", userRouter);
