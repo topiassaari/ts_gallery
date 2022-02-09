@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=prod node index.js",
+    "start": "cross-env NODE_ENV=prod node dist/index.js",
     "dev:backend": "cross-env NODE_ENV=dev nodemon index.js",
     "start:ui": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && esbuild index.js --platform=node --bundle --minify --outfile=dist/index.js --external:./node_modules/*",
     "test": "react-scripts test",
     "lint:frontend": "eslint src",
     "e2e": "cypress run"
@@ -15,8 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-rate-limit": "^6.1.0",
@@ -25,15 +27,13 @@
     "mongoose-unique-validator": "^3.0.0",
     "mongoose-validator": "^2.1.0",
     "morgan": "^1.10.0",
-    "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "cross-env": "^7.0.3",
     "react-router-dom": "latest",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
+    "esbuild": "^0.14.21",
     "@testing-library/dom": "^8.11.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.1.1",
@@ -48,6 +48,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "jest-axe": "^5.0.1",
+    "nodemon": "^2.0.7",
     "prettier": "2.5.0",
     "react-redux": "^7.2.6",
     "react-scripts": "^5.0.0",
