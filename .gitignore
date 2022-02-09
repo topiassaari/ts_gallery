@@ -5,3 +5,7 @@ package-lock.json
 *.local
 reqs.rest
 build
+dist
+dist-ssr
+.eslintcache
+cypress.json
