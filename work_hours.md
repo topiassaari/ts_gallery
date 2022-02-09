@@ -33,4 +33,5 @@
 |  4.2.  | 4    | admin e2e tests and prop-types for components + small things from todo    |
 |  ----  | ---  | ------------------------------------------------------------------------- |
 |  8.2.  | 2    | check requirements list, fix a11y checlist issues, research deployment    |
+|  9.2.  | 2    | unsuccesfully                                                             |
 | total  | 101  |                                                                           |
