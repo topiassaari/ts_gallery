@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:8000/api/images";
+const baseUrl = "/api/images";
 let token = null;
 
 const setToken = (newToken) => {
