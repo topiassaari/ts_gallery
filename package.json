@@ -9,8 +9,9 @@
     "start:ui": "react-scripts start",
     "build": "react-scripts build && esbuild index.js --platform=node --bundle --minify --outfile=dist/index.js --external:./node_modules/*",
     "test": "react-scripts test",
-    "lint:frontend": "eslint src",
-    "e2e": "cypress run"
+    "lint": "eslint src",
+    "e2e": "cypress run",
+    "cypress:open": "cypress open"
   },
   "author": "",
   "license": "ISC",

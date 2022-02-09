@@ -128,47 +128,6 @@ input {
     @include flexCenter;
     @include overlay;
     z-index: 5;
-    & > #mobileControls {
-      display: none;
-    }
-    @media screen and (max-height: 40em) {
-      & > #mobileControls {
-        display: flex;
-        flex-direction: column;
-        @include overlay;
-        z-index: 100;
-        & > .close {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          height: 20%;
-          & > button {
-            margin: 2rem;
-          }
-        }
-        & > .prevNext {
-          height: 80%;
-          @include flexCenter;
-          & > div {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            & > button {
-              margin: 2rem;
-            }
-          }
-        }
-      }
-      & > #content {
-        & .button {
-          display: none;
-        }
-        & #lightboxClose {
-          display: none;
-        }
-      }
-    }
     & > #content {
       padding: 2rem;
       position: relative;

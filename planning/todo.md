@@ -2,9 +2,7 @@ in no specific order, always put done items at bottom
 
 - [ ] plan integration to site
 - [ ] explore optional style ideas
-- [ ] plan deployment
 - [ ] implement sorting in admin view
-- [ ] dockerize the whole thing
 - [ ] modals fill 100% of screen on mobile
 - [ ] implement tests to fill nicetohave-reqs
 - [ ] create a 404 page
@@ -15,6 +13,21 @@ in no specific order, always put done items at bottom
 - [ ] hamburger menu for mobile view
 - [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
+- [ ] fix linting
+- [ ] fix tests
+- [ ] make heroku pipeline work
+- [ ] fix dockerfile (bcrypt problem)
+
+  9.2.2022
+
+- [x] plan deployment
+- [x] dockerize the whole thing
+- [x] deploy to heroku
+- [x] bundle build (esbuild)
+- [x] refactor the whole thing to function as one node app
+- [x] try to make docker-compose work (and fail)
+- [x] try to see if possible to deploy from dockerfile
+- [x] research possibilities to deploy multiple node apps in same context
 
   8.2.2022
 

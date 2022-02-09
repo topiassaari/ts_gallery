@@ -1,6 +1,7 @@
 describe("admin stuff works", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/admin", { failOnStatusCode: false });
+    cy.visit("http://localhost:8000");
+    cy.get("#admin").click();
   });
   it("navigates to gallery", () => {
     cy.get("#signature").click();

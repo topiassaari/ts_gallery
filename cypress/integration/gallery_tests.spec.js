@@ -1,6 +1,6 @@
 describe("gallery stuff works", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:8000");
   });
   it("displays header", () => {
     cy.contains("A GALLERY OF IMAGES I'VE MADE IN THE PAST 6 YEARS");
@@ -48,26 +48,5 @@ describe("gallery stuff works", () => {
     cy.get("#themeSelector").click();
     cy.get("#root").should("have.class", "dark");
     cy.get(".App").should("have.css", "background-color", "rgb(29, 29, 29)");
-  });
-});
-describe("mobile view works", () => {
-  beforeEach(() => {
-    cy.visit("http://localhost:3000");
-  });
-  it("lightbox controls available in mobile", () => {
-    cy.viewport(375, 667);
-    cy.get(".thumbnail").first().click();
-    cy.get("#mobileControls").should("not.be.visible");
-    cy.get("#desktopControls").should("be.visible");
-  });
-  it("lightbox controls available in landscape mobile", () => {
-    cy.viewport(667, 375);
-    cy.get(".thumbnail").first().click();
-    cy.get("#mobileControls").should("be.visible");
-    cy.get("#desktopControls").should("not.be.visible");
-  });
-  it("title is not visible", () => {
-    cy.viewport(375, 667);
-    cy.get("#titleContainer").should("not.be.visible");
   });
 });
