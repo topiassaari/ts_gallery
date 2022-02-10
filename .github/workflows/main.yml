@@ -33,7 +33,7 @@ jobs:
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
         with:
           command: npm run e2e
-          start: npm run start
+          start: npm run start:test
           wait-on: http://localhost:8000
   deploy:
     runs-on: ubuntu-latest
