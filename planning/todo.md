@@ -14,8 +14,13 @@ in no specific order, always put done items at bottom
 - [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
 - [ ] fix linting
-- [ ] fix dockerfile (bcrypt problem)
-- [ ] create proper environment for e2e
+
+  10.2.2022
+
+- [x] create proper environment for e2e
+- [x] fix dockerfile (bcrypt problem)
+- [x] fix error notifications for posting
+- [x] refactor notifications under reducers for global access
 
   9.2.2022
 

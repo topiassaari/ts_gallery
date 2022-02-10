@@ -7,13 +7,28 @@ const loginRouter = require("./controllers/login");
 const imageRouter = require("./controllers/image");
 const middleware = require("./utils/middleware");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
+const config = require("./utils/config");
 require("dotenv").config();
 app.use(middleware.tokenExtractor);
 app.use(middleware.limitHandler);
 
+mongoose
+  .connect(config.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("connected to mongodb");
+  })
+  .catch((error) => {
+    console.log("error: ", error.message);
+  });
+
 morgan.token("content", function (req) {
   return JSON.stringify(req.body);
 });
+
 app.use(express.static("build"));
 app.use(express.json());
 app.use(cors());

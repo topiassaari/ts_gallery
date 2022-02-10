@@ -17,14 +17,15 @@ describe("admin stuff works", () => {
     cy.get("#username").type("wrong value");
     cy.get("#password").type("wrong value");
     cy.get(".button").click();
+    cy.contains("login failed");
   });
   it("logs in with correct values", () => {
     cy.get("#admin").click();
-    cy.get("#username").type(Cypress.env("username"));
-    cy.get("#password").type(Cypress.env("password"));
+    cy.get("#username").type(Cypress.env("USERNAME"));
+    cy.get("#password").type(Cypress.env("PASSWORD"));
     cy.get(".button").click();
     cy.contains("img");
-    cy.contains("logged in " + Cypress.env("username"));
+    cy.contains("logged in " + Cypress.env("USERNAME"));
   });
   it("adds image", () => {
     cy.get(".add").click();

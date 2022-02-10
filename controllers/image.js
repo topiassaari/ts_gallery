@@ -8,7 +8,7 @@ imageRouter.get("/", (req, res) => {
   });
 });
 
-imageRouter.post("/", middleware.userExtractor, (req, res, next) => {
+imageRouter.post("/", middleware.userExtractor, (req, res) => {
   if (req.token === undefined) {
     res.status(401).json({ error: "Provide correct token" }).end();
   }

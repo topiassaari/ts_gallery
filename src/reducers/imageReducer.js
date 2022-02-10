@@ -36,10 +36,9 @@ export const addImage = (content) => {
   return async (dispatch) => {
     postalService.create(content).then((data) => {
       if (data.error) {
-        if (data.error) {
-          return dispatch(errorNotification(data.error));
-        }
+        return dispatch(errorNotification(data.error));
       }
+      dispatch(setNotification("img added", "success", 5));
       dispatch({
         type: "NEW",
         data,
@@ -58,10 +57,9 @@ export const updateImage = (img) => {
       })
       .then((data) => {
         if (data.error) {
-          if (data.error) {
-            return dispatch(errorNotification(data.error));
-          }
+          return dispatch(errorNotification(data.error));
         }
+        dispatch(setNotification("img updated", "success", 5));
         dispatch({
           type: "UPDATE",
           data,
@@ -76,6 +74,7 @@ export const deleteImage = (id) => {
       if (data.error) {
         return dispatch(errorNotification(data.error));
       }
+      dispatch(setNotification("img deleted", "success", 5));
       dispatch({
         type: "DELETE",
         id,

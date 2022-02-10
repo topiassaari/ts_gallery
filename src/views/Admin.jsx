@@ -9,7 +9,6 @@ import ImageTable from "../components/ImageTable";
 import LoginForm from "../components/LoginForm";
 
 import { updateImage, deleteImage, addImage } from "../reducers/imageReducer";
-import { setNotification } from "../reducers/notificationReducer";
 import { userLogin } from "../reducers/loginReducer";
 
 const Admin = () => {
@@ -28,29 +27,18 @@ const Admin = () => {
     setEdit(null);
     showModal(false);
   };
-  const handleSubmit = async (img) => {
+  const handleSubmit = (img) => {
     if (img.id) {
-      return dispatch(updateImage(img)).then(() => {
-        dispatch(setNotification("img updated", "success", 5));
-        closeModal();
-      });
+      return dispatch(updateImage(img)).then(() => closeModal());
     }
-    dispatch(addImage(img)).then(() => {
-      dispatch(setNotification("img added", "success", 5));
-      closeModal();
-    });
+    dispatch(addImage(img)).then(() => closeModal());
   };
-  const deleteImg = async (img) => {
-    dispatch(deleteImage(img.id)).then(() => {
-      dispatch(setNotification("img deleted", "success", 5));
-      closeModal();
-    });
+  const deleteImg = (img) => {
+    dispatch(deleteImage(img.id)).then(() => closeModal());
   };
 
   const handleLogin = async (username, password) => {
-    dispatch(userLogin(username, password)).then(() => {
-      dispatch(setNotification("logged in " + username, "success", 5));
-    });
+    await dispatch(userLogin(username, password));
   };
   const login = useSelector((state) => state.login);
   return (

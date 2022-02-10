@@ -9,3 +9,5 @@ dist
 dist-ssr
 .eslintcache
 cypress.json
+cypress/videos
+cypress/screenshots

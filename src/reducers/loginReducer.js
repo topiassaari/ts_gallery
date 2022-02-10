@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 import loginService from "../services/login";
 import postalService from "../services/postalService";
+import { setNotification } from "./notificationReducer";
 
 const loginReducer = (state = [], action) => {
   switch (action.type) {
@@ -29,17 +30,23 @@ export const userValidation = () => {
 };
 export const userLogin = (username, password) => {
   return async (dispatch) => {
-    const login = await loginService.login({
-      username,
-      password,
-    });
-    postalService.setToken(login.token);
-    window.sessionStorage.setItem("loggedUser", JSON.stringify(login));
-
-    dispatch({
-      type: "LOGIN",
-      data: login,
-    });
+    await loginService
+      .login({
+        username,
+        password,
+      })
+      .then((data) => {
+        if (data.error) {
+          return dispatch(setNotification("login failed", "error", 5));
+        }
+        postalService.setToken(data.token);
+        window.sessionStorage.setItem("loggedUser", JSON.stringify(data));
+        dispatch(setNotification("logged in " + data.username, "success", 5));
+        dispatch({
+          type: "LOGIN",
+          data,
+        });
+      });
   };
 };
 
