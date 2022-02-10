@@ -13,7 +13,6 @@ describe("gallery stuff works", () => {
       cy.contains(filter);
     });
   });
-
   it("displays image", () => {
     cy.get(".thumbnail")
       .first()
@@ -21,7 +20,7 @@ describe("gallery stuff works", () => {
       .should("have.attr", "src")
       .should(
         "include",
-        "https://topias.kuvat.fi/kuvat/website%20gallery/P290.jpg?img=medium"
+        "https://topias.kuvat.fi/kuvat/website%20gallery/P270.jpg?img=medium"
       );
   });
   it("opens lightbox", () => {
@@ -29,11 +28,11 @@ describe("gallery stuff works", () => {
     cy.contains("x");
     cy.contains("prev");
     cy.contains("next");
-    cy.contains("Kotka, 2022");
+    cy.contains("Herttoniemi, 2021");
   });
   it("filter works", () => {
     //todo replace static way of testing this
-    cy.get("#thumbnailGrid").children().should("have.length", 28);
+    cy.get("#thumbnailGrid").children().should("have.length", 27);
     cy.contains("2017").click();
     cy.get("#thumbnailGrid").children().should("have.length", 4);
   });
