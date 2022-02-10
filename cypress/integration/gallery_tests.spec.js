@@ -13,11 +13,7 @@ describe("gallery stuff works", () => {
       cy.contains(filter);
     });
   });
-  it("navigates to admin", () => {
-    cy.get("#admin").click();
-    cy.contains("username");
-    cy.contains("password");
-  });
+
   it("displays image", () => {
     cy.get(".thumbnail")
       .first()
