@@ -14,6 +14,8 @@ in no specific order, always put done items at bottom
 - [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
 - [ ] fix linting
+- [ ] fix local dev env (frontend wrong port and baseUrl linking)
+- [ ] add "if dev --> don't use static build of frontend"
 
   10.2.2022
 
@@ -21,6 +23,8 @@ in no specific order, always put done items at bottom
 - [x] fix dockerfile (bcrypt problem)
 - [x] fix error notifications for posting
 - [x] refactor notifications under reducers for global access
+- [x] refactor ci/cd under separate files
+- [x] add working ci/cd testing
 
   9.2.2022
 
