@@ -14,8 +14,12 @@ in no specific order, always put done items at bottom
 - [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
 - [ ] fix linting
-- [ ] fix local dev env (frontend wrong port and baseUrl linking)
-- [ ] add "if dev --> don't use static build of frontend"
+
+  11.2.2022
+
+- [x] add "if dev --> don't use static build of frontend"
+- [x] if user goes directly to /admin the service tries to fetch
+- [x] fix local dev env (frontend wrong port and baseUrl linking)
 
   10.2.2022
 

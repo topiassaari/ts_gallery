@@ -35,4 +35,5 @@
 |  8.2.  | 2    | check requirements list, fix a11y checlist issues, research deployment    |
 |  9.2.  | 9    | deploy to heroku, make CI/CD build, battle with docker                    |
 | 10.2.  | 3    | fix Dockerfile add e2e test environment, refactor notifications           |
-| total  | 113  |                                                                           |
+| 11.2.  | 2    | fix routing issue, improve dev env for new structure of project           |
+| total  | 115  |                                                                           |
