@@ -29,7 +29,7 @@ morgan.token("content", function (req) {
   return JSON.stringify(req.body);
 });
 
-if (process.env.NODE_ENV === "prod") {
+if (process.env.NODE_ENV === "prod" || process.env.NODE_ENV === "test") {
   app.use(express.static("build"));
 }
 app.use(express.json());
@@ -37,7 +37,6 @@ app.use(cors());
 app.use("/api/users", userRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/images", imageRouter);
-app.use(express.static("build"));
 app.use(morgan(":method :url :response-time :content"));
 
 module.exports = app;
