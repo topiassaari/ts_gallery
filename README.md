@@ -7,7 +7,7 @@
 <p>Its a very basic gallery that's divided into two sections: Gallery and Admin.</p> 
 
 ### Gallery
-<p>All images have a bit of description and when it was made. I tried to focus on getting basic a11y-stuff right, so all of the basic features of the site should be usable with just keyboard etc. This part of the service, although not perfect, might be of use to someone.</p>
+<p>All images have a bit of description and when it was made. I tried to focus on getting basic a11y right, so all of the basic features of the site should be usable with just keyboard etc. This part of the service, although not perfect, might be of use to someone.</p>
 
 ### Admin
 <p>The admin-view on the other hand is completely for my personal ease of use. It displays the same list of images as in gallery, but there's tools for adding, updating and deleting images. There's no way in the frontend to create a new account, and currently you would have to do it through the backend API. In the frontend, a11y was more of a priority but unfortunately all of the essential stuff is missing currently, so be aware.</p>

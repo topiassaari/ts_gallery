@@ -1,6 +1,5 @@
 in no specific order, always put done items at bottom
 
-- [ ] plan integration to site
 - [ ] explore optional style ideas
 - [ ] implement sorting in admin view
 - [ ] modals fill 100% of screen on mobile
@@ -14,6 +13,12 @@ in no specific order, always put done items at bottom
 - [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
 - [ ] fix linting
+
+  13.2.2022
+
+- [x] heroku site to subdomain
+- [x] write README
+- [x] plan integration to site
 
   11.2.2022
 
