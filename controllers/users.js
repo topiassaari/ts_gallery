@@ -34,9 +34,10 @@ userRouter.post("/", async (req, res) => {
     }
   }
 });
-userRouter.get("/", async (req, res) => {
-  const users = await User.find({});
-  res.json(users.map((u) => u.toJSON()));
-});
-
+if (process.env.NODE_ENV === "dev") {
+  userRouter.get("/", async (req, res) => {
+    const users = await User.find({});
+    res.json(users.map((u) => u.toJSON()));
+  });
+}
 module.exports = userRouter;

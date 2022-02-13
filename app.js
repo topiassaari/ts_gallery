@@ -29,14 +29,18 @@ morgan.token("content", function (req) {
   return JSON.stringify(req.body);
 });
 
-if (process.env.NODE_ENV === "prod" || process.env.NODE_ENV === "test") {
-  app.use(express.static("build"));
-}
 app.use(express.json());
 app.use(cors());
 app.use("/api/users", userRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/images", imageRouter);
 app.use(morgan(":method :url :response-time :content"));
+if (process.env.NODE_ENV === "prod" || process.env.NODE_ENV === "test") {
+  app.use(express.static("build"));
+  //if route not available, go to SPA
+  app.get("*", (_req, res) => {
+    res.status(404).redirect("/");
+  });
+}
 
 module.exports = app;
