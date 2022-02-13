@@ -47,7 +47,7 @@ const Lightbox = (props) => {
                 {props.img.desc}, {props.img.year}
               </p>
             </figcaption>
-            <div id="desktopControls">
+            <div id="controls">
               <Button
                 variant="prev"
                 id="prev"

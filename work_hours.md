@@ -36,5 +36,5 @@
 |  9.2.  | 9    | deploy to heroku, make CI/CD build, battle with docker                    |
 | 10.2.  | 3    | fix Dockerfile add e2e test environment, refactor notifications           |
 | 11.2.  | 2    | fix routing issue, improve dev env for new structure of project           |
-| 13.2.  | 2    | deal with heroku and domains, write documentation, fix minor problems     |
-| total  | 117  |                                                                           |
+| 13.2.  | 4    | deal with heroku+domains, write docs, fix mobile styles and minor bugs    |
+| total  | 119  |                                                                           |

@@ -14,12 +14,12 @@ must:
 should:
 
 - [x] load appropriately on a restricted internet connection (normal 3g)
-- [x] service passes a11y WCAG checklist
+- [x] service passes a11y WCAG checklist (uses axe to test...unfortunately relies a lot on manual testing still)
 - [x] admin can add, edit and remove images straight through the service
 - [x] admin can see quickly all the images and their details
 
 nice to have:
 
 - [x] the system does not allow adding duplicate images
-- [ ] all admin feature can be done from a phone
+- [ ] all admin feature can be done from a phone (done but no tests)
 - [x] dark mode lol

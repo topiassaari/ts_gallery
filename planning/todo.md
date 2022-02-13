@@ -2,20 +2,21 @@ in no specific order, always put done items at bottom
 
 - [ ] explore optional style ideas
 - [ ] implement sorting in admin view
-- [ ] modals fill 100% of screen on mobile
 - [ ] implement tests to fill nicetohave-reqs
-- [ ] create a 404 page
 - [ ] maybe separate input component
 - [ ] think more about the modal styling to reach an actual design
 - [ ] keyboard support for admin panel
 - [ ] keyboard support for modal
-- [ ] hamburger menu for mobile view
-- [ ] filter options bigger for mobile (under hamburger?)
 - [ ] make web 1.0 version
 - [ ] fix linting
+- [ ] improve e2e static tests for filtering
 
   13.2.2022
 
+- [x] filter options bigger font (too small for mobile)
+- [x] modals fill 100% of screen on mobile
+- [x] create a 404 page (actually a redirect in case of wrong url)
+- [x] remove option to query users in prod
 - [x] heroku site to subdomain
 - [x] write README
 - [x] plan integration to site
