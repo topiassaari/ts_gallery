@@ -79,7 +79,7 @@ npm run test
 ```javascript
 MONGODB_URI_TEST=your test env
 CYPRESS_USERNAME=e2e mongodb test username
-CYPRESS_PASSWORD=e2e mongodb test username
+CYPRESS_PASSWORD=e2e mongodb test password
 ```
 
 <p>Then start a test instance of the build that connects to the test DB (and uses a static build of the frontend)</p>
@@ -98,5 +98,5 @@ npm start
 
 ## Links
 
-<p><a href="gallery.topiassaari.com">Heroku deployment of this project</a></p>
+<p><a href="http://gallery.topiassaari.com">Heroku deployment of this project</a></p>
 <p><a href="https://github.com/topiassaari/ts_gallery/blob/main/work_hours.md">Work hours</a></p>
