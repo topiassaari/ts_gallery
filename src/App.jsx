@@ -11,6 +11,7 @@ import { getAll } from "./reducers/imageReducer";
 import Notification from "./components/Notification";
 import { userValidation } from "./reducers/loginReducer";
 import { lightTheme } from "./reducers/themeReducer";
+import { removeOverlay } from "./reducers/overlayReducer";
 
 const App = () => {
   const [nav, setNav] = useState("gallery");
@@ -21,6 +22,8 @@ const App = () => {
   useEffect(() => {
     dispatch(userValidation());
     dispatch(lightTheme());
+    //bad naming here but it initiates the overlay to be false...
+    dispatch(removeOverlay());
   }, []);
   const handleNav = (val) => {
     setNav(val);

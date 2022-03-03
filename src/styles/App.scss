@@ -128,7 +128,7 @@ input {
     @include flexCenter;
     @include overlay;
     z-index: 5;
-    @media screen and (max-height: 40em) {
+    @media screen and (max-height: 28em) {
       & > #content {
         display: flex;
         & > #lightboxClose {
@@ -177,6 +177,10 @@ input {
   align-content: flex-end;
   justify-content: space-between;
   padding: 2rem;
+
+  & button:focus {
+    border: 1px solid red;
+  }
   & > .iconContainer {
     @include flexCenter;
   }

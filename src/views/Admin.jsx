@@ -10,22 +10,27 @@ import LoginForm from "../components/LoginForm";
 
 import { updateImage, deleteImage, addImage } from "../reducers/imageReducer";
 import { userLogin } from "../reducers/loginReducer";
+import { setOverlay, removeOverlay } from "../reducers/overlayReducer";
 
 const Admin = () => {
   const dispatch = useDispatch();
   const images = useSelector((state) => state.images);
+  const overlay = useSelector((state) => state.overlay);
   const [modal, showModal] = useState(false);
   const [edit, setEdit] = useState(null);
   const newImg = () => {
     showModal(true);
+    dispatch(setOverlay());
   };
   const editImage = (img) => {
     setEdit(img);
     showModal(true);
+    dispatch(setOverlay());
   };
   const closeModal = () => {
     setEdit(null);
     showModal(false);
+    dispatch(removeOverlay());
   };
   const handleSubmit = (img) => {
     if (img.id) {
@@ -58,7 +63,12 @@ const Admin = () => {
           </Modal>
           <div id="imgTable">
             <ImageTable images={images} edit={editImage} />
-            <Button variant="add" onClick={newImg} />
+            <Button
+              variant="add"
+              onClick={newImg}
+              //there seems to be something weird with this
+              style={{ display: overlay ? "none" : "block" }}
+            />
           </div>
         </div>
       )}

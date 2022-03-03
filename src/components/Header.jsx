@@ -13,6 +13,7 @@ import PropTypes from "prop-types";
 const Header = (props) => {
   const login = useSelector((state) => state.login);
   const theme = useSelector((state) => state.theme);
+  const overlay = useSelector((state) => state.overlay);
   const dispatch = useDispatch();
   const handleLogout = async (event) => {
     event.preventDefault();
@@ -22,7 +23,10 @@ const Header = (props) => {
   };
   return (
     <div id="headerContainer" role="navigation">
-      <button onClick={() => props.handleNav("gallery")}>
+      <button
+        onClick={() => props.handleNav("gallery")}
+        tabIndex={overlay ? -1 : 1}
+      >
         <img
           src={theme === "light" ? signatureLight : signatureDark}
           id="signature"
@@ -34,7 +38,10 @@ const Header = (props) => {
       </div>
 
       <div className="iconContainer">
-        <button onClick={() => props.handleNav("admin")}>
+        <button
+          onClick={() => props.handleNav("admin")}
+          tabIndex={overlay ? -1 : 1}
+        >
           <img
             src={theme === "light" ? adminLight : adminDark}
             id="admin"
@@ -42,7 +49,7 @@ const Header = (props) => {
           />
         </button>
         {login.token ? (
-          <button onClick={handleLogout} onKeyDown={handleLogout}>
+          <button onClick={handleLogout} tabIndex={overlay ? -1 : 1}>
             <img
               src={theme === "light" ? logoutLight : logoutDark}
               id="logout"

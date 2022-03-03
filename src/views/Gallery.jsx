@@ -1,12 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import Lightbox from "../components/Lightbox";
 import ThumbnailGrid from "../components/ThumbnailGrid";
 import Filter from "../components/Filter";
+import { setOverlay, removeOverlay } from "../reducers/overlayReducer";
 
 const Gallery = () => {
   const images = useSelector((state) => state.images);
+  const dispatch = useDispatch();
   const [lightboxCurrent, setLightboxCurrent] = useState(null);
   const [filteredImages, setFiltered] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +16,10 @@ const Gallery = () => {
   const handleLightbox = (value) => {
     setLightboxCurrent(value);
     if (value) {
+      dispatch(setOverlay());
       return setIsOpen(true);
     }
+    dispatch(removeOverlay());
     setIsOpen(false);
   };
   const handleLightboxPrev = () => {

@@ -4,6 +4,8 @@
 
 <p>Its an app for showing images on the internet. The whole thing is made for personal use, and most likely will not be of much use for you...Still, here's some documentation on how to run the thing.</p>
 
+<p>Made as a project for <a href="https://fullstackopen.com/">Full Stack Open 2022</a></p>
+
 ## Features
 
 <p>Its a very basic gallery that's divided into two sections: Gallery and Admin.</p>
@@ -21,7 +23,7 @@
 
 ### Tools
 
-<p>The frontend uses React with CRA, backend is at its core an Express-app. Both are under the same repository again because of reasons. Testing done with Jest and Cypress, Linting with ESLint, styles with SCSS and MongoDB as the database. There's also a Dockerfile and and CI/CD using Actions.</p>
+<p>The frontend uses React with CRA, backend is at its core an Express-app. Both are under the same repository again because of reasons. Testing done with Jest and Cypress, Linting with ESLint, styles with SCSS and MongoDB as the database.</p>
 
 ### Installation
 
@@ -95,6 +97,20 @@ npm run start:test
 ```javascript
 npm start
 ```
+
+## Other stuff
+
+### Docker
+
+<p>There is a dockerfile that should be fairly light. It pulls from github to an alpine dist and build the prod build. To run it you need to define the env vars.</p>
+
+### CI/CD
+
+<p>Checks tests for unit, e2e and linting. Also there's a workflow for deploying to Heroku.</p>
+
+### TODO
+
+<p>See <a href="https://github.com/topiassaari/ts_gallery/blob/main/planning/todo.md">todo</a> for stuff that has been done / should have been done.</p>
 
 ## Links
 

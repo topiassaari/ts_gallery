@@ -9,7 +9,7 @@
     "dev:frontend": "PORT=3000 react-scripts start",
     "build": "react-scripts build && esbuild index.js --platform=node --bundle --minify --outfile=dist/index.js --external:./node_modules/*",
     "test": "react-scripts test",
-    "lint": "eslint src",
+    "lint": "eslint .",
     "e2e": "cross-env NODE_ENV=test cypress run",
     "start:test": "cross-env NODE_ENV=test node index.js",
     "cypress:open": "cypress open"

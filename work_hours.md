@@ -37,4 +37,6 @@
 | 10.2.  | 3    | fix Dockerfile add e2e test environment, refactor notifications           |
 | 11.2.  | 2    | fix routing issue, improve dev env for new structure of project           |
 | 13.2.  | 4    | deal with heroku+domains, write docs, fix mobile styles and minor bugs    |
-| total  | 119  |                                                                           |
+|  ----  | ---  | ------------------------------------------------------------------------- |
+|  3.3.  | 4    | fixes for linting, mobile styles, docs and keyboard control in admin view |
+| total  | 123  |                                                                           |

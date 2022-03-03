@@ -1,15 +1,20 @@
 in no specific order, always put done items at bottom
 
-- [ ] explore optional style ideas
 - [ ] implement sorting in admin view
-- [ ] implement tests to fill nicetohave-reqs
-- [ ] maybe separate input component
-- [ ] think more about the modal styling to reach an actual design
-- [ ] keyboard support for admin panel
-- [ ] keyboard support for modal
-- [ ] make web 1.0 version
-- [ ] fix linting
+- [ ] implement remaining tests to fill nicetohave-reqs
 - [ ] improve e2e static tests for filtering
+- [ ] admin view add button tabindex causes problems when modal is launched
+- [ ] dev environment endpoint for backend
+- [ ] ddark mode animation times for html element vs body
+
+  3.3.2022
+
+- [x] refactor so that redux handles overlay --> tabIndex
+- [x] keyboard support for modal
+- [x] keyboard support for admin panel (surprisingly complex...)
+- [x] disable tabbing of header if in lightbox or modal
+- [x] fix linting
+- [x] fix mobile landscape view...again
 
   13.2.2022
 

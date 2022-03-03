@@ -6,6 +6,7 @@ import { lightTheme, darkTheme } from "../reducers/themeReducer";
 
 const ThemeSelector = () => {
   const currentTheme = useSelector((state) => state.theme);
+  const overlay = useSelector((state) => state.overlay);
   const dispatch = useDispatch();
 
   const changeTheme = () => {
@@ -17,7 +18,11 @@ const ThemeSelector = () => {
     }
   };
   return (
-    <button id="themeSelector" onClick={changeTheme}>
+    <button
+      id="themeSelector"
+      onClick={changeTheme}
+      tabIndex={overlay ? -1 : 1}
+    >
       <img
         src={currentTheme === "light" ? lightbulbLight : lightbulbDark}
         alt="theme selector"
