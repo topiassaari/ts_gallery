@@ -1,10 +1,8 @@
 /* eslint-disable indent */
-import { useSelector } from "react-redux";
 import React from "react";
 import PropTypes from "prop-types";
 
 const ImageTable = (props) => {
-  const overlay = useSelector((state) => state.overlay);
   const keydown = (e, img) => {
     if (e.key === "Enter" || e.keyCode === 13) {
       props.edit(img);
@@ -27,7 +25,7 @@ const ImageTable = (props) => {
                   key={index}
                   onKeyDown={(ev) => keydown(ev, img)}
                   onClick={() => props.edit(img)}
-                  tabIndex={overlay ? -1 : 1}
+                  tabIndex={props.overlay ? -1 : 0}
                 >
                   <td>
                     <img src={img.url} alt=""></img>
@@ -47,4 +45,5 @@ export default ImageTable;
 ImageTable.propTypes = {
   images: PropTypes.array,
   edit: PropTypes.func,
+  overlay: PropTypes.bool,
 };

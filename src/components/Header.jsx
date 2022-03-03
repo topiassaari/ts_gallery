@@ -25,7 +25,7 @@ const Header = (props) => {
     <div id="headerContainer" role="navigation">
       <button
         onClick={() => props.handleNav("gallery")}
-        tabIndex={overlay ? -1 : 1}
+        tabIndex={overlay ? -1 : 0}
       >
         <img
           src={theme === "light" ? signatureLight : signatureDark}
@@ -40,7 +40,7 @@ const Header = (props) => {
       <div className="iconContainer">
         <button
           onClick={() => props.handleNav("admin")}
-          tabIndex={overlay ? -1 : 1}
+          tabIndex={overlay ? -1 : 0}
         >
           <img
             src={theme === "light" ? adminLight : adminDark}
@@ -49,7 +49,7 @@ const Header = (props) => {
           />
         </button>
         {login.token ? (
-          <button onClick={handleLogout} tabIndex={overlay ? -1 : 1}>
+          <button onClick={handleLogout} tabIndex={overlay ? -1 : 0}>
             <img
               src={theme === "light" ? logoutLight : logoutDark}
               id="logout"

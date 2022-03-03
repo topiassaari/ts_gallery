@@ -21,7 +21,7 @@ const ThemeSelector = () => {
     <button
       id="themeSelector"
       onClick={changeTheme}
-      tabIndex={overlay ? -1 : 1}
+      tabIndex={overlay ? -1 : 0}
     >
       <img
         src={currentTheme === "light" ? lightbulbLight : lightbulbDark}

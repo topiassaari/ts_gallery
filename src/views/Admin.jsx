@@ -62,7 +62,7 @@ const Admin = () => {
             ) : null}
           </Modal>
           <div id="imgTable">
-            <ImageTable images={images} edit={editImage} />
+            <ImageTable images={images} edit={editImage} overlay={overlay} />
             <Button
               variant="add"
               onClick={newImg}
