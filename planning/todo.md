@@ -6,6 +6,15 @@ in no specific order, always put done items at bottom
 - [ ] admin view add button tabindex causes problems when modal is launched
 - [ ] dev environment endpoint for backend
 - [ ] ddark mode animation times for html element vs body
+- [ ] fix problem of hiding error messages
+- [ ] refactor redux action types from string to const
+- [ ] check out redux toolkit for example to use createSlice
+- [ ] component specific CSS?
+- [ ] ReactQuery for fetching images
+
+  20.3.2022
+
+- [x] remove unnecessary toJSON
 
   3.3.2022
 
