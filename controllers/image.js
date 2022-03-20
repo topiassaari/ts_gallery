@@ -4,7 +4,7 @@ const middleware = require("../utils/middleware");
 
 imageRouter.get("/", (req, res) => {
   Image.find({}).then((images) => {
-    res.json(images.map((image) => image.toJSON()));
+    res.json(images.map((image) => image));
   });
 });
 
@@ -23,7 +23,7 @@ imageRouter.post("/", middleware.userExtractor, (req, res) => {
     dateAdded: new Date(),
   });
   newImg.save().then((saved) => {
-    res.json(saved.toJSON());
+    res.json(saved);
   });
 });
 
@@ -39,7 +39,7 @@ imageRouter.put("/:id", middleware.userExtractor, async (req, res) => {
     new: true,
   });
   if (updated) {
-    res.json(updated.toJSON());
+    res.json(updated);
   } else {
     res.status(404).end();
   }
