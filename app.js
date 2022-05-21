@@ -11,7 +11,6 @@ const mongoose = require("mongoose");
 const config = require("./utils/config");
 require("dotenv").config();
 app.use(middleware.tokenExtractor);
-app.use(middleware.limitHandler);
 
 mongoose
   .connect(config.MONGODB_URI, {
@@ -35,7 +34,7 @@ app.use("/api/users", userRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/images", imageRouter);
 app.use(morgan(":method :url :response-time :content"));
-if (process.env.NODE_ENV === "prod" || process.env.NODE_ENV === "test") {
+if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "test") {
   app.use(express.static("build"));
   //if route not available, go to SPA
   app.get("*", (_req, res) => {

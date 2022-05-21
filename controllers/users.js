@@ -34,7 +34,7 @@ userRouter.post("/", async (req, res) => {
     }
   }
 });
-if (process.env.NODE_ENV === "dev") {
+if (process.env.NODE_ENV === "development") {
   userRouter.get("/", async (req, res) => {
     const users = await User.find({});
     res.json(users.map((u) => u.toJSON()));

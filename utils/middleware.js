@@ -1,6 +1,5 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
-const rateLimit = require("express-rate-limit");
 
 const tokenExtractor = (req, res, next) => {
   const auth = req.get("authorization");
@@ -26,18 +25,7 @@ const userExtractor = async (req, res, next) => {
   });
 };
 
-const limitHandler = (_req, _res, next) => {
-  rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100,
-    standardHeaders: true,
-    legacyHeaders: false,
-  });
-  next();
-};
-
 module.exports = {
   tokenExtractor,
   userExtractor,
-  limitHandler,
 };

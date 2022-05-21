@@ -24,7 +24,7 @@ const imageReducer = (state = [], action) => {
 export const getAll = () => {
   return async (dispatch) => {
     const data = await postalService.getAll();
-    data.sort((a, b) => new Date(b.year) - new Date(a.year));
+    data.sort((a, b) => b.year - a.year);
     dispatch({
       type: "GET",
       data,
